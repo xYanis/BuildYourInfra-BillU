@@ -23,9 +23,9 @@ Dans le contexte du projet, le formateur sera le DSI de cette société.
 *Préface*
 
 
- SKYLAN,une solution de pointe déployée par RemindMe.Une entreprise réputée pour son expertise en solutions informatiques de pointe, vient de remporter avec succès l'appel d'offres pour structurer le réseau informatique de la société BillU. Cette annonce marque une étape significative dans l'évolution technologique de BillU, une entreprise innovante dans le domaine du développement logiciel. La décision de confier cette tâche cruciale à RemindMe reflète la confiance de BillU dans la capacité de Skylan à concevoir et à mettre en œuvre des solutions informatiques fiables et évolutives. Cette collaboration promet de renforcer l'efficacité opérationnelle de BillU tout en lui offrant les outils nécessaires pour prospérer dans un environnement numérique en constante évolution.  
+SkyLan, une solution de pointe déployée par RemindMe. Une entreprise réputée pour son expertise en solutions informatiques de pointe, vient de remporter avec succès l'appel d'offres pour structurer le réseau informatique de la société BillU. Cette annonce marque une étape significative dans l'évolution technologique de BillU, une entreprise innovante dans le domaine du développement logiciel. La décision de confier cette tâche cruciale à RemindMe reflète la confiance de BillU dans la capacité de Skylan à concevoir et à mettre en œuvre des solutions informatiques fiables et évolutives. Cette collaboration promet de renforcer l'efficacité opérationnelle de BillU tout en lui offrant les outils nécessaires pour prospérer dans un environnement numérique en constante évolution.  
 
-Effectif détaché par RemindME pour le déploiement de SKYLAN au sein de BillU:
+Effectif détaché par RemindME pour le déploiement de SkyLan au sein de BillU:
 
 Semaine 09 sprint 01  
 
