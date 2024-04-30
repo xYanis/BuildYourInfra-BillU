@@ -27,7 +27,7 @@ SkyLan, une solution de pointe déployée par RemindMe. Une entreprise réputée
 
 Effectif détaché par RemindME pour le déploiement de SkyLan au sein de BillU:
 
-Semaine 09 sprint 01  
+## Semaine 09 sprint 01  
 
         - Yanis Hortholary   SM
         - Alexandre Peyronie
