@@ -33,3 +33,16 @@ Effectif détaché par RemindME pour le déploiement de SkyLan au sein de BillU:
         - Alexandre Peyronie
         - Thomas Scotti
         - Sébastien Taiclet  PO
+
+
+| Tâche                                               | Responsable    |
+|-----------------------------------------------------|----------------|
+| Création de VM serveur / client                     | Sébastien Taiclet et  Alexandre Peyronie |
+| Création d'un domaine                               | Sébastien Taiclet et  Alexandre Peyronie |
+| Création des OU correspondant aux différents services de la société | Sébastien Taiclet et Alexandre Peyronie |
+| Création des groupes correspondant aux différents groupes d'utilisateurs de la société | Alexandre Peyronie et Sébastien Taiclet |
+| Intégration des données dans l'AD                  |  Alexandre Peyronie et Sébastien Taiclet   |
+| Plan d'adressage réseau                             |      Alexandre Peyronie       |
+| Plan schématique du futur réseau                   |  Yanis Hortholary et Thomas Scotti |
+| Liste des serveurs/matériels nécessaires           |  Yanis Hortholary et Thomas Scotti |
+| Mise en place d'une nomenclature de nom            |  Yanis Hortholary et Thomas Scotti |
