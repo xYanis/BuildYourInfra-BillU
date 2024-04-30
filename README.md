@@ -35,7 +35,7 @@ Effectif détaché par RemindME pour le déploiement de SkyLan au sein de BillU:
         - Sébastien Taiclet  PO
 
 
-| Tâche                                               | Responsable    |
+| Tâches                                               | Responsable    |
 |-----------------------------------------------------|----------------|
 | Création de VM serveur / client                     | Sébastien Taiclet et  Alexandre Peyronie |
 | Création d'un domaine                               | Sébastien Taiclet et  Alexandre Peyronie |
