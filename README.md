@@ -46,3 +46,11 @@ Effectif détaché par RemindME pour le déploiement de SkyLan au sein de BillU:
 | Plan schématique du futur réseau                   |  Yanis Hortholary et Thomas Scotti |
 | Liste des serveurs/matériels nécessaires           |  Yanis Hortholary et Thomas Scotti |
 | Mise en place d'une nomenclature de nom            |  Yanis Hortholary et Thomas Scotti |
+
+
+## Semaine 10 sprint 02 
+
+        - Yanis Hortholary   PO
+        - Alexandre Peyronie
+        - Thomas Scotti      SM
+        - Sébastien Taiclet  
