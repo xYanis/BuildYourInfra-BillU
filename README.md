@@ -54,3 +54,11 @@ Effectif détaché par RemindME pour le déploiement de SkyLan au sein de BillU:
         - Alexandre Peyronie
         - Thomas Scotti      SM
         - Sébastien Taiclet  
+
+| Tâches                                               | Responsable    |
+|-----------------------------------------------------|----------------|
+| AD-DS Création d'un domaine AD ( Windows Server GUI CORE )        | Thomas Scotti et Yanis Hortholary |
+| Création de l'arborescence AD ( Création OU / GROUPES / COMPTES )                | Alexandre Peyronie et Yanis Hortholary |
+| Création de l'arborescence AD entièrement automatisée à partir d'un fichier CSV | Sébastien Taiclet et Alexandre Peyronie |
+| Création d'une VM Server Debian mise sur le domaine AD accessible en SSH | Thomas Scotti et Sébastien Taiclet |
+| Création VM client ( Sur le domaine AD + SSH Debian )                | Thomas Scotti et Yanis Hortholary   |
