@@ -279,7 +279,7 @@ Afin d'accéder à la gestion de l'Active Directory, il faut se rendre sur le `S
 ![2024-05-15 14_37_14-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/9f4116ed-5623-443c-8a72-6e8c2edc5887)
 
 
-- Création des unités organisationnelles (OU)
+### Création des unités organisationnelles (OU)
 
 Nous allons faire un clique droit sur **BillU.lan**  
 Selectionner `New` et selectionner `Organizationnal Unit` et la nommer **Communication-Reseaux-Publiques**
@@ -307,7 +307,7 @@ Selectionner `New` et selectionner `Organizationnal Unit` et la nommer **Communi
 
 
 
-  - Création des groupes
+  ### Création des groupes
 
   
   Ensuite nous allons faire un clique droit sur **Communication-Reseaux-Publiques** pour créer un nouveau groupe 
@@ -327,7 +327,7 @@ Selectionner `New` et selectionner `Organizationnal Unit` et la nommer **Communi
   
   
   
-  - Création des comptes
+  ### Création des comptes
 
 
 On refait un clique droit droit pour aller sur `New` en sélectionnant `User`
