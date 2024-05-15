@@ -137,7 +137,7 @@ Nous allons selectionner l'option `8` pour afficher l'interface `Network Setting
 
 ![2024-05-14 14_53_48-QEMU (G1-WServer2022-Core) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/1d53782b-c26e-4908-b981-ab5d9e2b7509)
 
-Nous allons ensuite séléctionner l'option `1` pour paramétrer la carte réseau via l'interface Network Adpater Settings
+Nous allons ensuite séléctionner l'option `1` pour paramétrer la carte réseau via l'interface `Network Adpater Settings`
 
 ![2024-05-14 14_54_01-QEMU (G1-WServer2022-Core) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/c991277f-183c-4248-baa6-908e651e4e8d)
 
