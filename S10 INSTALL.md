@@ -206,6 +206,81 @@ La configuration de Windows Server 2022 (Core) est terminée !
 ![2024-05-14 15_02_26-QEMU (G1-WServer2022-Core) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/6511ee1d-5c6f-4a03-b920-9fc1f3cdd544)
 
 
+## *Réplication des deux serveurs Windows Server 2022*
+
+Nos deux serveurs étant fraichement installés, nous allons maintenant placer le serveur Windows Server 2022 (Core) en tant que contrôleur de domaine, puis mettre en place une réplication entre les deux serveurs
+
+### *Ajout du serveur Windows Server 2022 (Core) en tant que contrôleur de domaine*
+
+Démarrer le serveur Windows Server 2022 (GIU), puis se rendre dans le `Server Manager`
+
+![2024-05-14 15_03_47-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/222d5e73-2dd9-41f0-b14c-6a9dc0a80717)
+
+Cliquer sur `Manage`, puis sur `Add Servers`
+
+![2024-05-14 15_04_21-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/9b2360b3-5eb6-41f7-a084-b7b3feccd85b)
+
+Cliquer sur `Find Now`, afin de trouver le serveur Windows Server 2022 (Core), qui se nomme `BillU-Files-Rec`
+
+![2024-05-14 15_04_31-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/ceee5ab0-40b4-4194-9703-16255f345136)
+
+Selectionner le serveur `BillU-Files-Rec`, puis cliquer sur la flèche située au milieu de la fenêtre
+
+![2024-05-14 15_04_31-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/0621b23e-d52d-45c4-9b31-141e21743a7d)
+
+Le serveur `BillU-Files-Rec` est maintenant placé sur la partie droite de la fenêtre, appuyer ensuite sur `OK`
+
+![2024-05-14 15_04_41-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/eeb64a54-d289-4b20-8a63-0e1370ebcc36)
+
+De retour sur `Server Manager`, se rendre sur `All Servers` pour vérifier la présence des deux serveurs
+
+![2024-05-14 15_05_49-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/366155cc-c188-4d76-9842-b5fa7d842c2e)
+
+Cliquer sur le drapeau en haut de la fenêtre, puis cliquer sur `Promote this server to a domain controller`
+
+![2024-05-14 15_09_02-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/54fbc060-8031-42f2-b2d9-b11548ebd4f5)
+
+Dans la fenêtre nouvellement ouverte, dans la rubrique `Deployment Configuration`, cliquer sur `Change`, et entrer les informations suivantes : 
+- `Administrator`
+- `Azerty1*`
+
+![2024-05-14 15_09_51-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/3a0cbe73-380c-4898-9a17-282566a53db9)
+
+Dans la rubrique `Domain Controller Options`, indiquer le mot de passe `Azerty1*` dans les cases `Password` et `Confirm password`
+
+![2024-05-14 15_10_13-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/bbc62a2b-4ba6-4c45-b9d0-b836e98aad7a)
+
+Dans la rubrique `Additional Options`, selectionner `BillU-Files.BillU.lan` dans la liste déroulante
+
+![2024-05-14 15_10_47-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/a9ceb338-3e5b-4536-868e-0d126ee1afc2)
+
+Terminer ensuite l'installation normalement
+
+![2024-05-14 15_11_05-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/5d594528-69dd-4e2b-9724-103ad21922ee)
+
+Pour vérifier le bon fonctionnement de la réplication, ouvrir une invite de commandes et inscrire la commande suivante : 
+
+```cmd
+repadmin /replsummary
+```
+
+![2024-05-14 15_13_46-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/b6aba23c-b28f-437a-ae14-663682a182e1)
+
+Les deux serveurs sont donc bien des contrôleurs de domaine, et en réplication complète !
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
