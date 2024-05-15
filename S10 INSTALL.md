@@ -271,6 +271,30 @@ Les deux serveurs sont donc bien des contrôleurs de domaine, et en réplication
 
 
 
+### Gestion de l'arborescence Active Directory
+
+
+![2024-05-15 14_37_14-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/9f4116ed-5623-443c-8a72-6e8c2edc5887)
+
+
+
+
+  - Création des unités organisationnelles (OU)
+
+
+![2024-05-15 11_58_54-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/27782147-d2ca-414e-8050-b9ec0ef137ee)
+
+
+
+
+![2024-05-15 12_02_34-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/6212e5bf-ce14-4a7e-8392-b34397d36328)
+
+
+
+
+
+
+![2024-05-15 12_04_07-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/291f784c-1d34-4d5e-83ef-157872b2dd61)
 
 
 
@@ -280,40 +304,73 @@ Les deux serveurs sont donc bien des contrôleurs de domaine, et en réplication
 
 
 
+  - Création des groupes
+
+  
+  
+  
+  
+  ![2024-05-15 12_04_55-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/6a092af6-45c3-40ac-8c20-5b4e241404f7)
+
+  
+  
+  
+  
+  
+  ![2024-05-15 12_06_14-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/dffe2fb5-b76e-425e-ae45-d848d553b29b)
+
+  
+  
+  
+  
+  
+  - Création des comptes
 
 
 
 
 
 
+![2024-05-15 12_09_54-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/181b4637-2089-4845-9389-eba97ec3b696)
 
 
 
 
 
 
+![2024-05-15 12_10_42-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/d0f7c556-497f-46cb-85ca-9ada1203d5fd)
 
 
 
 
 
 
+![2024-05-15 12_11_10-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/b5ccf405-fe36-43a9-a9d7-1b338140b1f3)
+
+
+
+
+
+![2024-05-15 12_14_14-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/eb9f33fc-0c67-494d-bdb4-181d3436c29b)
+
+
+
+
+
+![2024-05-15 12_14_42-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/cda30a35-62ee-4e17-8cd3-f463b0e7cabc)
 
 
 
 
 
 
+![2024-05-15 12_14_55-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/6df5938b-8792-4a40-9e8d-3ba6cc3914f2)
 
 
 
 
 
-
-
-
-
-
+![2024-05-15 12_15_16-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/e496fd29-f8f1-4f00-b86c-1c9e4e8d2a7b)
 
 
 
