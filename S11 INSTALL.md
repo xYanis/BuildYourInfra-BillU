@@ -25,7 +25,7 @@
 
 ### B - Installation du serveur GLPI
 
-#### Mise à jour du système
+### ***Mise à jour du système***
 
 Une fois connecté en `root` sur la VM Debian, éxécuter la commande suivant afin de mettre à jour le système : 
 ```bash
@@ -34,7 +34,7 @@ sudo apt-get update && sudo apt-get upgrade
 
 ![2024-05-21 15_34_29-QEMU (G1-DebianServer) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/02f557df-c517-4f43-bf0e-8e48a7b47390)
 
-#### Téléchargement et installation des paquets nécéssaires
+### ***Téléchargement et installation des paquets nécéssaires***
 
 Exécuter la commande suivante afin d'installer les paquets `Apache2`, `Maria DB`, et `PHP` (Penser également à appuyer sur `O` puis sur la touche `Entrée` pour valider)
 ```bash
@@ -50,7 +50,7 @@ sudo apt-get install php-xml php-common php-json php-mysql php-mbstring php-curl
 
 ![2024-05-21 15_39_46-QEMU (G1-DebianServer) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/df6aed23-b5fa-4b18-b6c1-f52cded7d804)
 
-#### Installation et configuration de MariaDB
+### ***Installation et configuration de MariaDB***
 
 Exécuter la commande suivante pour préparer MariaDB à l'hebergement de la base de données de GLPI : 
 ```bash
@@ -84,7 +84,7 @@ EXIT
 
 ![2024-05-21 15_48_43-QEMU (G1-DebianServer) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/86a91321-5ff5-4741-96f3-aa77b41f9482)
 
-#### Téléchargement et installation de GLPI
+### ***Téléchargement et installation de GLPI***
 
 Exécuter les commandes suivantes afin de télécharger GLPI à partir du lien [GitHub](https://github.com/glpi-project/glpi/releases/) officiel, dans un dossier temporaire : 
 ```bash
