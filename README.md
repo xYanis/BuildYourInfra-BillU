@@ -62,3 +62,59 @@ Effectif détaché par RemindME pour le déploiement de SkyLan au sein de BillU:
 | Création de l'arborescence AD entièrement automatisée à partir d'un fichier CSV | Sébastien Taiclet et Alexandre Peyronie |
 | Création d'une VM Server Debian mise sur le domaine AD accessible en SSH | Thomas Scotti et Sébastien Taiclet |
 | Création VM client ( Sur le domaine AD + SSH Debian )                | Thomas Scotti et Yanis Hortholary   |
+
+
+
+## Semaine 11 sprint 02 
+
+        - Yanis Hortholary   
+        - Alexandre Peyronie PO
+        - Thomas Scotti      
+        - Sébastien Taiclet  SM
+
+## Création de GPO
+
+## GPO de Sécurité
+
+| #  | GPO de Sécurité                                                          | Responsable |
+|----|--------------------------------------------------------------------------|-------------|
+| 1  | Politique de mot de passe (complexité, longueur, etc.)                   |            |
+| 2  | Verrouillage de compte (blocage de l'accès à la session après quelques erreurs de mot de passe) |            |
+| 3  | Restriction d'installation de logiciel pour les utilisateurs non-administrateurs |           |
+| 4  | Blocage de l'accès à la base de registre                                 |            |
+| 5  | Gestion du pare-feu                                                      |            |
+| 6  | Écran de veille avec mot de passe en sortie                              |            |
+| 7  | Politique de sécurité PowerShell                                         |            |
+| 8  | Bloquer l'accès au lecteur C                                             |            |
+| 9  | Bloquer l'accès aux jeux                                                 |            |
+| 10 | Interdire la configuration avancée TCP / IP                              |            |
+
+
+## GPO Standard
+
+| #  | GPO Standard                                  | Responsable |
+|----|-----------------------------------------------|-------------|
+| 1  | Fond d'écran                                  |           |
+| 2  | Déploiement (publication) de logiciels        |           |
+| 3  | Configuration des paramètres du navigateur (Firefox ou Chrome) |           |
+
+
+
+## Création d'un serveur GLPI - Sur Debian 11 ou 12 en CLI
+
+| #  | Création d'un serveur GLPI                               | Responsable |
+|----|-----------------------------------------------|-------------|
+| 1  | Synchronisation AD                            |               |
+| 2  | Gestion de parc : Inclusion des objets AD (utilisateurs, groupes, ordinateurs)   |         |
+| 3  | Gestion des incidents : Mise en place d'un système de ticketing  |         |
+| 4  | Accès et gestion à partir d'un client  |         |
+ 
+##  Scripts d'automatisation :
+
+| #  | Scripts d'automatisation | Responsable |
+|----|-----------------------------------------------|-------------|
+| 1  | Sur un serveur Debian, installation de Glpi à partir d'un fichier de configuration qui contient par exemple le nom de la base de donnée, le nom du compte, etc.
+| 2  | Sur un Windows Server Core, installation du rôle AD-DS, ajout à un domaine existant. On se base sur un fichier de configuration qui contient le nom du serveur, l'adresse IP du DNS, le nom du domaine, etc.
+
+        
+
