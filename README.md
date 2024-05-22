@@ -86,7 +86,7 @@ Effectif détaché par RemindME pour le déploiement de SkyLan au sein de BillU:
 | 6  | Écran de veille avec mot de passe en sortie                              |            |
 | 7  | Politique de sécurité PowerShell                                         |            |
 | 8  | Bloquer l'accès au lecteur C                                             |            |
-| 9  | Bloquer l'accès aux jeux                                                 |            |
+| 9  | Bloquer l'accès à l'AD                                                   |            |
 | 10 | Interdire la configuration avancée TCP / IP                              |            |
 
 
@@ -97,6 +97,8 @@ Effectif détaché par RemindME pour le déploiement de SkyLan au sein de BillU:
 | 1  | Fond d'écran                                  |           |
 | 2  | Déploiement (publication) de logiciels        |           |
 | 3  | Configuration des paramètres du navigateur (Firefox ou Chrome) |           |
+| 4  | Bloquer Windows Jeux                          |           |
+| 5  | Désactiver l'accès à Windows Media Player     |           |
 
 
 
