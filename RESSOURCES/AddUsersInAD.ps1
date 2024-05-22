@@ -99,16 +99,3 @@ if (($fonction -like "Responsable-*") -and ($Service -eq "NA")) {
         Write-Output "Erreur lors de l'ajout de $prenom $nom : $_"
     }
 }
-
-
-Le mer. 22 mai 2024 à 15:38, Thomas S <thoxinou@gmail.com> a écrit :
-
-    if ($Service -eq "NA") {
-         $ou =
-    "OU=$fonction,OU=$departement,OU=$societe,OU=BillU-Users,DC=BILLU,DC=LAN"
-    }
-
-    if (($fonction -like "Responsable*") -and ($Service -eq "NA")) {
-         $ou = "OU=$departement,OU=$societe,OU=BillU-Users,DC=BILLU,DC=LAN"
-    }
-
