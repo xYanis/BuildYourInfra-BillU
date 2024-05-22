@@ -23,7 +23,7 @@
   - Mot de passe : `Azerty1*`
   - Adresse IP : `172.19.5.4`
 
-### B - Installation du serveur GLPI
+### B - Préparation du serveur GLPI
 
 ### ***Mise à jour du système***
 
@@ -132,7 +132,7 @@ nano /var/www/glpi/inc/downstream.php
 
 ![2024-05-21 15_57_41-QEMU (G1-DebianServer) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/152506f1-7787-4846-a539-06add00caed9)
 
-Une fois dans l'éditeur, ajouter le contenu ci-dessous : 
+Une fois dans l'éditeur, ajouter le contenu ci-dessous, puis enregistrer le fichier : 
 ```php
 <?php
 define('GLPI_CONFIG_DIR', '/etc/glpi/');
@@ -150,7 +150,7 @@ nano /etc/glpi/local_define.php
 
 ![2024-05-21 16_00_58-QEMU (G1-DebianServer) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/2cb5aeb8-ce15-4978-be80-883653996f3e)
 
-Une fois dans l'éditeur, ajouter le contenu ci-dessous :
+Une fois dans l'éditeur, ajouter le contenu ci-dessous, puis enregistrer le fichier :
 ```php
 <?php
 define('GLPI_VAR_DIR', '/var/lib/glpi/files');
@@ -163,3 +163,129 @@ define('GLPI_LOG_DIR', '/var/log/glpi');
 
 *Pour la configuration du serveur Web Apache2, nous allons créer un fichier un fichier de configuration pour le VirtualHost dédié à GLPI.  
 Dans notre cas, le fichier s'appellera `support.billu.net.conf`, en référence au nom de domaine choisi : `support.billu.net`*
+
+Exécuter la commande suivante pour la création du rfichier de configuration précédemmenr cité : 
+```bash
+nano /etc/apache2/sites-available/support.billu.net.conf
+```
+
+![2024-05-21 16_05_01-QEMU (G1-DebianServer) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/a5c4d3a6-f9d7-4a4f-b931-86cd6de805a9)
+
+Une fois dans l'éditeur, ajouter le contenu ci-dessous, puis enregistrer le fichier : 
+```php
+<VirtualHost *:80>
+    ServerName support.billu.net
+
+    DocumentRoot /var/www/glpi/public
+
+    # If you want to place GLPI in a subfolder of your site (e.g. your virtual host is serving multiple applications),
+    # you can use an Alias directive. If you do this, the DocumentRoot directive MUST NOT target the GLPI directory itself.
+    # Alias "/glpi" "/var/www/glpi/public"
+
+    <Directory /var/www/glpi/public>
+        Require all granted
+
+        RewriteEngine On
+
+        # Redirect all requests to GLPI router, unless file exists.
+        RewriteCond %{REQUEST_FILENAME} !-f
+        RewriteRule ^(.*)$ index.php [QSA,L]
+    </Directory>
+</VirtualHost>
+```
+
+![2024-05-21 16_11_44-QEMU (G1-DebianServer) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/882c7a9c-26ac-4d11-9ccb-e18be4b371fb)
+
+Exécuter ensuite la commande suivante pour activer le nouveau site dans `Apache2` : 
+```bash
+a2ensite support.billu.net.conf
+```
+
+Exécuter ensuite la commande suivante pour désactiver le site par défaut, car inutile :
+```bash
+a2dissite 000-default.conf
+```
+
+Exécuter ensuite la commande suivante pour activer le module `Rewrite`, car nius l'avont utilisé dans le fichier de configuration du VirtualHost (`RewriteCond` / `RewriteRule`)
+```bash
+a2enmod rewrite
+```
+
+Exécuter ensuite la commande suivante pour redémarrer le service `Apache2` : 
+```bash
+systemctl restart apache2
+```
+
+![2024-05-21 16_16_52-QEMU (G1-DebianServer) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/b0ed1786-2639-4fc1-a908-0c67dd854dac)
+
+### ***Installation et configuration de PHP8.2-FMP***
+
+*Du fait de ses meilleures performances et de son indépendance aux autres différents services, il est recommandé d'utiliser le module `PHP8.2-FPM` sur `Apache2`, en lieu et place du module PHP de base*
+
+Exécuter la commande suivante pour installer le module `PHP8.2-FPM` : 
+```bash
+apt-get install php8.2-fpm
+```
+
+![2024-05-21 16_17_57-QEMU (G1-DebianServer) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/a483b34c-7f44-408f-8340-b0ef127e7037)
+
+Exécuter ensuite les commandes suivantes pour activer deux modules dans `Apache2`, activer la configuration de `PHP8.2-FPM`, et enfin redémarrer le service `Apache2` :
+```bash
+a2enmod proxy_fcgi setenvif
+a2enconf php8.2-fpm
+systemctl reload apache2
+```
+
+![2024-05-21 16_19_05-QEMU (G1-DebianServer) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/d7eada24-8b42-488e-b947-2bc48e2b4638)
+
+Exécuter ensuite la commande suivante pour éditer le fichier de configuration de `PHP8.2-FPM`
+```bash
+nano /etc/php/8.2/fpm/php.ini
+```
+
+![2024-05-21 16_19_35-QEMU (G1-DebianServer) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/a7d55a09-ce7c-42de-9b11-47fa3382a42e)
+
+Une fois dans l'éditeur, rechercher l'option `session.cookie_httponly` et indiquer la valeur `on` pour l'activer, afin de protéger les cookies de GLPI : 
+```bash
+; Whether or not to add the httpOnly flag to the cookie, which makes it
+; inaccessible to browser scripting languages such as JavaScript.
+; https://php.net/session.cookie-httponly
+session.cookie_httponly = on
+```
+
+![2024-05-21 16_24_10-QEMU (G1-DebianServer) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/4e9a5b14-77e3-4f02-b132-a09f3134a9ac)
+
+Exécuter ensuite la commande suivante  pour redémarrer le module PHP8.2-FPM : 
+```bash
+systemctl restart php8.2-fpm.service
+```
+
+![2024-05-21 16_25_06-QEMU (G1-DebianServer) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/ce16306c-7e7b-42be-b971-8acbc088402b)
+
+Exécuter ensuite la commande suivante pour éditer de nouveau le fichier support.billu.net.conf, afin de préciser à Apache2 d'utiliser le module PHP8.2-FPM pour les fichier PHP : 
+```bash
+nano /etc/apache2/sites-available/support.billu.net.conf
+```
+
+![2024-05-21 16_25_33-QEMU (G1-DebianServer) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/41e081e0-3638-4f63-9dc2-7163244b1ab9)
+
+Une fois dans l'éditeur, ajouter le contenu ci-dessous (entre les balises `</Directory>` et `</VirtualHost>`, puis enregistrer le fichier : 
+```php
+<FilesMatch \.php$>
+    SetHandler "proxy:unix:/run/php/php8.2-fpm.sock|fcgi://localhost/"
+</FilesMatch>
+```
+
+![2024-05-21 16_27_35-QEMU (G1-DebianServer) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/dbaab8d0-8d80-4b11-84d0-1aa8fa8ec1bd)
+
+Pour terminer, exécuter la commande suivante pour redémarrer le service `Apache2` : 
+```bash
+sudo systemctl restart apache2
+```
+
+![2024-05-21 16_28_03-QEMU (G1-DebianServer) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/7374c9d9-f2c0-4573-ac81-2d9f350d16c0)
+
+**La configuration de GLPI est terminée**
+
+
+
