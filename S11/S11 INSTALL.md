@@ -4,6 +4,10 @@
 
 ### 1 - Création de 10 GPO de sécurité (Minimum)
 
+1- Politique de mot de passe (complexité, longueur, etc.)
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/GPOUserPasswordSecurity.png?raw=true)
+
 6- Écran de veille avec mot de passe en sortie
 
 ![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/GPOUserPasswordScreensaver.png?raw=true)
