@@ -8,6 +8,10 @@
 
 ![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/GPOUserPasswordSecurity.png?raw=true)
 
+2- Verrouillage de compte (blocage de l'accès à la session après quelques erreurs de mot de passe)
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/GPOComputerLockWrongPassword.png?raw=true)
+
 6- Écran de veille avec mot de passe en sortie
 
 ![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/GPOUserPasswordScreensaver.png?raw=true)
