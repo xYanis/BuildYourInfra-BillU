@@ -30,7 +30,7 @@
 
 7- Politique de sécurité PowerShell
 
-
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/GPOUserPowershellDeny.png?raw=true)
 
 8- Bloquer l'accès au lecteur C
 
