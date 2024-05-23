@@ -45,7 +45,7 @@
 
 
 
-### 2 - Création de 5 GPO de sécurité (Minimum)
+### 2 - Création de 5 GPO standar (Minimum)
 
 ### 3 - Création d'un serveur GLPI sur une VM Debian 12 (CLI)
 
