@@ -14,7 +14,7 @@
 
 3- Restriction d'installation de logiciel pour les utilisateurs non-administrateurs
 
-
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/GPOUserInstallSoftwareDeny.png?raw=true)
 
 4- Blocage de l'accès à la base de registre
 
