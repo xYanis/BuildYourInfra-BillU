@@ -36,9 +36,9 @@
 
 ![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/GPOUserDiskCDeny.png?raw=true)
 
-9- Bloquer l'accès à l'AD
+9- Bloquer l'accès au panneau de configuration
 
-
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/GPOUserControlPanelDeny.png?raw=true)
 
 10- Interdire la configuration avancée TCP / IP
 
