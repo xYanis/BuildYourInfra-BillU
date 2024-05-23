@@ -4,6 +4,9 @@
 
 ### 1 - Création de 10 GPO de sécurité (Minimum)
 
+2- Verrouillage de compte (blocage de l'accès à la session après quelques erreurs de mot de passe)
+!()[https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/GPOUserPasswordScreensaver.png?raw=true]
+
 ### 2 - Création de 5 GPO de sécurité (Minimum)
 
 ### 3 - Création d'un serveur GLPI sur une VM Debian 12 (CLI)
