@@ -22,7 +22,7 @@
 
 5-Gestion du pare-feu
 
-
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/GPOUserFirewallDeny.png?raw=true)
 
 6- Écran de veille avec mot de passe en sortie
 
