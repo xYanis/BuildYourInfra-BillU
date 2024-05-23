@@ -12,9 +12,38 @@
 
 ![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/GPOComputerLockWrongPassword.png?raw=true)
 
+3- Restriction d'installation de logiciel pour les utilisateurs non-administrateurs
+
+
+
+4- Blocage de l'accès à la base de registre
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/GPOUserRegeditDeny.png?raw=true)
+
+5-Gestion du pare-feu
+
+
+
 6- Écran de veille avec mot de passe en sortie
 
 ![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/GPOUserPasswordScreensaver.png?raw=true)
+
+7- Politique de sécurité PowerShell
+
+
+
+8- Bloquer l'accès au lecteur C
+
+
+
+9- Bloquer l'accès à l'AD
+
+
+
+10- Interdire la configuration avancée TCP / IP
+
+
+
 
 ### 2 - Création de 5 GPO de sécurité (Minimum)
 
