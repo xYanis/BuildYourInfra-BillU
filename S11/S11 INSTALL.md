@@ -287,5 +287,45 @@ sudo systemctl restart apache2
 
 **La configuration de GLPI est terminée**
 
+### C - Installation du serveur GLPI
 
+### ***Via Interface Graphique***
 
+Dans un premier temps, nous devons nous rendre sur un hôte disposant d'une interface graphique, et connecté sur le même réseau que celui qui heberge le serveur GLPI.  
+Dans notre cas, ce sera une VM `WIndows 10 Pro` ayant comme adresse IP `172.19.5.10`
+
+Ouvrir ensuite un navigateur (Par ex : `Edge`) et inscrire l'adresse suivante : `<Adresse_IP_Serveur_GLPI>/install/install.php`  
+Nous arrivons dons sur la page ci-dessous :
+
+![2024-05-21 16_29_40-QEMU (G1-W10-Client1) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/7d9ddd70-a974-4cbb-bb72-754fefc7ed5a)
+
+Sélectionner Français, puis cliquer sur `OK` : 
+
+![2024-05-21 16_30_00-QEMU (G1-W10-Client1) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/b3d643fe-11d9-4773-a200-b47940d1c3f8)
+
+Lire le contrat de license, puis cliquer sur `Continuer` : 
+
+![2024-05-21 16_30_09-QEMU (G1-W10-Client1) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/6b432556-78e3-45e9-9bbe-d3c438467793)
+
+Comme il s'agit de la 1ère installation, cliquer sur `Installer` : 
+
+![2024-05-21 16_30_25-QEMU (G1-W10-Client1) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/9a328af8-fc72-47af-a834-8e868fecb35f)
+
+Bien vérifier que tous les modules soient bien présents, puis cliquer sur Continuer : 
+
+![2024-05-21 16_30_53-QEMU (G1-W10-Client1) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/72c4c129-eefb-4293-98b7-873ea4030a66)
+
+Arrivé sur l'écran `Etape 1`, entrer les infirlations suivantes : 
+ - Serveur SQL : `localhost`
+ - Utilisateur SQL : `glpi_adm`
+ - Mot de passe SQL : `Azerty1*`
+
+Puis cliquer sur `Continuer` : 
+
+![2024-05-21 16_31_21-QEMU (G1-W10-Client1) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/6b2570c9-51f2-470c-8841-8a136e2b8d85)
+
+Séléctionner la base de données créée précédemment :`billu_glpi`, puis cliquer sur `Continuer` : 
+
+![2024-05-23 10_04_50-QEMU (G1-W10-Client1) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/a4634ac0-764f-4463-ba57-4e23c7b85f31)
+
+**L'installation du serveur GLPI est terminée**
