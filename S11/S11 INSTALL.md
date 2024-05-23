@@ -4,7 +4,7 @@
 
 ### 1 - Création de 10 GPO de sécurité (Minimum)
 
-2- Verrouillage de compte (blocage de l'accès à la session après quelques erreurs de mot de passe)
+6- Écran de veille avec mot de passe en sortie
 
 ![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/GPOUserPasswordScreensaver.png?raw=true)
 
