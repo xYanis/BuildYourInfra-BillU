@@ -55,9 +55,9 @@ Effectif détaché par RemindME pour le déploiement de SkyLan au sein de BillU:
         - Thomas Scotti      SM
         - Sébastien Taiclet  
 
-| Tâches                                               | Responsable    |
-|-----------------------------------------------------|----------------|
-| AD-DS Création d'un domaine AD ( Windows Server GUI / CORE )        | Thomas Scotti et Yanis Hortholary |
+| Tâches                                                                            | Responsable    |
+|-----------------------------------------------------------------------------------|----------------|
+| AD-DS Création d'un domaine AD ( Windows Server GUI / CORE )                      | Thomas Scotti et Yanis Hortholary |
 | Création de l'arborescence AD ( Création OU / GROUPES / COMPTES )                | Alexandre Peyronie et Yanis Hortholary |
 | Création de l'arborescence AD entièrement automatisée à partir d'un fichier CSV | Sébastien Taiclet et Alexandre Peyronie |
 | Création d'une VM Server Debian mise sur le domaine AD accessible en SSH | Thomas Scotti et Sébastien Taiclet |
@@ -77,46 +77,47 @@ Effectif détaché par RemindME pour le déploiement de SkyLan au sein de BillU:
 ## GPO de Sécurité
 
 | #  | GPO de Sécurité                                                          | Responsable |
-|----|--------------------------------------------------------------------------|-------------|
-| 1  | Politique de mot de passe (complexité, longueur, etc.)                   |            |
-| 2  | Verrouillage de compte (blocage de l'accès à la session après quelques erreurs de mot de passe) |            |
-| 3  | Restriction d'installation de logiciel pour les utilisateurs non-administrateurs |           |
-| 4  | Blocage de l'accès à la base de registre                                 |            |
-| 5  | Gestion du pare-feu                                                      |            |
-| 6  | Écran de veille avec mot de passe en sortie                              |            |
-| 7  | Politique de sécurité PowerShell                                         |            |
-| 8  | Bloquer l'accès au lecteur C                                             |            |
-| 9  | Bloquer l'accès au panneau de configuration                                                   |            |
-| 10 | Déconexion en dehors des horaires prédéfinies                             |            |
+|----|-------------------------------------------------------------------------------------------------|-------------|
+| 1  | Politique de mot de passe (complexité, longueur, etc.)                                          | Alexandre Peyronie et Thomas Scotti |
+| 2  | Verrouillage de compte (blocage de l'accès à la session après quelques erreurs de mot de passe) | Alexandre Peyronie et Thomas Scotti |
+| 3  | Restriction d'installation de logiciel pour les utilisateurs non-administrateurs                | Alexandre Peyronie et Thomas Scotti |
+| 4  | Blocage de l'accès à la base de registre                                                        | Alexandre Peyronie et Thomas Scotti |
+| 5  | Gestion du pare-feu                                                                             | Alexandre Peyronie et Thomas Scotti |
+| 6  | Écran de veille avec mot de passe en sortie                                                     | Alexandre Peyronie et Thomas Scotti |
+| 7  | Politique de sécurité PowerShell                                                                | Alexandre Peyronie et Thomas Scotti |
+| 8  | Bloquer l'accès au lecteur C                                                                    | Alexandre Peyronie et Thomas Scotti |
+| 9  | Bloquer l'accès au panneau de configuration                                                     | Alexandre Peyronie et Thomas Scotti |
+| 10 | Déconexion en dehors des horaires prédéfinies                                                   | Alexandre Peyronie et Thomas Scotti |
 
 
 ## GPO Standard
 
-| #  | GPO Standard                                  | Responsable |
-|----|-----------------------------------------------|-------------|
-| 1  | Fond d'écran                                  |           |
-| 2  | Déploiement (publication) de logiciels        |           |
-| 3  | Configuration des paramètres du navigateur (Firefox ou Chrome) |           |
-| 4  | Bloquer Windows Jeux                          |           |
-| 5  | Désactiver l'accès à Windows Media Player     |           |
+| #  | GPO Standard                                                   | Responsable |
+|----|----------------------------------------------------------------|-------------|
+| 1  | Fond d'écran                                                   | Yanis Hortholary et Thomas Scotti  |
+| 2  | Déploiement (publication) de logiciels                         | Yanis Hortholary et Thomas Scotti  |
+| 3  | Configuration des paramètres du navigateur (Firefox ou Chrome) | Yanis Hortholary et Thomas Scotti  |
+| 4  | Bloquer Windows Jeux                                           | Yanis Hortholary et Thomas Scotti  |
+| 5  | Désactiver l'accès à Windows Media Player                      | Yanis Hortholary et Thomas Scotti  |
 
 
 
 ## Création d'un serveur GLPI - Sur Debian 11 ou 12 en CLI
 
 | #  | Création d'un serveur GLPI                               | Responsable |
-|----|-----------------------------------------------|-------------|
-| 1  | Synchronisation AD                            |               |
-| 2  | Gestion de parc : Inclusion des objets AD (utilisateurs, groupes, ordinateurs)   |         |
-| 3  | Gestion des incidents : Mise en place d'un système de ticketing  |         |
-| 4  | Accès et gestion à partir d'un client  |         |
+|----|----------------------------------------------------------------------------------|-------------|
+| 1  | Synchronisation AD                                                               |   Alexandre Peyronie et Thomas Scotti |
+| 2  | Gestion de parc : Inclusion des objets AD (utilisateurs, groupes, ordinateurs)   |  Alexandre Peyronie et Thomas Scotti  |
+| 3  | Gestion des incidents : Mise en place d'un système de ticketing                  |  Alexandre Peyronie et Thomas Scotti  |
+| 4  | Accès et gestion à partir d'un client                                            |  Alexandre Peyronie et Thomas Scotti  |
  
 ##  Scripts d'automatisation :
 
 | #  | Scripts d'automatisation | Responsable |
 |----|-----------------------------------------------|-------------|
-| 1  | Sur un serveur Debian, installation de Glpi à partir d'un fichier de configuration qui contient par exemple le nom de la base de donnée, le nom du compte, etc.
-| 2  | Sur un Windows Server Core, installation du rôle AD-DS, ajout à un domaine existant. On se base sur un fichier de configuration qui contient le nom du serveur, l'adresse IP du DNS, le nom du domaine, etc.
+| 1  | Sur un serveur Debian, installation de Glpi à partir d'un fichier de configuration qui contient par exemple le nom de la base de donnée, le nom du compte, etc.       |  Sébastien Taiclet et  Alexandre Peyronie |
+| 2  | Sur un Windows Server Core, installation du rôle AD-DS, ajout à un domaine existant. On se base sur un fichier de configuration qui contient le nom du serveur, l'adresse IP du DNS, le nom du domaine, etc. | Yanis Hortholary et Thomas Scotti |
+| 3 | Finalisation du script ajout d'utilisateur    |  Sébastien Taiclet |
 
         
 
