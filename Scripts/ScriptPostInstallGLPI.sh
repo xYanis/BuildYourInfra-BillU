@@ -13,7 +13,7 @@ apt upgrade -y
 apt install apache2 mariadb-server php php-mysql php-xml php-mbstring php-curl php-gd php-imap php-ldap php-apcu php-zip php-json wget tar -y
 
 # Télécharger et décompresser GLPI
-cd /var/www/html
+cd /var/www
 wget https://github.com/glpi-project/glpi/releases/download/$GLPI_VERSION/glpi-$GLPI_VERSION.tgz
 tar -xvzf glpi-$GLPI_VERSION.tgz
 mv glpi-$GLPI_VERSION glpi
@@ -49,7 +49,7 @@ mysql -u root -e "FLUSH PRIVILEGES;"
 sleep 10
 
 # Installe les tables de base de données
-mysql -u "$DB_USER" -p"$DB_PASS" "$DB_NAME" < /var/www/html/glpi/install/mysql/glpi-empty.sql
+mysql -u "$DB_USER" -p"$DB_PASS" "$DB_NAME" < /var/www/glpi/install/mysql/glpi-empty.sql
 
 # Configurer les paramètres par défaut
 mysql -u "$DB_USER" -p"$DB_PASS" "$DB_NAME" <<EOF
