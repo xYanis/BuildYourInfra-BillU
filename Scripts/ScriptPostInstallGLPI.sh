@@ -1,60 +1,104 @@
 #!/bin/bash
+#Merci Julien <3
+#Fichier de configuration
+fichier_config="config.txt"
 
-# Variables de configuration
-DB_NAME="billu_glpi"
-DB_USER="glpi_adm"
-DB_PASS="Azerty1*"
-GLPI_URL="http://support.billu.net/glpi"
-GLPI_VERSION="10.0.15"  #version glpi
+#Sourcer le fichier de configuration
+source "$fichier_config"
 
-# Mettre à jour le système et installer les dépendances
-apt update
-apt upgrade -y
-apt install apache2 mariadb-server php php-mysql php-xml php-mbstring php-curl php-gd php-imap php-ldap php-apcu php-zip php-json wget tar -y
+#Utilisation des variables importées
+echo "Nom d'utilisateur: $db_name"
+echo "Mot de passe: $db_pass"
+echo "Nom de BDD: $db_name"
 
-# Télécharger et décompresser GLPI
-cd /var/www
-wget https://github.com/glpi-project/glpi/releases/download/$GLPI_VERSION/glpi-$GLPI_VERSION.tgz
-tar -xvzf glpi-$GLPI_VERSION.tgz
-mv glpi-$GLPI_VERSION glpi
-chown -R www-data:www-data /var/www/html/glpi
-chmod -R 755 /var/www/html/glpi
+# Installation des paquets nécessaires
+apt update && apt upgrade -y
+apt install apache2 php mariadb-server -y
+apt install php-xml php-common php-json php-mysql php-mbstring php-curl php-gd php-intl php-zip php-bz2 php-imap php-apcu -y
+apt install php-ldap -y
 
-# Configurer Apache pour GLPI
-bash -c 'cat <<EOT > /etc/apache2/sites-available/glpi.conf
-<VirtualHost *:80>
-    ServerAdmin admin@example.com
-    DocumentRoot /var/www/html/glpi
-    ServerName support.billu.net
-    <Directory /var/www/html/glpi>
-        Options FollowSymLinks
-        AllowOverride All
-        Require all granted
-    </Directory>
-    ErrorLog \${APACHE_LOG_DIR}/glpi_error.log
-    CustomLog \${APACHE_LOG_DIR}/glpi_access.log combined
-</VirtualHost>
-EOT'
-a2ensite glpi.conf
-a2enmod rewrite
-systemctl restart apache2
+# Sécurisation de l'installation MariaDB
+#mysql_secure_installation
 
-# Configurer la base de données MariaDB pour GLPI
-mysql -u root -e "CREATE DATABASE $DB_NAME;"
-mysql -u root -e "CREATE USER '$DB_USER'@'localhost' IDENTIFIED BY '$DB_PASS';"
-mysql -u root -e "GRANT ALL PRIVILEGES ON $DB_NAME.* TO '$DB_USER'@'localhost';"
-mysql -u root -e "FLUSH PRIVILEGES;"
+# Création de la base de données MySQL
+mysql -e "CREATE DATABASE $db_name"
+mysql -e "GRANT ALL PRIVILEGES ON $db_name.* TO '$db_user'@'localhost' IDENTIFIED BY '$db_pass'"
+mysql -e "FLUSH PRIVILEGES"
 
-# Attendre que le serveur soit prêt
-sleep 10
+# Télécharger et extraire GLPI
+cd /tmp
+wget https://github.com/glpi-project/glpi/releases/download/10.0.15/glpi-10.0.15.tgz
+tar -xzvf glpi-10.0.15.tgz -C /var/www/
 
-# Installe les tables de base de données
-mysql -u "$DB_USER" -p"$DB_PASS" "$DB_NAME" < /var/www/glpi/install/mysql/glpi-empty.sql
+# Attribuer les permissions
+chown www-data /var/www/glpi/ -R
 
-# Configurer les paramètres par défaut
-mysql -u "$DB_USER" -p"$DB_PASS" "$DB_NAME" <<EOF
-INSERT INTO glpi_configs (context, name, value) VALUES ('core', 'base_url', '$GLPI_URL');
-UPDATE glpi_users SET password = MD5('glpi') WHERE username = 'glpi';
+# Création des dossiers nécessaires
+mkdir /etc/glpi
+chown www-data /etc/glpi/
+mv /var/www/glpi/config /etc/glpi
+
+mkdir /var/lib/glpi
+chown www-data /var/lib/glpi/
+mv /var/www/glpi/files /var/lib/glpi
+
+mkdir /var/log/glpi
+chown www-data /var/log/glpi
+
+# Création des fichiers de configuration PHP
+touch /var/www/glpi/inc/downstream.php
+cat > /var/www/glpi/inc/downstream.php <<EOF
+<?php
+define('GLPI_CONFIG_DIR', '/etc/glpi/');
+if (file_exists(GLPI_CONFIG_DIR . '/local_define.php')) {
+    require_once GLPI_CONFIG_DIR . '/local_define.php';
+}
 EOF
 
-echo "Installation de GLPI terminée. Accédez à $GLPI_URL pour finaliser l'installation."
+touch /etc/glpi/local_define.php
+cat > /etc/glpi/local_define.php <<EOF
+<?php
+define('GLPI_VAR_DIR', '/var/lib/glpi/files');
+define('GLPI_LOG_DIR', '/var/log/glpi');
+EOF
+
+# Configuration Apache2 pour GLPI
+touch /etc/apache2/sites-available/support.pharmgreen.org.conf
+cat > /etc/apache2/sites-available/support.pharmgreen.org.conf <<EOF
+<VirtualHost *:80>
+    ServerName pharmgreen.org
+
+    DocumentRoot /var/www/glpi/public
+
+    <Directory /var/www/glpi/public>
+        Require all granted
+
+        RewriteEngine On
+
+        RewriteCond %{REQUEST_FILENAME} !-f
+        RewriteRule ^(.*)$ index.php [QSA,L]
+    </Directory>
+    <FilesMatch \.php$>
+        SetHandler "proxy:unix:/run/php/php8.2-fpm.sock|fcgi://localhost/"
+    </FilesMatch>
+</VirtualHost>
+EOF
+
+# Activer le site GLPI et modules Apache
+a2ensite support.pharmgreen.org
+a2dissite 000-default.conf
+a2enmod rewrite
+
+# Redémarrer Apache
+systemctl restart apache2
+
+# Installation et configuration de PHP-FPM
+apt-get install php8.2-fpm -y
+sudo a2enmod proxy_fcgi setenvif
+sudo a2enconf php8.2-fpm
+sudo systemctl reload apache2
+sed -i 's/^\(session\.cookie_httponly\s*=\s*\).*/\1on/' /etc/php/8.2/fpm/php.ini
+
+# Redémarrer PHP-FPM et Apache
+systemctl restart php8.2-fpm.service
+sudo systemctl restart apache2
