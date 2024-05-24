@@ -28,7 +28,8 @@ Set-DnsClientServerAddress -InterfaceIndex $Interface -ServerAddresses $DNS
 Rename-Computer -NewName $NomServeur -Force
 
 # Installer le rôle AD-DS
-Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools
+Add-WindowsFeature -Name "RSAT-AD-Tools" -IncludeManagementTools -IncludeAllSubFeature
+Add-WindowsFeature -Name "AD-Domain-Services" -IncludeManagementTools -IncludeAllSubFeature
 
 # Ajout d'une ligne de confirmation
 Write-Host "Configuration OK pour le serveur $NomServeur"
