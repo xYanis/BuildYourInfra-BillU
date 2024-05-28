@@ -52,6 +52,6 @@ Ensuite mise en place d'un routage statique pour faire communiquer les deux rés
 
 Nous avons donc fait communiquer les réseaux 172.19.10.0/24 et 172.19.0.0/24.
 
-!()[https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/VyOS_Show_Interface&Show_IP_Route.png?raw=true]
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/VyOS_Show_Interface&Show_IP_Route.png?raw=true)
 
 ## 3. Sécurité - Gestion de la télémétrie sur un client Windows 10/11, 2 possibilités (au choix)
