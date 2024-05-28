@@ -45,10 +45,9 @@ Mise en place d'un routeur de type VyOS cloner depuis un template fourni par le 
 
 Création de deux carte réseaux pour les ajouter au routeur pour faire communiquer deux réseaux dans un premier temps.
 
-Sur l'interface de VyOS taper 'conf' puis 'set interfaces ethernet eth<Numéro> address <AdresseDeLInterface>
-' pour configurer les différents port ethernet du routeur, ne pas oublier de faire un 'commit' et un 'save' après chaque manipulation, la commande 'show interfaces' permet de voir les interfaces ethernet présente sur le routeur.
+Sur l'interface de VyOS taper `conf` puis `set interfaces ethernet eth<Numéro> address <AdresseDeLInterface>` pour configurer les différents port ethernet du routeur, ne pas oublier de faire un `commit` et un `save` après chaque manipulation, la commande `show interfaces` permet de voir les interfaces ethernet présente sur le routeur.
 
-Ensuite mise en place d'un routage statique pour faire communiquer les deux réseaux en utilisant la commande 'set protocols static route <addresse réseau de destination> next-hop <passerelle>' , ne pas oublier le 'commit' et le 'save'
+Ensuite mise en place d'un routage statique pour faire communiquer les deux réseaux en utilisant la commande `set protocols static route <addresse réseau de destination> next-hop <passerelle>` , ne pas oublier le `commit` et le `save`
 
 Nous avons donc fait communiquer les réseaux 172.19.10.0/24 et 172.19.0.0/24.
 
