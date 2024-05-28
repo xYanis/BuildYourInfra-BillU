@@ -121,3 +121,18 @@ Effectif détaché par RemindME pour le déploiement de SkyLan au sein de BillU:
 
         
 
+## Semaine 12 sprint 03
+
+        - Yanis Hortholary   PO
+        - Alexandre Peyronie SM
+        - Thomas Scotti      
+        - Sébastien Taiclet  
+
+## Firewall - Prise en main du pare-feu pfSense
+
+## Routeur - Mise en place de routeur VyOS
+
+## Sécurité - Gestion de la télémétrie sur un client Windows 10/11
+
+
+
