@@ -34,8 +34,8 @@
   - Script exécuté sur les clients (GPO, AT, etc.)
 
 - Gestion par GPO :
-		  - Création d'une GPO ordinateur
-		  - Création d'une GPO utilisateur
+  - Création d'une GPO ordinateur
+  - Création d'une GPO utilisateur
 
 ## 1. Firewall - Prise en main du pare-feu pfSense
 
