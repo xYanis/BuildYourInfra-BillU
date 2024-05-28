@@ -41,4 +41,17 @@
 
 ## 2. Réseau - Utilisation de routeur sur l'infrastructure Proxmox
 
+Mise en place d'un routeur de type VyOS cloner depuis un template fourni par le formateur.
+
+Création de deux carte réseaux pour les ajouter au routeur pour faire communiquer deux réseaux dans un premier temps.
+
+Sur l'interface de VyOS taper 'conf' puis 'set interfaces ethernet eth<Numéro> address <AdresseDeLInterface>
+' pour configurer les différents port ethernet du routeur, ne pas oublier de faire un 'commit' et un 'save' après chaque manipulation, la commande 'show interfaces' permet de voir les interfaces ethernet présente sur le routeur.
+
+Ensuite mise en place d'un routage statique pour faire communiquer les deux réseaux en utilisant la commande 'set protocols static route <addresse réseau de destination> next-hop <passerelle>' , ne pas oublier le 'commit' et le 'save'
+
+Nous avons donc fait communiquer les réseaux 172.19.10.0/24 et 172.19.0.0/24.
+
+!()[https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/VyOS_Show_Interface&Show_IP_Route.png?raw=true)
+
 ## 3. Sécurité - Gestion de la télémétrie sur un client Windows 10/11, 2 possibilités (au choix)
