@@ -4,47 +4,6 @@
 
 ### 1 - Création de 10 GPO de sécurité (Minimum)
 
-1- Politique de mot de passe (complexité, longueur, etc.)
-
-![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/GPOUserPasswordSecurity.png?raw=true)
-
-2- Verrouillage de compte (blocage de l'accès à la session après quelques erreurs de mot de passe)
-
-![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/GPOComputerLockWrongPassword.png?raw=true)
-
-3- Restriction d'installation de logiciel pour les utilisateurs non-administrateurs
-
-![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/GPOUserInstallSoftwareDeny.png?raw=true)
-
-4- Blocage de l'accès à la base de registre
-
-![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/GPOUserRegeditDeny.png?raw=true)
-
-5-Gestion du pare-feu
-
-![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/GPOUserFirewallDeny.png?raw=true)
-
-6- Écran de veille avec mot de passe en sortie
-
-![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/GPOUserPasswordScreensaver.png?raw=true)
-
-7- Politique de sécurité PowerShell
-
-![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/GPOUserPowershellDeny.png?raw=true)
-
-8- Bloquer l'accès au lecteur C
-
-![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/GPOUserDiskCDeny.png?raw=true)
-
-9- Bloquer l'accès au panneau de configuration
-
-![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/GPOUserControlPanelDeny.png?raw=true)
-
-10- Déconexion en dehors des horaire prédéfini
-
-![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/GPOUserAutomaticLogoff.png?raw=true)
-
-
 ### 2 - Création de 5 GPO standar (Minimum)
 
 ### 3 - Création d'un serveur GLPI sur une VM Debian 12 (CLI)
@@ -52,6 +11,48 @@
 ### 4 - Scripts d'automatisation sur Debian et Windows Server (Core)
 
 ## 1 - Création de 10 GPO de sécurité (Minimum)
+
+1 - Politique de mot de passe (complexité, longueur, etc.)
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/GPOUserPasswordSecurity.png?raw=true)
+
+2 - Verrouillage de compte (Blocage de l'accès à la session après quelques erreurs de mot de passe)
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/GPOComputerLockWrongPassword.png?raw=true)
+
+3 - Restriction d'installation de logiciels pour les utilisateurs non-administrateurs
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/GPOUserInstallSoftwareDeny.png?raw=true)
+
+4 - Blocage de l'accès à la base de registre
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/GPOUserRegeditDeny.png?raw=true)
+
+5 - Gestion du pare-feu
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/GPOUserFirewallDeny.png?raw=true)
+
+6 - Écran de veille avec mot de passe en sortie
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/GPOUserPasswordScreensaver.png?raw=true)
+
+7 - Politique de sécurité PowerShell
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/GPOUserPowershellDeny.png?raw=true)
+
+8 - Bloquer l'accès au lecteur C
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/GPOUserDiskCDeny.png?raw=true)
+
+9 - Bloquer l'accès au panneau de configuration
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/GPOUserControlPanelDeny.png?raw=true)
+
+10 - Déconnexion en dehors des horaires prédéfinis
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/GPOUserAutomaticLogoff.png?raw=true)
+
+
 
 ## 2 - Création de 5 GPO de sécurité (Minimum)
 
