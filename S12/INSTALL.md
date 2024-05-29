@@ -90,7 +90,9 @@ Mise en place d'un relais DHCP sur le routeur VyOS
 
 Une fois sur la console VyOS rentrer en mode conf puis taper :
 
-`set service dhcp-relay interface eth<interface_number>`
+`set service dhcp-relay listen-interface eth<interface_number1>`
+
+`set service dhcp-relay upstream-interface eth<interface_number2>`
 
 `set service dhcp-relay server <DHCP_IP_Address>`
 
@@ -98,11 +100,17 @@ Une fois sur la console VyOS rentrer en mode conf puis taper :
 
 `save`
 
-<interface_number> correspond à l'interface qui écoute les requetes DHCP
+`exit` pour quitter le mode conf
+
+`restart dhcp relay-agent`
+
+<interface_number1> correspond à l'interface qui écoute les requetes DHCP
+
+<interface_number2> correspond à l'interface qui reçoit les demande DHCP
 
 <DHCP_IP_Address> correspond à l'addresse IP du serveur DHCP
 
-![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/VyOS_Relay_DHCP.png?raw=true)
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/VyOS_DHCP_Relay.png?raw=true)
 
 
 ## 3. Sécurité - Gestion de la télémétrie sur un client Windows 10/11, 2 possibilités (au choix)
