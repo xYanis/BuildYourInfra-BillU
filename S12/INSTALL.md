@@ -53,4 +53,17 @@ Nous avons donc fait communiquer les réseaux 172.19.10.0/24 et 172.19.0.0/24.
 
 ![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/VyOS_Show_Interface&Show_IP_Route.png?raw=true)
 
+Mise en place d'un relais DHCP sur le routeur VyOS
+
+Une fois sur la console VyOS rentrer en mode conf puis taper :
+
+<interface_number> correspond à l'interface qui écoute les requetes DHCP
+
+``
+set service dhcp-relay interface eth<interface_number>
+set service dhcp-relay server <DHCP_IP_Address>
+``
+
+
+
 ## 3. Sécurité - Gestion de la télémétrie sur un client Windows 10/11, 2 possibilités (au choix)
