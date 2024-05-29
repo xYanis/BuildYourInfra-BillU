@@ -38,6 +38,34 @@
   - Création d'une GPO utilisateur
 
 ## 1. Firewall - Prise en main du pare-feu pfSense
+### 1. Connexion :
+	 -	1. Login : `admin`
+	 -	2. Mdp : `pfsense`
+### 2. VM Proxmox :
+	  -	1. Interfaces :
+		  - WAN (vmbr1 proxmox) : 10.0.0.2/24
+		  - Gateway : 10.0.0.1
+			- LAN (vmbr4 proxmox) : 172.19.10.254/16 
+			- DMZ (vmbr5 proxmox) : 172.19.11.1
+		2. ID de VM de groupe à gérer
+     - pfSense ID = 543
+##3. Mise en place de règles de pare-feu (WAN et LAN)
+  ![Capture d'écran 2024-05-29 151908](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/160050170/2bdf9f9e-5dcb-4b13-8947-2f37fcb8a3aa)
+    
+  Deny all traffic depuis WAN
+
+  ![Capture d'écran 2024-05-29 151931](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/160050170/b7836113-b743-44dc-bbc4-2621f2d1c4a6)
+    
+  - Deny all traffic depuis LAN
+  - Puis ajout de règles pour gèrer le traffic.
+  - LAN to LAN
+  - LAN to pfSense
+  - LAN to WAN
+
+ ### - En attente de services a filtrer
+    
+
+
 
 ## 2. Réseau - Utilisation de routeur sur l'infrastructure Proxmox
 
