@@ -62,6 +62,11 @@
   - LAN to pfSense
   - LAN to WAN
 
+  ![image](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/160050170/8cdd015f-702f-4225-8f5f-386c4e40d6cf)
+
+  - Deny all traffic from DMZ to LAN
+
+
  ### - En attente de services a filtrer
     
 
