@@ -57,13 +57,11 @@ Mise en place d'un relais DHCP sur le routeur VyOS
 
 Une fois sur la console VyOS rentrer en mode conf puis taper :
 
+`set service dhcp-relay interface eth<interface_number>`
+
+`set service dhcp-relay server <DHCP_IP_Address>`
+
 <interface_number> correspond à l'interface qui écoute les requetes DHCP
-
-``
-set service dhcp-relay interface eth<interface_number>
-set service dhcp-relay server <DHCP_IP_Address>
-``
-
 
 
 ## 3. Sécurité - Gestion de la télémétrie sur un client Windows 10/11, 2 possibilités (au choix)
