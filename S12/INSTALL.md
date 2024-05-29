@@ -67,6 +67,8 @@ Une fois sur la console VyOS rentrer en mode conf puis taper :
 
 <interface_number> correspond à l'interface qui écoute les requetes DHCP
 
+<DHCP_IP_Address> correspond à l'addresse IP du serveur DHCP
+
 ![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/VyOS_Relay_DHCP.png?raw=true)
 
 
