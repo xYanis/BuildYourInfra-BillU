@@ -129,6 +129,12 @@ Effectif détaché par RemindME pour le déploiement de SkyLan au sein de BillU:
         - Sébastien Taiclet  
 
 ## Firewall - Prise en main du pare-feu pfSense
+### - Ajout de règles de pare-feu
+- WAN to LAN blocked
+- Servers group (172.19.0.0/24) to WAN blocked
+- LAN to LAN OK
+### - Création d'une DMZ
+- WIP ,en attente de l'implentation de services 
 
 ## Routeur - Mise en place de routeur VyOS
 
