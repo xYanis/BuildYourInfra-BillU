@@ -11,10 +11,16 @@ Le script se compose en quatres parties :
 
 2
 
+![2024-05-31 11_41_20-Clone de Template Windows 10 Neutre  En fonction  - Oracle VM VirtualBox](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/1b42687a-dd43-48ea-b4e9-cc7a636b4ecd)
 
 
 3
 
 
+![2024-05-31 11_42_11-Clone de Template Windows 10 Neutre  En fonction  - Oracle VM VirtualBox](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/60dc9695-f12b-4334-9f96-2db9a6e8710a)
+
+
 4
 
+
+![2024-05-31 11_43_55-Clone de Template Windows 10 Neutre  En fonction  - Oracle VM VirtualBox](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/91c3c466-f694-4d17-99f2-e477a6f05d5f)
