@@ -143,7 +143,7 @@ Effectif détaché par RemindME pour le déploiement de SkyLan au sein de BillU:
 ## Utilisation de routeur sur l'infrastructure Proxmox
 
 | #  | Vyos                                        |  Responsable  |
-|----|-----------------------------------------------------|  
+|----|-----------------------------------------------------|---------------------------------------|  
 | 1  | Routeur Vyos                                        |   Alexandre Peyronie et Thomas Scotti |
 | 2  | Lien avec le schéma réseau initial                  |   Alexandre Peyronie et Thomas Scotti |
 
