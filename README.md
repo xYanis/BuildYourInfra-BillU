@@ -128,17 +128,37 @@ Effectif détaché par RemindME pour le déploiement de SkyLan au sein de BillU:
         - Thomas Scotti      
         - Sébastien Taiclet  
 
+
 ## Firewall - Prise en main du pare-feu pfSense
-### - Ajout de règles de pare-feu
-- WAN to LAN blocked
-- Servers group (172.19.0.0/24) to WAN blocked
-- LAN to LAN OK
-### - Création d'une DMZ
-- WIP ,en attente de l'implentation de services 
 
-## Routeur - Mise en place de routeur VyOS
+| #  | Firewall                                        |   Responsable  |   
+|----|-----------------------------------------------------|---------------------|  
+| 1  | Connexion au pare-feu pfSense                       |  Sébastien Taiclet  |
+| 2  | DMZ (vmbr5 proxmox) : Interface à gérer             |  Sébastien Taiclet  |
+| 3  | Identification des VMs de groupe à gérer            |  Sébastien Taiclet  |
+| 4  | Mise en place de règles de pare-feu (WAN et LAN)    |  Sébastien Taiclet  |
+| 5  | Règles de bonnes pratiques                          |  Sébastien Taiclet  |
+| 6  | Principe du Deny All                                |  Sébastien Taiclet  |
 
-## Sécurité - Gestion de la télémétrie sur un client Windows 10/11
+## Utilisation de routeur sur l'infrastructure Proxmox
+
+| #  | Vyos                                        |  Responsable  |
+|----|-----------------------------------------------------|  
+| 1  | Routeur Vyos                                        |   Alexandre Peyronie et Thomas Scotti |
+| 2  | Lien avec le schéma réseau initial                  |   Alexandre Peyronie et Thomas Scotti |
+
+## Gestion de la télémétrie sur un client Windows 10/11
+
+| #  | GPO Télémétrie                                       | Responsable | 
+|----|-----------------------------------------------------|--------------|  
+| 1  | Gestion par script                                  |  Yanis Hortholary |
+| 2  | Script créé sur un serveur Windows                  |  Yanis Hortholary |
+| 3  | Script copié sur les clients (GPO, AT, etc.)        |  Yanis Hortholary |
+| 4  | Script exécuté sur les clients (GPO, AT, etc.)      |  Yanis Hortholary |
 
 
+## Mise en place du role DHCP
 
+| #  | DHCP                                       | Responsable |
+|----|-------------------------------------------|--------------| 
+| 1  | Mis en place sur GUI et Vyos              |   Alexandre Peyronie, Thomas Scotti et Sébastien Taiclet |
