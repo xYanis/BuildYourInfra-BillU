@@ -86,9 +86,9 @@ Nous avons donc fait communiquer les réseaux 172.19.10.0/24 et 172.19.0.0/24.
 
 ![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/VyOS_Show_Interface&Show_IP_Route.png?raw=true)
 
-Mise en place d'un relais DHCP sur le routeur VyOS
+### Mise en place d'un relais DHCP sur le routeur VyOS
 
-Une fois sur la console VyOS rentrer en mode conf puis taper :
+Une fois sur la console VyOS, entrer en mode "configuration", via la commande `conf`, puis entrer les commandes suivantes :
 
 `set service dhcp-relay listen-interface eth<interface_number1>`
 
@@ -100,17 +100,30 @@ Une fois sur la console VyOS rentrer en mode conf puis taper :
 
 `save`
 
-`exit` pour quitter le mode conf
+`exit` pour quitter le mode "configuration"
 
 `restart dhcp relay-agent`
 
-<interface_number1> correspond à l'interface qui écoute les requetes DHCP
+`<interface_number1>` correspond à l'interface qui écoute les requetes DHCP
 
-<interface_number2> correspond à l'interface qui reçoit les demande DHCP
+`<interface_number2>` correspond à l'interface qui reçoit les demande DHCP
 
-<DHCP_IP_Address> correspond à l'addresse IP du serveur DHCP
+`<DHCP_IP_Address>` correspond à l'addresse IP du serveur DHCP
 
 ![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/VyOS_DHCP_Relay.png?raw=true)
+
+
+### Installation de service DHCP sur les VM Ubuntu
+
+Concernant la mise en réseau des différents ordinateurs sur les réseaux, et notamment ceux sur Ubuntu, nous devons configurer le service DHCP.  
+Pour Windows, le service est dejà intégré, mais pas pour Linux.  
+Pour cela, nous devons installer le service DHCP via la commande suivante : 
+```bash
+sudo apt install isc-dhcp-client
+```
+Puis utiliser les commandes `sudo dhclient -r` pour libérer l'adresse IP, et `sudo dhclient` pour renouveller la demande d'adresse IP
+
+![2024-05-31 12_04_30-QEMU (G1-Ubuntu-Client2) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/a4bd2180-eb03-40d4-a5ea-b9ccec65537d)
 
 
 ## 3. Sécurité - Gestion de la télémétrie sur un client Windows 10/11, 2 possibilités (au choix)
