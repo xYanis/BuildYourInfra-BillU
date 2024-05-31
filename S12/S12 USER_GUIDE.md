@@ -24,13 +24,13 @@ Le script se compose en quatres parties :
 ### 4 Définir les noms de packages à supprimer avec DISM
 
 Pour obtenir la liste des packages provisionnés en ligne avec DISM
-DISM.exe /Online /Get-ProvisionedAppxPackages
+`DISM.exe /Online /Get-ProvisionedAppxPackages`
 
 Pour les supprimer 
-DISM.exe /Online /Remove-ProvisionedAppxPackage /Package-Name:NomPkg
+`DISM.exe /Online /Remove-ProvisionedAppxPackage /Package-Name:NomPkg`
 
 Désinstaller un package d'application pour tous les utilisateurs
-Get-AppxPackage -AllUsers -Name Editeur.NomDePackage | Remove-AppxPackage
+`Get-AppxPackage -AllUsers -Name Editeur.NomDePackage | Remove-AppxPackage`
 
 
 ![2024-05-31 11_43_55-Clone de Template Windows 10 Neutre  En fonction  - Oracle VM VirtualBox](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/91c3c466-f694-4d17-99f2-e477a6f05d5f)
