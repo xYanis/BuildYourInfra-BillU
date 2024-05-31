@@ -1,6 +1,6 @@
-## Script GPO télémétrie
+# Script GPO télémétrie
 
-# Fonctionnement du script
+## Fonctionnement du script
 
 Le script se compose en quatres parties : 
 
