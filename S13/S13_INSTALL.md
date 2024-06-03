@@ -114,7 +114,7 @@ Comme précédemment : Ne pas oublier de se rendre dans l'onglet `Common`, et de
 
 ![2024-06-03 18_48_08-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/f5101a66-1ff4-4644-8b74-876db7401254)
 
-Et enfin, faire de même avec la catégorie `Shortcuts`
+Et enfin, faire de même avec la catégorie `Shortcuts`  
 Clic-droit, puis `New` -> `Shortcut`
 
 ![2024-06-03 18_48_19-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/53c0f1c0-2e99-49c5-84f4-637e3dd283be)
@@ -122,7 +122,7 @@ Clic-droit, puis `New` -> `Shortcut`
 - Name : `Mes Fichiers Personnels`
 - Location : `Desktop`
 - Nous avons personnalisé l'icône du raccourci du bureau
-- Comme précédemment, nous avons cocheé la case `Run in logged-on user's security context (user policy option)` dans l'onglet `Common`
+- Comme précédemment, nous avons coché la case `Run in logged-on user's security context (user policy option)` dans l'onglet `Common`
 - Cliquer sur `Apply`, puis sur `OK`
 
 ![2024-06-03 18_49_26-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/ee1625c7-d2dd-46bc-9fce-791f57eae24e)
@@ -152,7 +152,7 @@ La fichier est également présent sur le dossier du serveur avec le bon chemin 
 
 ![2024-06-03 19_01_34-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/392052f9-d0c6-484c-8da6-d78a5e4d7205)
 
-La GPO mise en place fonctionne correctement !
+**La GPO mise en place fonctionne correctement !**
 
 
 
