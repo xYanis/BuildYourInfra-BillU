@@ -148,7 +148,7 @@ Nous allons créer un fichier dans ce dossier
 
 ![2024-06-03 19_00_57-QEMU (G1-WIN10-Client1) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/3cd50e6d-34b7-45ed-90cb-3621150bf83d)
 
-La fichier est également présent sur le dossier du serveur avec le bon chemin : `E:\Individuels\<ID_Utilisateur>`
+La fichier est également présent sur le dossier du serveur avec le bon chemin : `E:\Individuels\<ID_Utilisateur>\`
 
 ![2024-06-03 19_01_34-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/392052f9-d0c6-484c-8da6-d78a5e4d7205)
 
