@@ -2,7 +2,7 @@
 Import-Module -Name NetAdapter
 
 # Lire le fichier de configuration 
-$ConfigPath = "C:\ConfigScripts\ServerCoreConfig.csv" 
+$ConfigPath = "C:\Scripts\ServerCoreConfig.csv" 
 
 # Lecture du ficher config
 $Config = Import-Csv -Path $ConfigPath -Delimiter "," -Header "ServerName","IPAddress","Gateway","DNS","DomainName","DomainAdmin","DomainPassword" | Select-Object -Skip 1
