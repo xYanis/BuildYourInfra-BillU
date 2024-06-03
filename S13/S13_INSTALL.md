@@ -8,7 +8,7 @@
 
 ### 1.1 Stockage des données sur un volume spécifique de l'AD
 
-Dans un premier temps, nous allons ajouter un disque dur virtuel à la VM Windows Server, qui sera préalablement formatté, et nommé "Stockage"
+Dans un premier temps, nous allons ajouter un disque dur virtuel à la VM `Windows Server`, qui sera préalablement formaté, et nommé `Stockage`
 
 ![2024-06-03 18_31_02-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/19cfa9b0-0665-4e7e-97b0-ad3d39da7e41)
 
