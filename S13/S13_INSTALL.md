@@ -1,14 +1,30 @@
+# TSSR-2402-P3-G1-BuildYourInfra-BillU
+
+## INSTALL GUIDE Infrastructure sécurisée pour BillU
+
+# Objectifs
+
+## 1 - DOSSIERS PARTAGES - Mettre en place des dossiers réseaux pour les utilisateurs  
+
+### 1.1 Stockage des données sur un volume spécifique de l'AD
+
+Dans un premier temps, nous allons ajouter un disque dur virtuel à la VM Windows Server, qui sera préalablement formatté, et nommé "Stockage"
+
 ![2024-06-03 18_31_02-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/19cfa9b0-0665-4e7e-97b0-ad3d39da7e41)
 
+### 1.2 Mappage d'un lecteur réseau "I", correspondant à un dossier individuel sécurisé et accessible uniquement par cet utilisateur
+
+Procédons maintenant au partage du dossier nommé `Individuels`, qui correspondra au lecteur réseau utilisé par un utilisateur pour stocker ses fichiers personnels.  
+  
+Dans un premier temps, faire un clic-droit, puis cliquer sur `Properties` sur le dossier `Individuels`
 
 ![2024-06-03 18_32_03-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/16142eef-1687-44d5-9158-e9ff98f90d82)
 
+Se rendre dans l'onglet `Sharing`, puis cliquer sur `Advanced Sharing ...`
 
 ![2024-06-03 18_32_24-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/7bddd7a3-46d8-487f-983b-a3f9d57b752e)
 
-
-![2024-06-03 18_32_47-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/8eb431b2-0a40-46b4-9f42-22292e0c8777)
-
+Remplacer le contenu de la case `Share Name` par `Individuels$` *(Le symbole `$` permettra de masquer ce dossier dans le cas d'une découverte du réseau)*
 
 ![2024-06-03 18_33_08-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/84b0b231-dc7a-4e36-b1bc-3512252e16d0)
 
