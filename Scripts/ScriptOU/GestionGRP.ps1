@@ -1,7 +1,7 @@
 #                   #
 # The Master Script #
 #                   #
-
+#  MERCI BRUBRU <3  #
 
 #Installez le module ImportExcel s'il n'est pas déjà installé
 if (-not (Get-Module -ListAvailable -Name ImportExcel)) {
