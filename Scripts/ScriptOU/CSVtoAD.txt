@@ -1,0 +1,96 @@
+# Importer le module Active Directory
+Import-Module ActiveDirectory
+
+#Variable CSV>OU
+#$Servicerecrutement = $user.Recrutement
+#$ServiceCommercial = $user.Service-Commercial
+
+
+# Chemin vers le fichier CSV
+$csvPath = "C:\Users\Administrator\Desktop\UtilisateurV2.csv"
+
+# Lire le fichier CSV
+$users = Import-Csv -Path $csvPath -Delimiter ','
+
+#Replace
+#.replace('Servicerecrutement','Recrutement')
+
+# Boucle sur chaque ligne du CSV
+foreach ($user in $users) {
+    # Vérifier si les champs Prenom et Nom existent et ne sont pas vides
+    if (-not $user.Prenom -or -not $user.Nom) {
+        Write-Output "L'utilisateur avec des informations manquantes (Prenom ou Nom) ne peut pas être ajouté. Ligne: $($user | Out-String)"
+        continue
+    }
+
+    $prenom = $user.Prenom.Trim()
+    $nom = $user.Nom.Trim()
+
+    if (-not $prenom -or -not $nom) {
+        Write-Output "L'utilisateur avec des informations manquantes après nettoyage (Prenom ou Nom) ne peut pas être ajouté. Ligne: $($user | Out-String)"
+        continue
+    }
+
+    $societe = $user.Societe
+    $departement = $user.Departement
+    $Service = $User.Service
+    $fonction = $user.fonction
+    $telephoneFixe = $user."Telephone fixe"
+    $telephonePortable = $user."Telephone portable"
+
+    # Définir l'OU
+    $ou = "OU=$fonction,OU=$Service,OU=$departement,OU=BillU-User,DC=BILLU,DC=LAN" 
+    
+    # Construire le Distinguished Name (DN) 
+    $baseDn = "CN=$prenom $nom,$ou"
+    $dn = $baseDN
+
+    # Vérifier l'unicité du CN et générer un CN unique si nécessaire
+    $counter = 1
+    while (Get-ADUser -LDAPFilter "(distinguishedName=$dn)") {
+        $dn = "CN=$prenom $nom $counter,$ou"
+        $counter++
+    }
+
+
+
+
+    # Générer des noms d'utilisateur uniques
+    $samAccountName = ($prenom.Substring(0,1) + "." + $nom).ToLower()
+    $userPrincipalName = "$samAccountName@BillU.LAN"
+
+    # Vérifier l'unicité du SamAccountName
+    $counter = 1
+    while (Get-ADUser -Filter { SamAccountName -eq $samAccountName }) {
+        $samAccountName = ($prenom.Substring(0,1) + $nom + $counter).ToLower()
+        $userPrincipalName = "$samAccountName@BillU.LAN"
+        $counter++
+    }
+
+    # Attributs de l'utilisateur
+    $userParams = @{
+        SamAccountName   = $samAccountName
+        UserPrincipalName = $userPrincipalName
+        Name             = "$prenom $nom"
+        Surname          = $nom
+        GivenName        = $prenom
+        DisplayName      = "$prenom $nom"
+        Path             = $ou
+        AccountPassword  = (ConvertTo-SecureString "Azerty1*" -AsPlainText -Force)
+        Enabled          = $true
+        EmailAddress     = $userPrincipalName
+        Company          = $societe
+        Department       = $departement
+        Title            = $fonction
+        OfficePhone      = $telephoneFixe
+        MobilePhone      = $telephonePortable
+    }
+
+    # Ajout de l'utilisateur
+    try {
+        New-ADUser @userParams
+        Write-Output "Utilisateur $prenom $nom ajouté avec succès à $ou"
+    } catch {
+        Write-Output "Erreur lors de l'ajout de $prenom $nom : $_"
+    }
+}
