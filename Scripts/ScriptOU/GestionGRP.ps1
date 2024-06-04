@@ -30,7 +30,7 @@ $data = Import-Csv -Path $csvFilePath
 # Ajouter une nouvelle colonne "Groupe_Departement" à la variable $data
 $data | Add-Member -MemberType NoteProperty -Name 'Groupe_Departement' -Value ''
 
-# Ajouter une nouvelle colonne "Nouvelle_Colonne" à la variable $data
+# Ajouter une nouvelle colonne "Groupe_Service" à la variable $data
 $data | Add-Member -MemberType NoteProperty -Name 'Groupe_Service' -Value ''
 
 # Parcourir chaque ligne de la variable $data
