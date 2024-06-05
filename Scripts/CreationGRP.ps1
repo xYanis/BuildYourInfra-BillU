@@ -6,7 +6,7 @@ $baseOU = "OU=BillU-Users,DC=BillU,DC=lan"
 $csv = Import-Csv -Path $csvPath
 
 # Get unique combinations of OU and Groupe_Departement, excluding rows with "NA"
-$uniqueDeptGroups = $csv | Where-Object { $_.OU -ne "NA" -and $_.Groupe_Departement -ne "NA" } | Select-Object -Property OU, Groupe_Departement -Unique
+# $uniqueDeptGroups = $csv | Where-Object { $_.OU -ne "NA" -and $_.Groupe_Departement -ne "NA" } | Select-Object -Property OU, Groupe_Departement -Unique
 
 # Loop through each unique combination of OU and Groupe_Departement
 foreach ($item in $uniqueDeptGroups) {
