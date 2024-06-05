@@ -1,3 +1,4 @@
+Import-Module ActiveDirectory #(commenter si le module Active Directory est déjà importer)
 # Chemin du fichier CSV
 $csvPath = "path\to\your\CSV_Master.csv"
 # Activer la lignes pour le chemin correspondant
