@@ -33,23 +33,13 @@ foreach ($user in $users) {
 
     # Définir l'OU
       # Construire le chemin de l'OU
-     # D�finir l'OU
+     # Définir l'OU
     if ($Service -eq "NA") {
         $ouPath = "OU=$departement,OU=BillU-Users,DC=BILLU,DC=LAN"
         }
     else {
         $ouPath = "OU=$service,OU=$departement,OU=BillU-Users,DC=BILLU,DC=LAN"
     }
-    # Vérifier si l'OU existe déjà
-    #$ouExists = Get-ADOrganizationalUnit -Filter "DistinguishedName -eq '$ouPath'" -ErrorAction SilentlyContinue
-
-    #if (-not $ouExists) {
-        # Créer l'OU si elle n'existe pas
-     #   New-ADOrganizationalUnit -Name $fonction -Path "OU=$service,OU=$departement,OU=$societe,OU=BillU-Users,DC=BILLU,DC=LAN"
-      #  Write-Host "OU $ouPath created."
-   # } else {
-    #    Write-Host "OU $ouPath already exists."
-    #}
 
     # Construire le Distinguished Name (DN)
     $baseDn = "CN=$prenom $nom,$ou"
@@ -93,7 +83,7 @@ foreach ($user in $users) {
         MobilePhone       = $telephonePortable
     }
 
-    # Ajout de l'utilisateur
+    # Ajout de l'utilisateur et ajout au groupes du département et du service
     try {
         New-ADUser @userParams
         Add-ADGroupMember -Identity $groupDep -Members $samAccountName
