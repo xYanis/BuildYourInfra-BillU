@@ -3,7 +3,7 @@ Import-Module ActiveDirectory #(commenter si le module Active Directory est déj
 $csvPath = "path\to\your\CSV_Master.csv"
 # Activer la lignes pour le chemin correspondant
 $baseOU = "OU=BillU-Users,DC=BillU,DC=lan"
-#$baseOU = "OU=BillU-Users,DC=BillU,DC=lan"
+#$baseOU = "OU=BillU-Computers,DC=BillU,DC=lan"
 
 # Importation du fichier CSV
 $csv = Import-Csv -Path $csvPath
