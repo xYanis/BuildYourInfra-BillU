@@ -1,4 +1,5 @@
-# Import-Module ActiveDirectory (Uncomment this line if the Active Directory module is not already imported)
+Import-Module ActiveDirectory #(commenter si le module Active Directory est déjà importer)
+
 $csvPath = "path\to\your\CSV_Master.csv"
 $baseOU = "OU=BillU-Users,DC=BillU,DC=lan"
 
