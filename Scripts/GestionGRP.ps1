@@ -12,7 +12,7 @@ if (-not (Get-Module -ListAvailable -Name ImportExcel)) {
 $excelFilePath = "C:\Projet_3\s09_BillU.xlsx"
 $csvFilePath = "C:\Projet_3\CSVtest.csv"
 
-$fichierCSV = "C:\Projet_3\CSV_Master1.csv"
+$fichierCSV = "C:\Projet_3\CSV_Master.csv"
 
 
 #Importez les données du fichier Excel
