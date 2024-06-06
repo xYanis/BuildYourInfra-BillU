@@ -154,7 +154,31 @@ La fichier est également présent sur le dossier du serveur avec le bon chemin 
 
 **La GPO mise en place fonctionne correctement !**
 
-# Ojectif 5
+## 3 - MOT DE PASSE ADMINISTRATEUR LOCAL - Mise en place de LAPS
+
+### 1 - Configuration de Windows LAPS
+
+Tout d'abord, ouvrir une invite de commandes en mde administrateur afin d'éxécuter une commande pour lister l'ensemble des disponibles pour LAPS, et de vérifier que ce dernier est bien accessible depuis votre serveur : 
+```powershell
+Get-Command -Module LAPS
+```
+
+![2024-06-06 15_34_01-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/9850cea6-d3b4-4407-b7bf-4ae3266c4e00)
+
+Exécuter ensuite les deux commandes suivantes : 
+```powershell
+Import-Module LAPS
+Update-LapsADSSchema -Verbose
+```
+
+La 1ère sert à importer le module LAPS
+La 2eme sert à mettre à jour le schéma de l'Active Directory
+
+
+
+
+
+# Objectif 5
 ## 5. DÉPLACEMENT DES MACHINES DANS L'AD - Automatisation du placement dans la bonne OU
 ### Création d'une tache planifiée
 ![Capture d'écran 2024-06-06 141148](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/160050170/6c5976ab-006c-4822-8729-36091c8a0b8a)
