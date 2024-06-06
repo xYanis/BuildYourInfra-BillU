@@ -248,6 +248,7 @@ Puis nous retournons sur le serveur afin de confirmer l'action de la GPO :
 ```powershell
 Get-LapsADPassword "<Nom_PC> -AsPlainText
 ```
+
 ![2024-06-06 18_40_02-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/2045578b-925a-450e-bc92-d07a46f96e38)
 
 
