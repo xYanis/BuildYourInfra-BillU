@@ -234,11 +234,28 @@ Ne pas oublier de lier la GPO à L'OU contenant les ordinateurs de l'AD :
 
 ![2024-06-06 18_29_09-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/1c951b55-10d5-43b4-8db9-d80004a853d8)
 
-Exécuter la commande sui
+
+Pour tester cette GPO, nous nous rendons sur un ordinateur contenu dans l'AD, nous éxécutons la commande suivante pour forcer la mise à jours des GPO
+```
+gpupdate /force
+```
+
+Nous redémarrons ensuite cet ordinateur.  
+
+Puis nous retournons sur le serveur afin de confirmer l'action de la GPO : 
+ - Soit par l'Active Directory
+ - Soit en éxécutant la commande suivante sous PowerShell :
+```powershell
+Get-LapsADPassword "<Nom_PC> -AsPlainText
+```
+![2024-06-06 18_40_02-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/2045578b-925a-450e-bc92-d07a46f96e38)
 
 
-# Objectif 5
+
+
+
 ## 5. DÉPLACEMENT DES MACHINES DANS L'AD - Automatisation du placement dans la bonne OU
+  
 ### Création d'une tache planifiée
 ![Capture d'écran 2024-06-06 141148](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/160050170/6c5976ab-006c-4822-8729-36091c8a0b8a)
 Ouvrir le planificateur de tache et cliquez sur 'Create Task...'
