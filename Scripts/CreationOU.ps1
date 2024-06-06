@@ -17,9 +17,9 @@ foreach ($ou in $uniqueOUs) {
     # Check if the OU already exists, if not, create it
     if (-not (Get-ADOrganizationalUnit -Filter {Name -eq $ou} -SearchBase $baseOU -ErrorAction SilentlyContinue)) {
         New-ADOrganizationalUnit -Name $ou -Path $baseOU
-        Write-Host "Created parent OU: $ou"
+        Write-Host "L'OU parent $ou a été créée"
     } else {
-        Write-Host "Parent OU already exists: $ou"
+        Write-Host "L'OU parent $ou existe déjà"
     }
 
     # Unique OU enfant pour l'OU parent, et exclure "NA"
@@ -31,9 +31,9 @@ foreach ($ou in $uniqueOUs) {
         # Vérification OU enfant existe, sinon le créé
         if (-not (Get-ADOrganizationalUnit -Filter {Name -eq $childOU} -SearchBase $ouPath -ErrorAction SilentlyContinue)) {
             New-ADOrganizationalUnit -Name $childOU -Path $ouPath
-            Write-Host "Created child OU: $childOU under parent OU: $ou"
+            Write-Host "L'OU enfant $childOU a été créée sous l'OU parent $ou"
         } else {
-            Write-Host "Child OU already exists: $childOU under parent OU: $ou"
+            Write-Host "L'OU enfant $childOU existe déjà sous l'OU parent $ou"
         }
     }
 }
