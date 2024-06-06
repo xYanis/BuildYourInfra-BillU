@@ -27,7 +27,7 @@ SkyLan, une solution de pointe déployée par RemindMe. Une entreprise réputée
 
 Effectif détaché par RemindME pour le déploiement de SkyLan au sein de BillU:
 
-## Semaine 09 sprint 01  
+# Semaine 09 sprint 01  
 
         - Yanis Hortholary   SM
         - Alexandre Peyronie
@@ -48,7 +48,7 @@ Effectif détaché par RemindME pour le déploiement de SkyLan au sein de BillU:
 | Mise en place d'une nomenclature de nom            |  Yanis Hortholary et Thomas Scotti |
 
 
-## Semaine 10 sprint 02 
+# Semaine 10 sprint 02 
 
         - Yanis Hortholary   PO
         - Alexandre Peyronie
@@ -65,7 +65,7 @@ Effectif détaché par RemindME pour le déploiement de SkyLan au sein de BillU:
 
 
 
-## Semaine 11 sprint 02 
+# Semaine 11 sprint 02 
 
         - Yanis Hortholary   
         - Alexandre Peyronie PO
@@ -121,7 +121,7 @@ Effectif détaché par RemindME pour le déploiement de SkyLan au sein de BillU:
 
         
 
-## Semaine 12 sprint 03
+# Semaine 12 sprint 03
 
         - Yanis Hortholary   PO
         - Alexandre Peyronie SM
@@ -162,3 +162,29 @@ Effectif détaché par RemindME pour le déploiement de SkyLan au sein de BillU:
 | #  | DHCP                                       | Responsable |
 |----|-------------------------------------------|--------------| 
 | 1  | Mis en place sur GUI et Vyos              |   Alexandre Peyronie, Thomas Scotti et Sébastien Taiclet |
+
+
+
+# Semaine 13 sprint 04
+
+        - Yanis Hortholary   
+        - Alexandre Peyronie 
+        - Thomas Scotti      SM
+        - Sébastien Taiclet  PO
+
+## 1. DOSSIERS PARTAGES - Mettre en place des dossiers réseaux pour les utilisateurs
+
+| #  | Dossiers partaagés                                     |  Responsable  |
+|----|--------------------------------------------------------|-----------------------------------|
+| 1  | Stockage des données sur un volume spécifique de l'AD  | Yanis Hortholary et Thomas Scotti |
+| 2  | Sécurité de partage des dossiers par groupe AD         | Yanis Hortholary et Thomas Scotti |
+| 3  | Mappage des lecteurs sur les clients par GPO ou script | Yanis Hortholary et Thomas Scotti |
+|    | ou paramétrage de profil utilisateur                   |                                   | 
+| 4  | Acces des utilisteurs aux lecteurs                     | Yanis Hortholary et Thomas Scotti |
+
+## 2. STOCKAGE AVANCÉ - Mettre en place du RAID 1 sur le volume système des serveurs
+## 3. SAUVEGARDE - Mettre en place une sauvegarde du volume qui contient les dossiers partagés des utilisateurs
+## 4. MOT DE PASSE ADMINISTRATEUR LOCAL - Mise en place de LAPS
+## 5. DÉPLACEMENT DES MACHINES DANS L'AD - Automatisation du placement dans la bonne OU
+## 6. RESTRICTION D'UTILISATION DES MACHINES - Restriction horaire
+## 7. Objectif personnalisé 
