@@ -171,7 +171,7 @@ Import-Module LAPS
 Update-LapsADSSchema -Verbose
 ```
 
-*La 1ère commande sert à importer le module LAPS*
+*La 1ère commande sert à importer le module LAPS*  
 *La 2eme commande sert à mettre à jour le schéma de l'Active Directory*
 
 Vérifier ensuite dans les `Properties` d'un poste sur l'Active Directory que les lignes `mSLAPS- ...` sont bien présentes
@@ -180,8 +180,8 @@ Vérifier ensuite dans les `Properties` d'un poste sur l'Active Directory que le
 
 ### 2 - Attribution des droits d'écriture aus postes
 
-Quand un poste va effectuer une rotation du mot de passe du compte Admnistrateur local, il va devoir sauvegarder ce nouveau mot de passe dans l'Active Directory.  
-Nous allons donc éxécuter la commande ci-dessous pour donner cette autorisation aux postes situés dans l'OU BillU-Computers : 
+Quand un poste va effectuer une rotation du mot de passe du compte `Admnistrateur local`, il va devoir sauvegarder ce nouveau mot de passe dans l'Active Directory.  
+Nous allons donc éxécuter la commande ci-dessous pour donner cette autorisation aux postes situés dans l'OU `BillU-Computers` : 
 
 ```powershell
 Set-LapsADComputerSelfPermission -Identity "OU=BillU-Computers,DC=BillU,DC=lan"
@@ -204,7 +204,7 @@ Et les coller à cet endroit :
 C:\Windows\SYSVOL\sysvol\BillU.lan\Policies\PolicyDefinitions\LAPS.admx
 C:\Windows\SYSVOL\sysvol\BillU.lan\Policies\PolicyDefinitions\us-US\LAPS.adml
 ```
-Ensuite, nous devons créer une GPO pour définir la politique de mots de passe à appliquer sur le compte Administrateur géré, nous lui donnerons le nom de `Security_WindowsLAPS_Config`
+Ensuite, nous devons créer une GPO pour définir la politique de mots de passe à appliquer sur le compte `Administrateur` géré, nous lui donnerons le nom de `Security_WindowsLAPS_Config`
 
 Puis l'éditer en se rendant dans `Computer Configuration` > `Administrative Templates : Policy definitions ...` > `System` > `LAPS`
 
@@ -225,6 +225,10 @@ Double-cliquer sur `Configure size of encrypted password history`, puis cocher l
 Double-cliquer sur `Enable password encryption`, puis cocher l'option `Enabled`
 
 ![2024-06-06 18_25_52-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/ed884736-1d2b-486b-8a21-5fd5d4dd690d)
+
+Une dernière étape est à réaliser pour activer les administrateux locaux : 
+
+![2024-06-06 18_55_10-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/d87aeafd-90cb-45a8-a12a-965e319fcc80)
 
 La stratégie de groupe est prête : 
 
@@ -250,8 +254,6 @@ Get-LapsADPassword "<Nom_PC> -AsPlainText
 ```
 
 ![2024-06-06 18_40_02-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/2045578b-925a-450e-bc92-d07a46f96e38)
-
-
 
 
 
