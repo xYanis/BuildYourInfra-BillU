@@ -32,8 +32,7 @@ foreach ($user in $users) {
     $telephonePortable = $user."Telephone portable"
 
     # Définir l'OU
-      # Construire le chemin de l'OU
-     # Définir l'OU
+    
     if ($Service -eq "NA") {
         $ouPath = "OU=$departement,OU=BillU-Users,DC=BILLU,DC=LAN"
         }
