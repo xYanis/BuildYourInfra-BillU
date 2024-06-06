@@ -27,8 +27,8 @@ foreach ($row in $computers) {
     if (-not $computerExists) {
         # Créer l'objet ordinateur
         New-ADComputer -Name $computerName -Path $ouPath 
-        Write-Host "Computer $computerName created in $ouPath."
+        Write-Host "Le poste $computerName a été créé dans l'OU $ouPath."
     } else {
-        Write-Host "Computer $computerName already exists in $ouPath."
+        Write-Host "Le poste $computerName existe déjà dans l'OU $ouPath."
     }
 }
