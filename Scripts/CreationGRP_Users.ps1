@@ -18,9 +18,9 @@ foreach ($item in $uniqueDeptGroups) {
     # Vérification si le groupe existe,sinon, création
     if (-not (Get-ADGroup -Filter {Name -eq $groupDept} -SearchBase $ouPath -ErrorAction SilentlyContinue)) {
         New-ADGroup -Name $groupDept -GroupScope Global -GroupCategory Security -Path $ouPath
-        Write-Host "Created group: $groupDept in OU: $ou"
+        Write-Host "Le groupe $groupDept a été créé dans l'OU $ou"
     } else {
-        Write-Host "Group already exists: $groupDept in OU: $ou"
+        Write-Host "Le groupe $groupDept existe dejà dans l'OU $ou"
     }
 }
 
@@ -37,8 +37,8 @@ foreach ($item in $uniqueServiceGroups) {
     # Vérification si le groupe existe,sinon, création
     if (-not (Get-ADGroup -Filter {Name -eq $groupService} -SearchBase $ouPath -ErrorAction SilentlyContinue)) {
         New-ADGroup -Name $groupService -GroupScope Global -GroupCategory Security -Path $ouPath
-        Write-Host "Created group: $groupService in OU: $sousOU under parent OU: $ou"
+        Write-Host "Le groupe $groupService a été créé dans la sous-OU $sousOU de l'OU parente $ou"
     } else {
-        Write-Host "Group already exists: $groupService in OU: $sousOU under parent OU: $ou"
+        Write-Host "Le groupe $groupService existe dejà dans la sous-OU $sousOU de l'OU parente $ou"
     }
 }
