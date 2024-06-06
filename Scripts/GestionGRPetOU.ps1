@@ -78,7 +78,7 @@ foreach ($row in $data) {
       "Fiscalité" { $row.Groupe_Service = "GRP_FC_FIS" }
       "Contrôle Qualité" { $row.Groupe_Service = "GRP_QHSE_CQ" }
       "Gestion environnementale" { $row.Groupe_Service = "GRP_QHSE_GE" }
-      "Certification" { $row.Groupe_Service = "GRP_QHSE_SER" }
+      "Certification" { $row.Groupe_Service = "GRP_QHSE_CER" }
       "Service Client" { $row.Groupe_Service = "GRP_SC_SCL" }
       "Service achat" { $row.Groupe_Service = "GRP_SC_SA" }
       "ADV" { $row.Groupe_Service = "GRP_SC_ADV" }
