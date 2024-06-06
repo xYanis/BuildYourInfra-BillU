@@ -154,18 +154,19 @@ La fichier est également présent sur le dossier du serveur avec le bon chemin 
 
 **La GPO mise en place fonctionne correctement !**
 
+# Ojectif 5
+## 5. DÉPLACEMENT DES MACHINES DANS L'AD - Automatisation du placement dans la bonne OU
+### Création d'une tache planifiée
+![Capture d'écran 2024-06-06 141148](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/160050170/6c5976ab-006c-4822-8729-36091c8a0b8a)
+Ouvrir le planificateur de tache et cliquez sur 'Create Task...'
 
+![Capture d'écran 2024-06-06 141322](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/160050170/f7d8208a-197d-476a-8719-1be861c848f6)
+Ajoutez un nom et une description , selectionnez 'Run whether user is logged on or not','Run with highest privileges et la version du serveur.
+Ensuite allez sur l'onglet Triggers
 
+![Capture d'écran 2024-06-06 141423](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/160050170/96504b6f-3240-4151-ae32-45d4ea1caebc)
+Dans notre cas , on selectionne une tache journalière.
 
-
-
-
-
-
-
-
-
-
-
-
+![Capture d'écran 2024-06-06 141525](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/160050170/8522955a-cd0a-43ef-9622-548042a15402)
+Qui executera un script tous les jours à minuit, pour verifier des modifications à notre fichier CSV et le cas échéant lancer un autre script pour appliquer ces modifications.
 
