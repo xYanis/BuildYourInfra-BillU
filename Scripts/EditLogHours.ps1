@@ -66,7 +66,8 @@ Function Set-LogonHours{
     Set-ADUser -Identity $Identity -Replace @{logonhours = $FullByte} 
  }
  end{
-    Write-Host "La modification des horaires de connexion de tous les utilisateurs a bien été prise en compte" -ForegroundColor Green
+    Write-Host "La modification des horaires de connexion de tous les utilisateurs (Hors Administrateurs) a bien été prise en compte" -ForegroundColor Green
+    Write-Host "POUR RAPPEL : Connexion uniquement autorisée du lundi au samedi, de 7h30 à 20h" -ForegroundColor Green
  }
  }
  
