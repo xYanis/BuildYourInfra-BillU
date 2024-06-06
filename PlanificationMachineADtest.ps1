@@ -9,6 +9,6 @@ $currentWriteTime = (Get-Item "C:\Users\Administrator\Desktop\CSV_Master.csv").L
 if ($currentWriteTime -ne $lastWriteTime) {
     Write-Host "Le fichier a été modifié!"
 # Executer la commande de mise à jour de l'AD
-#-ExecutionPolicy Bypass -File "C:\Users\Administrator\Desktop\scriptADDComputer.ps1"
+-ExecutionPolicy Bypass -File "C:\Script\scriptADDComputer.ps1"
 
 }
