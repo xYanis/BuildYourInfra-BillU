@@ -187,4 +187,8 @@ Effectif détaché par RemindME pour le déploiement de SkyLan au sein de BillU:
 ## 4. MOT DE PASSE ADMINISTRATEUR LOCAL - Mise en place de LAPS
 ## 5. DÉPLACEMENT DES MACHINES DANS L'AD - Automatisation du placement dans la bonne OU
 ## 6. RESTRICTION D'UTILISATION DES MACHINES - Restriction horaire
+
+Création d'un [script](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/Scripts/EditLogHours.ps1) pour éditer les heures de connection autorisé pour tout les utilisateurs présent dans l'OU BillU-Users basé sur le tuto de [it-connect](https://www.it-connect.fr/chapitres/active-directory-powershell-horaire-acces/)
+
+
 ## 7. Objectif personnalisé 
