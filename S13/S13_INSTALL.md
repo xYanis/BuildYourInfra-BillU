@@ -170,3 +170,5 @@ Dans notre cas , on selectionne une tache journalière.
 ![Capture d'écran 2024-06-06 141525](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/160050170/8522955a-cd0a-43ef-9622-548042a15402)
 Qui executera un script tous les jours à minuit, pour verifier des modifications à notre fichier CSV et le cas échéant lancer un autre script pour appliquer ces modifications.
 
+
+
