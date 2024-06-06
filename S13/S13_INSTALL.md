@@ -158,7 +158,7 @@ La fichier est également présent sur le dossier du serveur avec le bon chemin 
 
 ### 1 - Configuration de Windows LAPS
 
-Tout d'abord, ouvrir une invite de commandes en mde administrateur afin d'éxécuter une commande pour lister l'ensemble des disponibles pour LAPS, et de vérifier que ce dernier est bien accessible depuis votre serveur : 
+Tout d'abord, ouvrir une invite de commandes en `Mode Administrateur` afin d'éxécuter une commande pour lister l'ensemble des commandes disponibles pour LAPS, et de vérifier que ce dernier est bien accessible depuis votre serveur : 
 ```powershell
 Get-Command -Module LAPS
 ```
@@ -171,11 +171,70 @@ Import-Module LAPS
 Update-LapsADSSchema -Verbose
 ```
 
-La 1ère sert à importer le module LAPS
-La 2eme sert à mettre à jour le schéma de l'Active Directory
+*La 1ère commande sert à importer le module LAPS*
+*La 2eme commande sert à mettre à jour le schéma de l'Active Directory*
+
+Vérifier ensuite dans les `Properties` d'un poste sur l'Active Directory que les lignes `mSLAPS- ...` sont bien présentes
+
+![2024-06-06 17_46_51-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/32f4eb43-ef0b-4b57-97f4-e8c96dc841fd)
+
+### 2 - Attribution des droits d'écriture aus postes
+
+Quand un poste va effectuer une rotation du mot de passe du compte Admnistrateur local, il va devoir sauvegarder ce nouveau mot de passe dans l'Active Directory.  
+Nous allons donc éxécuter la commande ci-dessous pour donner cette autorisation aux postes situés dans l'OU BillU-Computers : 
+
+```powershell
+Set-LapsADComputerSelfPermission -Identity "OU=BillU-Computers,DC=BillU,DC=lan"
+```
+
+![2024-06-06 17_57_34-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/c2d7d76e-1510-4539-928b-0ccef03b37cb)
+
+### 3 - Configuration de la GPO Windows LAPS
+
+Dans un premier temps, nous devons importer les modèles d'administration ADMX de Windows LAPS : 
+
+Copier les fichiers suivants : 
+```
+C:\Windows\PolicyDefinitions\LAPS.admx
+C:\Windows\PolicyDefinitions\us-US\LAPS.adml
+```
+
+Et les coller à cet endroit : 
+```
+C:\Windows\SYSVOL\sysvol\BillU.lan\Policies\PolicyDefinitions\LAPS.admx
+C:\Windows\SYSVOL\sysvol\BillU.lan\Policies\PolicyDefinitions\us-US\LAPS.adml
+```
+Ensuite, nous devons créer une GPO pour définir la politique de mots de passe à appliquer sur le compte Administrateur géré, nous lui donnerons le nom de `Security_WindowsLAPS_Config`
+
+Puis l'éditer en se rendant dans `Computer Configuration` > `Administrative Templates : Policy definitions ...` > `System` > `LAPS`
+
+Double-cliquer sur `Configure password backup directory`, puis cocher l'option `Enabled`
+
+![2024-06-06 18_12_54-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/bb778bfe-16b6-4fe1-a926-630e5dedafd4)
+
+Double-cliquer sur `Password Settings`, puis cocher l'option `Enabled`, et en indiquant les mêmes paramètres que l'image ci-dessous : 
+
+![2024-06-06 18_20_32-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/65d44a26-9939-4705-b7ad-b696472dffce)
 
 
+Double-cliquer sur `Configure size of encrypted password history`, puis cocher l'option `Enabled`, et en indiquant les mêmes paramètres que l'image ci-dessous : 
+*(Cette dernière option est facultative, mais nécéssaire en cas de compromission de la mise à jour de l'Active Directory, afin de pouvoir accéder au mot de passe précédent)*
 
+![2024-06-06 18_22_09-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/1e439445-2539-4504-9318-c4ccb9e7a7f7)
+
+Double-cliquer sur `Enable password encryption`, puis cocher l'option `Enabled`
+
+![2024-06-06 18_25_52-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/ed884736-1d2b-486b-8a21-5fd5d4dd690d)
+
+La stratégie de groupe est prête : 
+
+![2024-06-06 18_27_53-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/2766e8ea-6e30-4911-9800-1f3cb95726ee)
+
+Ne pas oublier de lier la GPO à L'OU contenant les ordinateurs de l'AD : 
+
+![2024-06-06 18_29_09-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/1c951b55-10d5-43b4-8db9-d80004a853d8)
+
+Exécuter la commande sui
 
 
 # Objectif 5
