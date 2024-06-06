@@ -34,7 +34,7 @@ $logonHours = @(
 $logonHoursBytes = [byte[]]$logonHours
 
 # Obtenez tous les utilisateurs dans BillU-Users
-$users = Get-ADUser -SearchBase "OU=YourUsersOU,DC=YourDomain,DC=com" -Filter *
+$users = Get-ADUser -SearchBase "OU=BillU-Users,DC=BillU,DC=lan" -Filter *
 
 # Mettre à jour les heures de connexion pour chaque utilisateur
 foreach ($user in $users) {
