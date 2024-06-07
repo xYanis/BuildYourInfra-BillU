@@ -65,7 +65,7 @@ Effectif détaché par RemindME pour le déploiement de SkyLan au sein de BillU:
 
 
 
-# Semaine 11 sprint 02 
+# Semaine 11 sprint 03
 
         - Yanis Hortholary   
         - Alexandre Peyronie PO
@@ -121,7 +121,7 @@ Effectif détaché par RemindME pour le déploiement de SkyLan au sein de BillU:
 
         
 
-# Semaine 12 sprint 03
+# Semaine 12 sprint 04
 
         - Yanis Hortholary   PO
         - Alexandre Peyronie SM
@@ -165,7 +165,7 @@ Effectif détaché par RemindME pour le déploiement de SkyLan au sein de BillU:
 
 
 
-# Semaine 13 sprint 04
+# Semaine 13 sprint 05
 
         - Yanis Hortholary   
         - Alexandre Peyronie 
