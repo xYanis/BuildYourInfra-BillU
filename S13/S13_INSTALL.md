@@ -313,7 +313,7 @@ Vérifier ensuite dans les `Properties` d'un poste sur l'Active Directory que le
 
 ![2024-06-06 17_46_51-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/32f4eb43-ef0b-4b57-97f4-e8c96dc841fd)
 
-### 2 - Attribution des droits d'écriture aus postes
+### 2 - Attribution des droits d'écriture aux postes
 
 Quand un poste va effectuer une rotation du mot de passe du compte `Admnistrateur local`, il va devoir sauvegarder ce nouveau mot de passe dans l'Active Directory.  
 Nous allons donc éxécuter la commande ci-dessous pour donner cette autorisation aux postes situés dans l'OU `BillU-Computers` : 
