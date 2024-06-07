@@ -174,7 +174,7 @@ Effectif détaché par RemindME pour le déploiement de SkyLan au sein de BillU:
 
 ## 1. DOSSIERS PARTAGES - Mettre en place des dossiers réseaux pour les utilisateurs
 
-| #  | Dossiers partaagés                                     |  Responsable  |
+| #  | Dossiers partagés                                     |  Responsable  |
 |----|--------------------------------------------------------|-----------------------------------|
 | 1  | Stockage des données sur un volume spécifique de l'AD  | Yanis Hortholary et Thomas Scotti |
 | 2  | Sécurité de partage des dossiers par groupe AD         | Yanis Hortholary et Thomas Scotti |
@@ -183,10 +183,33 @@ Effectif détaché par RemindME pour le déploiement de SkyLan au sein de BillU:
 | 4  | Acces des utilisteurs aux lecteurs                     | Yanis Hortholary et Thomas Scotti |
 
 ## 2. STOCKAGE AVANCÉ - Mettre en place du RAID 1 sur le volume système des serveurs
+En stand by
 ## 3. SAUVEGARDE - Mettre en place une sauvegarde du volume qui contient les dossiers partagés des utilisateurs
+
+| #  | Sauvegarde                                   |  Responsable  |
+|----|--------------------------------------------------------|-----------------------------------|
+| 1  | Mettre en place une sauvegarde du volume  | Yanis Hortholary et Thomas Scotti |
+
+
 ## 4. MOT DE PASSE ADMINISTRATEUR LOCAL - Mise en place de LAPS
+
+
+| #  | LAPS                                   |  Responsable  |
+|----|--------------------------------------------------------|-----------------------------------|
+| 1  | Mise en place du LAPS  | Alexandre Peyronie  |
+
+
 ## 5. DÉPLACEMENT DES MACHINES DANS L'AD - Automatisation du placement dans la bonne OU
+
+| #  | Placement des machines dans l'AD et automatisation                        |  Responsable  |
+|----|--------------------------------------------------------|-----------------------------------|
+| 1  | Placement AD et automatisation                  | Alexandre Peyronie et Sébastien Taiclet  |
+
 ## 6. RESTRICTION D'UTILISATION DES MACHINES - Restriction horaire
+
+| #  | Restriction horaire                                |  Responsable  |
+|----|--------------------------------------------------------|-----------------------------------|
+| 1  | Mise en place de la restriction | Alexandre Peyronie  |
 
 Création d'un [script](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/Scripts/EditLogHours.ps1) pour éditer les heures de connection autorisé pour tout les utilisateurs présent dans l'OU BillU-Users basé sur le tuto de [it-connect](https://www.it-connect.fr/chapitres/active-directory-powershell-horaire-acces/).
 
