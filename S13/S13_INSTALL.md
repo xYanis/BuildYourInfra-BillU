@@ -154,6 +154,131 @@ La fichier est également présent sur le dossier du serveur avec le bon chemin 
 
 **La GPO mise en place fonctionne correctement !**
 
+
+## 2 - SAUVEGARDE
+
+## 2.1 Sauvegarde sur un volume spécifique 
+
+Nous avons rajouté un volume spécifique de 10 GB pour prendre en charge la sauvegarde et ajouter 
+
+
+
+![2024-06-06 15_03_16-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/1fa10dd8-b1c5-4b17-8b72-7afbb5798793)
+
+
+
+
+![2024-06-06 15_03_37-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/97f26073-86ae-4b58-8bce-da4d8e48293e)
+
+
+
+
+![2024-06-06 15_04_59-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/47bafb2e-0f56-44dc-bf7f-5418f6a2f8aa)
+
+
+
+
+
+![2024-06-06 15_05_09-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/22101a0a-d4de-4551-8148-db483f86c84c)
+
+
+
+![2024-06-06 15_06_04-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/d72ba985-f9c2-4f75-a82e-92b64d684e0e)
+
+
+
+![2024-06-06 15_06_25-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/f8b0c9d0-07e5-415e-bd2c-3ebc0b6ed103)
+
+
+
+
+![2024-06-06 15_06_40-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/8f75b57b-24be-4fa1-b2e3-d222f843c5b0)
+
+
+
+![2024-06-06 15_07_44-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/fa9ae358-0e8c-4968-80ab-b5ebc2a5c88b)
+
+
+
+![2024-06-06 15_08_06-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/39e85641-49af-45ec-bfd0-c377872ba1c1)
+
+
+
+
+![2024-06-06 15_09_07-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/ef272449-2dc5-4114-aa3e-fbae4170f211)
+
+
+
+
+![2024-06-06 15_09_22-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/6bb6115e-05e3-4a27-a9f7-bffa99400f0f)
+
+
+
+
+
+![2024-06-06 15_09_52-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/3cb3ac1e-76d3-4e43-840c-df3e268aa868)
+
+
+
+
+
+![2024-06-06 15_11_18-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/f1761385-a520-4c97-9d02-073d11b2d570)
+
+
+
+![2024-06-06 15_12_28-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/1bbd2938-fdc7-42c7-9bb9-61d9248bd504)
+
+
+
+![2024-06-06 15_12_57-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/c11d1092-5e50-4531-839e-bfacc80017b7)
+
+
+
+
+![2024-06-06 15_13_09-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/1441b045-690e-4761-8420-a5d020236e03)
+
+
+
+
+![2024-06-06 15_13_21-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/ff753861-62ee-43b1-9333-841cebda9aa2)
+
+
+
+
+![2024-06-06 15_13_35-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/7408bd8f-a317-4951-af44-101b9885a909)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## 3 - MOT DE PASSE ADMINISTRATEUR LOCAL - Mise en place de LAPS
 
 ### 1 - Configuration de Windows LAPS
