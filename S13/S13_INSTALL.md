@@ -159,9 +159,13 @@ La fichier est également présent sur le dossier du serveur avec le bon chemin 
 
 ## 2.1 Sauvegarde sur un volume spécifique 
 
-Nous avons rajouté un volume spécifique de 10 GB pour prendre en charge la sauvegarde et ajouter 
+Nous avons rajouté un volume spécifique de 10 GB pour prendre en charge la sauvegarde
 
 
+![2024-06-06_15_00_15-wcs-cyber-node05_-_Proxmox_Virtual_Environment](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/acbc0515-1449-4c00-bb75-2dbc793a8e78)
+
+
+Nous allons ensuite ajouter le rôle `Windows Server Backup` dans le **SERVER MANAGER**
 
 ![2024-06-06 15_03_16-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/1fa10dd8-b1c5-4b17-8b72-7afbb5798793)
 
@@ -171,6 +175,7 @@ Nous avons rajouté un volume spécifique de 10 GB pour prendre en charge la sau
 ![2024-06-06 15_03_37-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/97f26073-86ae-4b58-8bce-da4d8e48293e)
 
 
+Une fois l'installation fini nous allons nous rendre sur le `Computer Management` pour initialiser le disque
 
 
 ![2024-06-06 15_04_59-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/47bafb2e-0f56-44dc-bf7f-5418f6a2f8aa)
@@ -195,25 +200,30 @@ Nous avons rajouté un volume spécifique de 10 GB pour prendre en charge la sau
 ![2024-06-06 15_06_40-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/8f75b57b-24be-4fa1-b2e3-d222f843c5b0)
 
 
+Nous pouvons  maintenant constater que le volume est bien au format attendu
+
 
 ![2024-06-06 15_07_44-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/fa9ae358-0e8c-4968-80ab-b5ebc2a5c88b)
 
 
+Nous allons maintenant nous rendre sur le `Windows Server Backup`
 
 ![2024-06-06 15_08_06-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/39e85641-49af-45ec-bfd0-c377872ba1c1)
 
 
+Nous allons programmer les horaires pour les sauvegardes en nous rendant `Backup Shedule Wizard` 
 
 
 ![2024-06-06 15_09_07-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/ef272449-2dc5-4114-aa3e-fbae4170f211)
 
 
+On séléctionne `Custom` pour configurer manuellement la configuration la sauvegarde
 
 
 ![2024-06-06 15_09_22-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/6bb6115e-05e3-4a27-a9f7-bffa99400f0f)
 
 
-
+On séléctionne ensuite les
 
 
 ![2024-06-06 15_09_52-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/3cb3ac1e-76d3-4e43-840c-df3e268aa868)
