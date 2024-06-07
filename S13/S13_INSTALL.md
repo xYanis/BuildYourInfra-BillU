@@ -326,20 +326,7 @@ Set-LapsADComputerSelfPermission -Identity "OU=BillU-Computers,DC=BillU,DC=lan"
 
 ### 3 - Configuration de la GPO Windows LAPS
 
-Dans un premier temps, nous devons importer les modèles d'administration ADMX de Windows LAPS : 
-
-Copier les fichiers suivants : 
-```
-C:\Windows\PolicyDefinitions\LAPS.admx
-C:\Windows\PolicyDefinitions\us-US\LAPS.adml
-```
-
-Et les coller à cet endroit : 
-```
-C:\Windows\SYSVOL\sysvol\BillU.lan\Policies\PolicyDefinitions\LAPS.admx
-C:\Windows\SYSVOL\sysvol\BillU.lan\Policies\PolicyDefinitions\us-US\LAPS.adml
-```
-Ensuite, nous devons créer une GPO pour définir la politique de mots de passe à appliquer sur le compte `Administrateur` géré, nous lui donnerons le nom de `Security_WindowsLAPS_Config`
+Nous devons créer une GPO pour définir la politique de mots de passe à appliquer sur le compte `Administrateur` géré, nous lui donnerons le nom de `Security_WindowsLAPS_Config`
 
 Puis l'éditer en se rendant dans `Computer Configuration` > `Administrative Templates : Policy definitions ...` > `System` > `LAPS`
 
