@@ -223,17 +223,19 @@ On séléctionne `Custom` pour configurer manuellement la configuration la sauve
 ![2024-06-06 15_09_22-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/6bb6115e-05e3-4a27-a9f7-bffa99400f0f)
 
 
-On séléctionne ensuite les
+On séléctionne ensuite les fichiers concernés par la sauvegarde
 
 
 ![2024-06-06 15_09_52-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/3cb3ac1e-76d3-4e43-840c-df3e268aa868)
 
 
-
+On définit l'heure dans la journée pour faire la sauvergarde.
 
 
 ![2024-06-06 15_11_18-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/f1761385-a520-4c97-9d02-073d11b2d570)
 
+
+On va définir la destination pour la sauvegarde et en suivant les captures d'écran ci dessous le volume sera bien configuré.
 
 
 ![2024-06-06 15_12_28-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/1bbd2938-fdc7-42c7-9bb9-61d9248bd504)
