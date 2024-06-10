@@ -9,7 +9,7 @@ if (-not (Get-Module -ListAvailable -Name ImportExcel)) {
 }
 
 #Spécifiez le chemin du fichier Excel d'entrée et du fichier CSV de sortie
-$excelFilePath = "C:\Projet_3\s09_BillU.xlsx"
+$excelFilePath = "C:\Projet_3\s14_BillU.xlsx"
 $csvBillUFilePath = "C:\Projet_3\BillU.csv"
 
 $fichierCSV = "C:\Projet_3\CSV_Master.csv"
@@ -17,6 +17,7 @@ $fichierCSV = "C:\Projet_3\CSV_Master.csv"
 
 #Importez les données du fichier Excel
 $data = Import-Excel -Path $excelFilePath
+
 
 #Filtrez les lignes où la colonne "société" contient "BillU"
 $filteredData = $data | Where-Object { $_.Societe -match "BillU" }
@@ -42,6 +43,12 @@ foreach ($row in $data) {
   # Extraire la valeur des colonnes "Departement" et "Service"
   $departement = $row.Departement
   $service = $row.Service
+
+  #Suppresion des accents et espace dans les colonnes Nom et Prénom
+  $row.Nom = $row.Nom -replace '\s', ''
+  $row.Nom = [System.Text.Encoding]::ASCII.GetString([System.Text.Encoding]::GetEncoding("Cyrillic").GetBytes($row.Nom))
+  $row.Prenom = $row.Prenom -replace '\s', ''
+  $row.Prenom = [System.Text.Encoding]::ASCII.GetString([System.Text.Encoding]::GetEncoding("Cyrillic").GetBytes($row.Prenom))
 
   # Déterminer la valeur de "Groupe_Departement" basée sur "Departement"
   switch ($departement) {
