@@ -38,17 +38,6 @@ foreach ($user in $users) {
         $ouPath = "OU=$service,OU=$departement,OU=BillU-Users,DC=BILLU,DC=LAN"
     }
 
-    # Construire le Distinguished Name (DN)
-    $baseDn = "CN=$prenom $nom,$ou"
-    $dn = $baseDn
-
-    # Vérifier l'unicité du CN et générer un CN unique si nécessaire
-    $counter = 1
-    while (Get-ADUser -LDAPFilter "(distinguishedName=$dn)") {
-        $dn = "CN=$prenom $nom $counter,$ou"
-        $counter++
-    }
-
     # Générer des noms d'utilisateur uniques
     $samAccountName = ($prenom + "." + $nom).ToLower()
     $userPrincipalName = "$samAccountName@billu.lan"
@@ -75,7 +64,7 @@ foreach ($user in $users) {
         EmailAddress      = $userPrincipalName
         Company           = $societe
         Department        = $departement
-        Title             = $fonction
+        Title             = $user.Fonction
         OfficePhone       = $telephoneFixe
         MobilePhone       = $telephonePortable
     }
@@ -110,13 +99,25 @@ $adUsers = Get-ADUser -Filter * -SearchBase "OU=BillU-Users,DC=BILLU,DC=LAN" -Pr
 foreach ($adUser in $adUsers) {
     $samAccountName = $adUser.SamAccountName
 
-    # Vérifier si l'utilisateur est présent dans le fichier CSV
-    $csvUser = $users | Where-Object { $_.Prenom.Trim() -eq $adUser.GivenName -and $_.Nom.Trim() -eq $adUser.Surname }
+    # Vérifier si l'utilisateur est présent dans le fichier CSV en utilisant SamAccountName
+    $csvUser = $users | Where-Object {
+        $csvPrenom = $_.Prenom.Trim().ToLower()
+        $csvNom = $_.Nom.Trim().ToLower()
+        $csvSamAccountName = ($csvPrenom + "." + $csvNom).ToLower()
+
+        $counter = 1
+        while (Get-ADUser -Filter { SamAccountName -eq $csvSamAccountName }) {
+            $csvSamAccountName = ($csvPrenom + "." + $csvNom + $counter).ToLower()
+            $counter++
+        }
+
+        $csvSamAccountName -eq $samAccountName
+    }
 
     if (-not $csvUser) {
         # Déplacer l'utilisateur vers l'OU spécifiée
         try {
-            Move-ADObject -Identity $adUser.DistinguishedName -TargetPath "OU=CorbeilleOU=User-BillU,DC=BillU,DC=lan"
+            Move-ADObject -Identity $adUser.DistinguishedName -TargetPath "OU=Corbeille,OU=User-BillU,DC=BillU,DC=lan"
             Write-Output "Utilisateur $samAccountName déplacé vers l'OU Corbeille"
         } catch {
             Write-Output "Erreur lors du déplacement de $samAccountName : $_"
