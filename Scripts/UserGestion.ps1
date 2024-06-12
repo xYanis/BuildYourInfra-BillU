@@ -2,7 +2,7 @@
 Import-Module ActiveDirectory
 
 # Chemin vers le fichier CSV
-$csvPath = "C:\Users\Administrator\Desktop\CSV_Master.csv"
+$csvPath = "C:\Projet_3\CSV_Master.csv"
 
 # Lire le fichier CSV
 $users = Import-Csv -Path $csvPath -Delimiter ','
@@ -11,15 +11,18 @@ $users = Import-Csv -Path $csvPath -Delimiter ','
 foreach ($user in $users) {
     # Vérifier si les champs Prenom et Nom existent et ne sont pas vides
     if (-not $user.Prenom -or -not $user.Nom) {
-        Write-Output "L'utilisateur avec des informations manquantes (Prenom ou Nom) ne peut pas être ajouté. Ligne: $($user | Out-String)"
+        Write-Host "L'utilisateur avec des informations manquantes (Prenom ou Nom) ne peut pas être ajouté. Ligne: $($user | Out-String)" -ForegroundColor DarkRed
         continue
     }
 
     $prenom = $user.Prenom.Trim()
     $nom = $user.Nom.Trim()
-
+    if ($nom.Length -ge 10) {
+        $nom = $nom.Substring(0, 5)
+    }
+    
     if (-not $prenom -or -not $nom) {
-        Write-Output "L'utilisateur avec des informations manquantes après nettoyage (Prenom ou Nom) ne peut pas être ajouté. Ligne: $($user | Out-String)"
+        Write-Host "L'utilisateur avec des informations manquantes après nettoyage (Prenom ou Nom) ne peut pas être ajouté. Ligne: $($user | Out-String)" -ForegroundColor DarkRed
         continue
     }
 
@@ -30,6 +33,7 @@ foreach ($user in $users) {
     $groupServ = $user.Groupe_Service
     $telephoneFixe = $user."Telephone fixe"
     $telephonePortable = $user."Telephone portable"
+    $birthday          = $user."Date de naissance"
 
     # Définir l'OU
     if ($Service -eq "NA") {
@@ -40,13 +44,14 @@ foreach ($user in $users) {
 
     # Générer des noms d'utilisateur uniques
     $samAccountName = ($prenom + "." + $nom).ToLower()
-    $userPrincipalName = "$samAccountName@billu.lan"
+    $userPrincipalName = ([string] ($user.Prenom.ToLower() + "." + $user.Nom.ToLower() + "@billu.lan"))
 
     # Vérifier l'unicité du SamAccountName
     $counter = 1
     while (Get-ADUser -Filter { SamAccountName -eq $samAccountName }) {
         $samAccountName = ($prenom + "." + $nom + $counter).ToLower()
-        $userPrincipalName = "$samAccountName@billu.lan"
+
+        $userPrincipalName = ([string] ($user.Prenom.ToLower() + "." + $user.Nom.ToLower() + $counter + "@billu.lan"))
         $counter++
     }
 
@@ -54,11 +59,12 @@ foreach ($user in $users) {
     $userParams = @{
         SamAccountName    = $samAccountName
         UserPrincipalName = $userPrincipalName
-        Name              = "$prenom $nom"
-        Surname           = $nom
-        GivenName         = $prenom
-        DisplayName       = "$prenom $nom"
+        Name              = $user.Prenom + " " + $user.Nom
+        Surname           = $user.Nom
+        GivenName         = $user.Prenom
+        DisplayName       = ([string] ($user.Prenom + " " + $user.Nom))
         Path              = $ouPath
+        Description       = $birthday
         AccountPassword   = (ConvertTo-SecureString "Azerty1*" -AsPlainText -Force)
         Enabled           = $true
         EmailAddress      = $userPrincipalName
@@ -76,51 +82,52 @@ foreach ($user in $users) {
         # Mettre à jour l'utilisateur existant
         try {
             Set-ADUser @userParams
-            Write-Output "Utilisateur $prenom $nom mis à jour avec succès à $ou"
+            Write-Host "Utilisateur $prenom $nom mis à jour avec succès à $ouPath" -ForegroundColor DarkGreen
         } catch {
-            Write-Output "Erreur lors de la mise à jour de $prenom $nom : $_"
+            Write-Host "Erreur lors de la mise à jour de $prenom $nom : $_" -ForegroundColor DarkRed
         }
     } else {
         # Ajouter l'utilisateur et ajouter au groupes du département et du service
         try {
             New-ADUser @userParams
             Add-ADGroupMember -Identity $groupDep -Members $samAccountName
-            Add-ADGroupMember -Identity $groupServ -Members $samAccountName
-            Write-Output "Utilisateur $prenom $nom ajouté avec succès à $ou"
+            if ($groupServ -eq 'NA') {
+                continue
+             else   
+            Add-ADGroupMember -Identity $groupServ -Members $samAccountName }
+            Write-Host "Utilisateur $prenom $nom ajouté avec succès à $ouPath" -ForegroundColor DarkGreen
         } catch {
-            Write-Output "Erreur lors de l'ajout de $prenom $nom : $_"
+            Write-Host "Erreur lors de l'ajout de $prenom $nom : $_" -ForegroundColor DarkRed
         }
     }
 }
 
 # Déplacer les utilisateurs qui ne sont pas présents dans le fichier CSV mais présents dans l'Active Directory
-$adUsers = Get-ADUser -Filter * -SearchBase "OU=BillU-Users,DC=BILLU,DC=LAN" -Properties SamAccountName
+
+$adUsers = Get-ADUser -Filter * -SearchBase "OU=BillU-Users,DC=BILLU,DC=LAN" -Properties Surname, GivenName, Description
 
 foreach ($adUser in $adUsers) {
-    $samAccountName = $adUser.SamAccountName
+    $samAccountName = ($adUser.GivenName + " " + $adUser.Surname + " " + $adUser.Description)
 
     # Vérifier si l'utilisateur est présent dans le fichier CSV en utilisant SamAccountName
     $csvUser = $users | Where-Object {
-        $csvPrenom = $_.Prenom.Trim().ToLower()
-        $csvNom = $_.Nom.Trim().ToLower()
-        $csvSamAccountName = ($csvPrenom + "." + $csvNom).ToLower()
+        $csvPrenom = $_.Prenom
+        $csvNom = $_.Nom
+        $csvDescription = $_."Date de naissance"
+        $csvSamAccountName = ($csvPrenom + " " + $csvNom + " " + $csvDescription)
 
-        $counter = 1
-        while (Get-ADUser -Filter { SamAccountName -eq $csvSamAccountName }) {
-            $csvSamAccountName = ($csvPrenom + "." + $csvNom + $counter).ToLower()
-            $counter++
-        }
 
         $csvSamAccountName -eq $samAccountName
     }
-
+$samAccountNameLite = ($adUser.GivenName + " " + $adUser.Surname)
     if (-not $csvUser) {
-        # Déplacer l'utilisateur vers l'OU spécifiée
+        # Désactiver et déplacer l'utilisateur vers l'OU Corbeille
         try {
-            Move-ADObject -Identity $adUser.DistinguishedName -TargetPath "OU=Corbeille,OU=User-BillU,DC=BillU,DC=lan"
-            Write-Output "Utilisateur $samAccountName déplacé vers l'OU Corbeille"
+            Disable-ADAccount -Identity $adUser.DistinguishedName
+            Move-ADObject -Identity $adUser.DistinguishedName -TargetPath "OU=Corbeille,OU=BillU-Users,DC=BillU,DC=lan"
+            Write-Host "Utilisateur $samAccountNameLite désactivé et déplacé vers l'OU Corbeille" -ForegroundColor DarkGreen
         } catch {
-            Write-Output "Erreur lors du déplacement de $samAccountName : $_"
+            Write-Host "Erreur lors du déplacement de $samAccountNameLite : $_" -ForegroundColor DarkRed
         }
     }
 }
