@@ -109,7 +109,7 @@ $adUsers = Get-ADUser -Filter * -SearchBase "OU=BillU-Users,DC=BILLU,DC=LAN" -Pr
 foreach ($adUser in $adUsers) {
     $samAccountName = ($adUser.GivenName + " " + $adUser.Surname + " " + $adUser.Description)
 
-    # Vérifier si l'utilisateur est présent dans le fichier CSV en utilisant SamAccountName
+    # Vérifier si l'utilisateur est présent dans le fichier CSV en utilisant prénom, nom et date de naissance
     $csvUser = $users | Where-Object {
         $csvPrenom = $_.Prenom
         $csvNom = $_.Nom
