@@ -1,5 +1,13 @@
 ## JOURNALISATION - Mettre en place une journalisation des scripts PowerShell
 *  Secondaire
+  Modifier les script que l'on veut journaliser en ajoutant au début
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/Journalisation-001.PNG?raw=true)
+  Puis à la fin
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/Journalisation-002.PNG?raw=true)
+
+Les journaux sont disponible dans le dossier Logs à la racine de C:\
+Nous pouvons aussi consulter les log depuis l'Event Log
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/Journalisation-003.PNG?raw=true)
 
 ## SUPERVISION - Mise en place d'une supervision de l'infrastructure réseau avec **ZABBIX**
 
