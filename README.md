@@ -221,10 +221,10 @@ Next week
 
 # Semaine 14 sprint 06
 
-        - Yanis Hortholary   
+        - Yanis Hortholary   SM
         - Alexandre Peyronie PO
         - Thomas Scotti      
-        - Sébastien Taiclet  SM
+        - Sébastien Taiclet  
 
 ## 1. ~~Mise en place du RAID~~
 Cet objectif n'a pas été réalisé par souci de place sur les disques de Proxmox, il sera réalisé ultérieurement.
