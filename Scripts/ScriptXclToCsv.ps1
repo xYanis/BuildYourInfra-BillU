@@ -1,7 +1,12 @@
 #                   #
 # The Master Script #
 #                   #
-#  MERCI BRUBRU <3  #
+
+# Définir le chemin du dossier Logs
+$logFilePath = "C:\Logs\ScriptXclToCsv.log"
+
+# Commencer la transcryption
+Start-Transcript -Path $logFilePath -Append
 
 #Installez le module ImportExcel s'il n'est pas déjà installé
 if (-not (Get-Module -ListAvailable -Name ImportExcel)) {
@@ -11,13 +16,10 @@ if (-not (Get-Module -ListAvailable -Name ImportExcel)) {
 #Spécifiez le chemin du fichier Excel d'entrée et du fichier CSV de sortie
 $excelFilePath = "C:\Projet_3\s14_BillU.xlsx"
 $csvBillUFilePath = "C:\Projet_3\BillU.csv"
-
 $fichierCSV = "C:\Projet_3\CSV_Master.csv"
-
 
 #Importez les données du fichier Excel
 $data = Import-Excel -Path $excelFilePath
-
 
 #Filtrez les lignes où la colonne "société" contient "BillU"
 $filteredData = $data | Where-Object { $_.Societe -match "BillU" }
@@ -149,3 +151,6 @@ foreach ($row in $data) {
 
 # Exporter les données mis à jour dans un nouveau fichier CSV
 $data | Export-Csv -Path $fichierCSV -NoTypeInformation
+
+# Fin de la transcryption
+Stop-Transcript
