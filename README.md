@@ -219,25 +219,42 @@ Ce Script permet aux utilisateurs de se connecter de 7h30 à 20h du lundi au sam
 ## 7. Objectif personnalisé 
 Next week
 
-# Semaine 13 sprint 05
+# Semaine 14 sprint 06
 
         - Yanis Hortholary   
         - Alexandre Peyronie PO
         - Thomas Scotti      
         - Sébastien Taiclet  SM
 
-## 1. Mise en place du RAID
+## 1. ~~Mise en place du RAID~~
+Cet objectif n'a pas été réalisé par souci de place sur les disques de Proxmox, il sera réalisé ultérieurement.
 
 ## 2. Supervision - ZABBIX
 
+| #  |          ZABBIX             |  Responsable  |
+|----|--------------------------------------------------------|-----------------------------------|
+| 1  | Installation de ZABBIX sur une VM Debian                  | Sébastien Taiclet et Yanis Hortholary |
+| 2  | Configuration de ZABBIX                 | Sébastien Taiclet et Yanis Hortholary |
+
 ## 3. Mise à jour de l'AD
 
-Le script UserGestion.ps1 à été modifier pour permettre de déplacer et désactiver les personnes sortante de l'entreprise
+| #  |          Mise à jour de l'AD             |  Responsable  |
+|----|--------------------------------------------------------|-----------------------------------|
+| 1  | Intégration et suppresion des utilisateurs                | Alexandre Peyronie |
+| 2  | Modification des informations                 | Alexandre Peyronie |
+
+Le script `UserGestion.ps1` à été modifié pour permettre l'ajout, le déplacement et la désactivation des comptes des employés de la société BillU, en tenant compte du nouveau fichier Excel fourni.
 
 ## 4. Journalisation des scripts
 
-Les scrips ont été modifier pour permettre de créer des journaux de log dans C:\Logs
+| #  |          Journalisation            |  Responsable  |
+|----|--------------------------------------------------------|-----------------------------------|
+| 1  | Modification des scripts Powershell              | Alexandre Peyronie |
+| 2  | Utilisation d'un repertoire spécifique pour stocker les fichiers logs                 | Alexandre Peyronie |
+| 3  | Visibilité des fichiers via l'Observateur d'Evenements                | Alexandre Peyronie |
 
-Chaque script créé un journal de log qui lui est propre pour faciliter la lecture et la recherche d'évènements 
+Les scripts ont été modifiés pour permettre la création de fichiers de logs dans le dossier : `C:\Logs`
 
-Ces log sont aussi consultable depuis le Log Event
+Chaque script créé un fichier de log unique, permettant de conserver l'historique et de faciliter la recherche des actions effectuées.
+
+Ces logs sont également consultables depuis l'Observateur d'Evenements.
