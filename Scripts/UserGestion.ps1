@@ -97,7 +97,7 @@ foreach ($user in $users) {
             Add-ADGroupMember -Identity $groupServ -Members $samAccountName }
             Write-Host "Utilisateur $prenom $nom ajouté avec succès à $ouPath" -ForegroundColor DarkGreen
         } catch {
-            Write-Host "Erreur lors de l'ajout de $prenom $nom : $_" -ForegroundColor DarkRed
+            Write-Host "Erreur lors de l'ajout de $prenom $nom : $_" -ForegroundColor DarkYellow
         }
     }
 }
