@@ -1,3 +1,9 @@
+# Définir le chemin du dossier Logs
+$logFilePath = "C:\Logs\UserGestion.log"
+
+# Commencer la transcryption
+Start-Transcript -Path $logFilePath -Append
+
 # Importer le module Active Directory
 Import-Module ActiveDirectory
 
@@ -109,7 +115,7 @@ $adUsers = Get-ADUser -Filter * -SearchBase "OU=BillU-Users,DC=BILLU,DC=LAN" -Pr
 foreach ($adUser in $adUsers) {
     $samAccountName = ($adUser.GivenName + " " + $adUser.Surname + " " + $adUser.Description)
 
-    # Vérifier si l'utilisateur est présent dans le fichier CSV en utilisant prénom, nom et date de naissance
+    # Vérifier si l'utilisateur est présent dans le fichier CSV en utilisant SamAccountName
     $csvUser = $users | Where-Object {
         $csvPrenom = $_.Prenom
         $csvNom = $_.Nom
@@ -131,3 +137,7 @@ $samAccountNameLite = ($adUser.GivenName + " " + $adUser.Surname)
         }
     }
 }
+
+
+# Fin de la transcryption
+Stop-Transcript
