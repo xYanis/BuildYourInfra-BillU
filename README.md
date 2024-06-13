@@ -218,3 +218,26 @@ Ce Script permet aux utilisateurs de se connecter de 7h30 à 20h du lundi au sam
 
 ## 7. Objectif personnalisé 
 Next week
+
+# Semaine 13 sprint 05
+
+        - Yanis Hortholary   
+        - Alexandre Peyronie PO
+        - Thomas Scotti      
+        - Sébastien Taiclet  SM
+
+## 1. Mise en place du RAID
+
+## 2. Supervision - ZABBIX
+
+## 3. Mise à jour de l'AD
+
+Le script UserGestion.ps1 à été modifier pour permettre de déplacer et désactiver les personnes sortante de l'entreprise
+
+## 4. Journalisation des scripts
+
+Les scrips ont été modifier pour permettre de créer des journaux de log dans C:\Logs
+
+Chaque script créé un journal de log qui lui est propre pour faciliter la lecture et la recherche d'évènements 
+
+Ces log sont aussi consultable depuis le Log Event
