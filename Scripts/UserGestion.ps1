@@ -8,12 +8,12 @@ Start-Transcript -Path $logFilePath -Append
 Import-Module ActiveDirectory
 
 # Chemin vers le fichier CSV
-$csvPath = "C:\Projet_3\CSV_Master.csv"
+$csvPath = "C:\Projet_3\CSV_Master14.csv"
 
 # Lire le fichier CSV
 $users = Import-Csv -Path $csvPath -Delimiter ','
 
-# Boucle sur chaque ligne du CSV
+# Boucle sur chaque ligne du CSV 1er passage
 foreach ($user in $users) {
     # Vérifier si les champs Prenom et Nom existent et ne sont pas vides
     if (-not $user.Prenom -or -not $user.Nom) {
@@ -107,6 +107,29 @@ foreach ($user in $users) {
         }
     }
 }
+
+# Boucle sur chaque ligne du CSV 2er passage pour gérer les managers
+foreach ($user in $users) {
+    $prenom = $user.Prenom.Trim()
+    $nom = $user.Nom.Trim()
+    if ($nom.Length -ge 10) {
+        $nom = $nom.Substring(0, 5)
+    }
+    $samAccountName = ($prenom + "." + $nom).ToLower()
+    $manager = $($user."Manager-Prenom".ToLower())+ "." + $($user."Manager-Nom".ToLower())
+    $managerPrenom = $user."Manager-Prenom"
+    $managerNom = $user."Manager-Nom"
+
+    if ($managerPrenom -eq 'NA') {
+        continue
+    }
+
+    #Modification des infos utilisateurs
+    Set-ADUser -Identity $samAccountName -Manager $manager
+}
+
+
+
 
 # Déplacer les utilisateurs qui ne sont pas présents dans le fichier CSV mais présents dans l'Active Directory
 
