@@ -111,8 +111,44 @@ Les deux écrans suivants indiquent un résumé de la pré-installation, et la c
 
 ![2024-06-13 16_04_35-QEMU (G1-Ubuntu-Client2) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/12da09b5-f685-40ff-8266-fcd1e90735b4)
 
+## Installation de l'agent ZABBIX sur un client Linux
 
+Se rendre sur la page officielle de ZABBIX pour obtenir les consignes d'installation de l'agent ZABBIX en fonction de l'OS : 
 
+![2024-06-14 11_47_09-](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/1954c0a0-514a-4e08-b8b5-71988815f77d)
 
+Ensuite, entrer les commandes comme indiqué sur le bas de la page : 
+
+- Installation du dépôt ZABBIX :
+```bash
+wget https://repo.zabbix.com/zabbix/7.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_7.0-1+ubuntu24.04_all.deb
+dpkg -i zabbix-release_7.0-1+ubuntu24.04_all.deb
+apt update
+```
+
+- Installation de l'agent ZABBIX :
+```bash
+apt install zabbix-agent
+```
+
+- Edition du fichier de configuration de l'agent ZABBIX :
+```bash
+nano /etc/zabbix/zabbix_agentd.conf
+```
+
+Et éditer la ligne n°117 : `Server=<IP_du_serveur_zabbix>`
+
+- Redémarrer l'agent ZABBIX, et le configurer pour un démarrage autoimatique :
+```bash
+systemctl restart zabbix-agent
+systemctl enable zabbix-agent
+```
+
+- Vérifier le statut de l'agent ZABBIX (Il devrait être en statut `Active`):
+```bash
+systemctl status zabbix-agent
+```
+
+L'installation de l'agant ZABBIX est terminée.
 
 ## AD - Nouveau fichier d'utilisateurs à synchroniser dans l'AD
