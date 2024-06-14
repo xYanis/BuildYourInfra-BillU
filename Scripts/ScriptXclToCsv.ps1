@@ -1,7 +1,3 @@
-#                   #
-# The Master Script #
-#                   #
-
 # Définir le chemin du dossier Logs
 $logFilePath = "C:\Logs\ScriptXclToCsv.log"
 
@@ -14,9 +10,9 @@ if (-not (Get-Module -ListAvailable -Name ImportExcel)) {
 }
 
 #Spécifiez le chemin du fichier Excel d'entrée et du fichier CSV de sortie
-$excelFilePath = "C:\Projet_3\s14_BillU.xlsx"
-$csvBillUFilePath = "C:\Projet_3\BillU.csv"
-$fichierCSV = "C:\Projet_3\CSV_Master.csv"
+$excelFilePath = "C:\Projet_3\s09_BillU.xlsx"
+$csvBillUFilePath = "C:\Projet_3\BillU09.csv"
+$fichierCSV = "C:\Projet_3\CSV_Master09.csv"
 
 #Importez les données du fichier Excel
 $data = Import-Excel -Path $excelFilePath
@@ -45,12 +41,27 @@ foreach ($row in $data) {
   # Extraire la valeur des colonnes "Departement" et "Service"
   $departement = $row.Departement
   $service = $row.Service
+  $managerPrenom = $row."Manager-Prenom"
+  $managerNom = $row."Manager-Nom"
 
   #Suppresion des accents et espace dans les colonnes Nom et Prénom
   $row.Nom = $row.Nom -replace '\s', ''
   $row.Nom = [System.Text.Encoding]::ASCII.GetString([System.Text.Encoding]::GetEncoding("Cyrillic").GetBytes($row.Nom))
   $row.Prenom = $row.Prenom -replace '\s', ''
   $row.Prenom = [System.Text.Encoding]::ASCII.GetString([System.Text.Encoding]::GetEncoding("Cyrillic").GetBytes($row.Prenom))
+
+# Suppresion case vide pour les cases Manager nom et prenom
+  switch ($managerPrenom) {
+    "" { $row."Manager-Prenom" = "NA"}
+    " " { $row."Manager-Prenom" = "NA"}
+    "-" { $row."Manager-Prenom" = "NA"}
+  }
+
+  switch ($managerNom) {
+    "" { $row."Manager-Nom" = "NA"}
+    " " { $row."Manager-Nom" = "NA"}
+    "-" { $row."Manager-Nom" = "NA"}
+  }
 
   # Déterminer la valeur de "Groupe_Departement" basée sur "Departement"
   switch ($departement) {
