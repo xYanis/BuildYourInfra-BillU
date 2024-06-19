@@ -375,8 +375,35 @@ Configuration de mariadb
 
 ![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/Capture%20d'%C3%A9cran%202024-06-19%20175419.png?raw=true)
 
-![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/passbolt_db_user_pass.png?raw=true)
+![]([https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/passbolt_db_user_pass.png?raw=true](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/Capture%20d'%C3%A9cran%202024-06-19%20175811.png?raw=true))
 
+ Configuration de Passbolt
+
+Sur une machine avec interface graphique et navigateur internet, lancer un navigateur et taper dans la barre d'addresse
+
+`http://adresse_ip_serveur_passbolt`
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/Screenshot%202024-06-19%20at%2014-42-46%20wcs-cyber-node05%20-%20Proxmox%20Virtual%20Environment.png?raw=true)
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/Screenshot%202024-06-19%20at%2014-43-03%20wcs-cyber-node05%20-%20Proxmox%20Virtual%20Environment.png?raw=true)
+
+Dans la deuxieme partie de la configuration faire comme ci dessous
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/Capture%20d'%C3%A9cran%202024-06-19%20180247.png?raw=true)
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/Screenshot%202024-06-19%20at%2015-23-48%20wcs-cyber-node05%20-%20Proxmox%20Virtual%20Environment.png?raw=true)
+
+Après la configuration la page vous invite à installer le plug in passbolt
+
+Ensuite on vous demande une passphrase ici : jemangedescaillou
+
+Création d'un mot de passe dans Passbolt
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/Screenshot%202024-06-19%20at%2017-37-17%20wcs-cyber-node05%20-%20Proxmox%20Virtual%20Environment.png?raw=true)
+
+Sur la prochaine image nous voyons une petite clé blanche sur fond rouge et si on clique dessus on peut voir la gestion de mot de passe que nous venons de créer et il vous sera demander votre passphrase
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/Screenshot%202024-06-19%20at%2017-38-51%20wcs-cyber-node05%20-%20Proxmox%20Virtual%20Environment.png?raw=true)
  
 # GESTION DE PROJET/SUIVI DE TÂCHES - Mettre en place un serveur **RedMine** 
 	
