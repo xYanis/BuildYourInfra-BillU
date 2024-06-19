@@ -349,8 +349,33 @@ zimbra@mail:/root$
  
 # SÉCURITÉ - Mettre en place un serveur de gestion de mot de passe **Passbolt**
 	
+Création d'un conteneur avec une image debian 12 avec comme configuration 2GO de RAM, 2 cores, 8GO de stockage et une carte réseau configurer en 172.19.0.25/24 avec comme passerelle l'interface du routeur VyOS (172.19.0.254) et désactivation du firewall
 
+Dans un premier temps télécharger curl avec la commande:
 
+`apt-get instal curl`
+
+Puis télécharger et lancer le script de Passbolt via:
+
+`curl -LO https://download.passbolt.com/ce/installer/passbolt-repo-setup.ce.sh`
+
+`bash ./passbolt-repo-setup.ce.sh`
+
+Installer Passbolt
+
+`apt install passbolt-ce-server`
+
+Configuration de mariadb
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/configure_mysql.png?raw=true)
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/Capture%20d'%C3%A9cran%202024-06-19%20175159.png?raw=true)
+
+![]([https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/mysql_admin_user_pass.png?raw=true](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/mysql_admin_user_pass.png?raw=true))
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/Capture%20d'%C3%A9cran%202024-06-19%20175419.png?raw=true)
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/passbolt_db_user_pass.png?raw=true)
 
  
 # GESTION DE PROJET/SUIVI DE TÂCHES - Mettre en place un serveur **RedMine** 
