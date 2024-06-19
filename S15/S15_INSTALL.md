@@ -164,13 +164,13 @@ Main menu
    6) zimbra-snmp:                             Enabled
    7) zimbra-store:                            Enabled
         +Create Admin User:                    yes
-        +Admin user to create:                 admin@testdomain1.com
+        +Admin user to create:                 admin@billu.lan
 ******* +Admin Password                        UNSET
-        +Anti-virus quarantine user:           virus-quarantine.2cu4xh2hd@testdomain1.com
+        +Anti-virus quarantine user:           virus-quarantine.2cu4xh2hd@billu.lan
         +Enable automated spam training:       yes
-        +Spam training user:                   spam.guxl4gg2za@testdomain1.com
-        +Non-spam(Ham) training user:          ham.5e2sctqp@testdomain1.com
-        +SMTP host:                            mail.testdomain1.com
+        +Spam training user:                   spam.guxl4gg2za@billu.lan
+        +Non-spam(Ham) training user:          ham.5e2sctqp@billu.lan
+        +SMTP host:                            mail.billu.lan
         +Web server HTTP port:                 8080
         +Web server HTTPS port:                8443
         +Web server mode:                      https
@@ -179,11 +179,11 @@ Main menu
         +POP server port:                      7110
         +POP server SSL port:                  7995
         +Use spell check server:               yes
-        +Spell server URL:                     http://mail.testdomain1.com:7780/aspell.php
+        +Spell server URL:                     http://mail.billu.lan:7780/aspell.php
         +Enable version update checks:         TRUE
         +Enable version update notifications:  TRUE
-        +Version update notification email:    admin@testdomain1.com
-        +Version update source email:          admin@testdomain1.com
+        +Version update notification email:    admin@billu.lan
+        +Version update source email:          admin@billu.lan
         +Install mailstore (service webapp):   yes
         +Install UI (zimbra,zimbraAdmin webapps): yes
    8) zimbra-spell:                            Enabled
@@ -194,17 +194,149 @@ Main menu
    q) Quit
 
 Address unconfigured (**) items  (? - help) 7
+```
 
+```bash
+Store configuration
 
+   1) Status:                                  Enabled
+   2) Create Admin User:                       yes
+   3) Admin user to create:                    admin@billu.lan
+** 4) Admin Password                           UNSET
+   5) Anti-virus quarantine user:              virus-quarantine.2cu4xh2hd@billu.lan
+   6) Enable automated spam training:          yes
+   7) Spam training user:                      spam.guxl4gg2za@billu.lan
+   8) Non-spam(Ham) training user:             ham.5e2sctqp@billu.lan
+   9) SMTP host:                               mail.billu.lan
+  10) Web server HTTP port:                    8080
+  11) Web server HTTPS port:                   8443
+  12) Web server mode:                         https
+  13) IMAP server port:                        7143
+  14) IMAP server SSL port:                    7993
+  15) POP server port:                         7110
+  16) POP server SSL port:                     7995
+  17) Use spell check server:                  yes
+  18) Spell server URL:                        http://mail.billu.lan:7780/aspell.php
+  19) Enable version update checks:            TRUE
+  20) Enable version update notifications:     TRUE
+  21) Version update notification email:       admin@billu.lan
+  22) Version update source email:             admin@billu.lan
+  23) Install mailstore (service webapp):      yes
+  24) Install UI (zimbra,zimbraAdmin webapps): yes
+
+Select, or 'r' for previous menu [r] 4
 ```
 
 
 ```bash
-
+Password for admin@testdomain1.com (min 6 characters): [********] Azerty1*
 ```
 
+```bash
+Store configuration
+
+   1) Status:                                  Enabled
+   2) Create Admin User:                       yes
+   3) Admin user to create:                    admin@billu.lan
+   4) Admin Password                           set
+   5) Anti-virus quarantine user:              virus-quarantine.2cu4xh2hd@billu.lan
+   6) Enable automated spam training:          yes
+   7) Spam training user:                      spam.guxl4gg2za@billu.lan
+   8) Non-spam(Ham) training user:             ham.5e2sctqp@billu.lan
+   9) SMTP host:                               mail.billu.lan
+  10) Web server HTTP port:                    8080
+  11) Web server HTTPS port:                   8443
+  12) Web server mode:                         https
+  13) IMAP server port:                        7143
+  14) IMAP server SSL port:                    7993
+  15) POP server port:                         7110
+  16) POP server SSL port:                     7995
+  17) Use spell check server:                  yes
+  18) Spell server URL:                        http://mail.billu.lan:7780/aspell.php
+  19) Enable version update checks:            TRUE
+  20) Enable version update notifications:     TRUE
+  21) Version update notification email:       admin@billu.lan
+  22) Version update source email:             admin@billu.lan
+  23) Install mailstore (service webapp):      yes
+  24) Install UI (zimbra,zimbraAdmin webapps): yes
+
+Select, or 'r' for previous menu [r] r
+```
+
+```bash
+Main menu
+
+   1) Common Configuration:
+   2) zimbra-ldap:                             Enabled
+   3) zimbra-logger:                           Enabled
+   4) zimbra-mta:                              Enabled
+   5) zimbra-dnscache:                         Enabled
+   6) zimbra-snmp:                             Enabled
+   7) zimbra-store:                            Enabled
+   8) zimbra-spell:                            Enabled
+   9) zimbra-proxy:                            Enabled
+  10) Default Class of Service Configuration:
+   s) Save config to file
+   x) Expand menu
+   q) Quit
+
+*** CONFIGURATION COMPLETE - press 'a' to apply
+Select from menu, or press 'a' to apply config (? - help) a
+Save configuration data to a file? [Yes] yes
+Save config in file: [/opt/zimbra/config.*****]
+Saving config in /opt/zimbra/config.*****...done.
+The system will be modified - continue? [No] yes
+Operations logged to /tmp/zmsetup.********-******.log
+```
+
+```bash
+You have the option of notifying Zimbra of your installation.
+This helps us to track the uptake of the Zimbra Collaboration Server.
+The only information that will be transmitted is:
+        The VERSION of zcs installed (8.8.15_GA_4179_UBUNTU20_64)
+        The ADMIN EMAIL ADDRESS created (admin@mail.billu.lan)
+
+Notify Zimbra of your installation? [Yes] no
+Notification skipped
+Checking if the NG started running...done.
+Setting up zimbra crontab...done.
 
 
+Moving /tmp/zmsetup.20220615-125142.log to /opt/zimbra/log
+
+
+Configuration complete - press return to exit
+[Press ENTER]
+
+root@mail:/tmp/zcs-8.8.15_GA_4179.UBUNTU20_64.20211118033954#
+```
+
+```bash
+root@mail:~# su zimbra
+zimbra@mail:/root$
+zimbra@mail:/root$ zmcontrol status
+Host mail.billu.lan
+        amavis                  Running
+        antispam                Running
+        antivirus               Running
+        dnscache                Running
+        ldap                    Running
+        logger                  Running
+        mailbox                 Running
+        memcached               Running
+        mta                     Running
+        opendkim                Running
+        proxy                   Running
+        service webapp          Running
+        snmp                    Running
+        spell                   Running
+        stats                   Running
+        zimbra webapp           Running
+        zimbraAdmin webapp      Running
+        zimlet webapp           Running
+        zmconfigd               Running
+zimbra@mail:/root$
+```
 
 
 
