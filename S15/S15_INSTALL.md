@@ -119,7 +119,7 @@ Execution du script de l'installation de Zimbra
 ./install.sh
 ```
 
-# 4 Menu d'installation Zimbra
+## 4 Menu d'installation Zimbra
 
 Après l'execution du script d'installation, plusieurs choix s'offrent à vous, ci dessous ce qu'il faudra indiqué :
 
@@ -337,6 +337,12 @@ Host mail.billu.lan
         zmconfigd               Running
 zimbra@mail:/root$
 ```
+
+## 5 Configuration Zimbra ( interface Web )
+
+
+
+
 
 
 
