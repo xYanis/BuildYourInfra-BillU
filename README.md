@@ -258,3 +258,42 @@ Les scripts ont été modifiés pour permettre la création de fichiers de logs 
 Chaque script créé un fichier de log unique, permettant de conserver l'historique et de faciliter la recherche des actions effectuées.
 
 Ces logs sont également consultables depuis l'Observateur d'Evenements.
+
+
+
+# Semaine 15 sprint 07
+
+        - Yanis Hortholary   PO
+        - Alexandre Peyronie SM
+        - Thomas Scotti      
+        - Sébastien Taiclet  
+
+
+
+### Messagerie
+
+| #   |  Messagerie                                             | Responsable |
+|-----|------------------------------------------------------|-------------|
+| 1   | Mettre en place un serveur de messagerie **Zimbra**  |   Yanis Hortholary et Thomas Scotti           |
+| 1.1 | Permet aux collaborateurs de communiquer en interne  |   Yanis Hortholary et Thomas Scotti           |
+| 1.2 | Des boîtes mails sont créées, liées à l'AD ou non    |   Yanis Hortholary et Thomas Scotti           |
+| 1.3 | Installation sur serveur autonome                    |   Yanis Hortholary et Thomas Scotti           |
+
+### Sécurité
+
+| #   |  Sécurité                                                                        | Responsable |
+|-----|----------------------------------------------------------------------------------|-------------|
+| 2   | Mettre en place un serveur de gestion de mot de passe **Passbolt**               |    Alexandre Peyronie        |
+| 2.1 | Accès en web pour la gestion/l'utilisation                                       |    Alexandre Peyronie        |
+| 2.2 | Installation possible sur un serveur existant                                    |    Alexandre Peyronie        |
+
+### Gestion de Projet/Suivi
+
+| #   |  Gestion de Projet/Suivi                                                        |  Responsable|
+|-----|---------------------------------------------------------------------------------|-------------|
+| 3   | Mettre en place un serveur **RedMine** (https://www.redmine.org/)               |  Sebastien Taiclet          |
+| 3.1 | Permet de suivre les tâches et les problèmes                                    |  Sebastien Taiclet          |
+| 3.2 | Installation possible sur un serveur GNU/Linux existant                         |  Sebastien Taiclet          |
+
+
+
