@@ -119,6 +119,94 @@ Execution du script de l'installation de Zimbra
 ./install.sh
 ```
 
+# 4 Menu d'installation Zimbra
+
+Après l'execution du script d'installation, plusieurs choix s'offrent à vous, ci dessous ce qu'il faudra indiqué :
+
+```bash
+ Do you agree with the terms of the software license agreement? [N] Y 
+```
+
+```bash
+Use Zimbra's package repository [Y] Y
+```
+
+```bash
+Select the packages to install
+
+Install zimbra-ldap [Y] Y
+Install zimbra-logger [Y] Y
+Install zimbra-mta [Y] Y
+Install zimbra-dnscache [Y] Y
+Install zimbra-snmp [Y] Y
+Install zimbra-store [Y] Y
+Install zimbra-apache [Y] Y
+Install zimbra-spell [Y] Y
+Install zimbra-memcached [Y] Y
+Install zimbra-proxy [Y] Y
+Install zimbra-drive [Y] N
+Install zimbra-imapd (BETA - for evaluation only) [N] N
+Install zimbra-chat [Y] N
+```
+
+```bash
+The system will be modified.  Continue? [N] Y
+```
+
+```bash
+Main menu
+
+   1) Common Configuration:
+   2) zimbra-ldap:                             Enabled
+   3) zimbra-logger:                           Enabled
+   4) zimbra-mta:                              Enabled
+   5) zimbra-dnscache:                         Enabled
+   6) zimbra-snmp:                             Enabled
+   7) zimbra-store:                            Enabled
+        +Create Admin User:                    yes
+        +Admin user to create:                 admin@testdomain1.com
+******* +Admin Password                        UNSET
+        +Anti-virus quarantine user:           virus-quarantine.2cu4xh2hd@testdomain1.com
+        +Enable automated spam training:       yes
+        +Spam training user:                   spam.guxl4gg2za@testdomain1.com
+        +Non-spam(Ham) training user:          ham.5e2sctqp@testdomain1.com
+        +SMTP host:                            mail.testdomain1.com
+        +Web server HTTP port:                 8080
+        +Web server HTTPS port:                8443
+        +Web server mode:                      https
+        +IMAP server port:                     7143
+        +IMAP server SSL port:                 7993
+        +POP server port:                      7110
+        +POP server SSL port:                  7995
+        +Use spell check server:               yes
+        +Spell server URL:                     http://mail.testdomain1.com:7780/aspell.php
+        +Enable version update checks:         TRUE
+        +Enable version update notifications:  TRUE
+        +Version update notification email:    admin@testdomain1.com
+        +Version update source email:          admin@testdomain1.com
+        +Install mailstore (service webapp):   yes
+        +Install UI (zimbra,zimbraAdmin webapps): yes
+   8) zimbra-spell:                            Enabled
+   9) zimbra-proxy:                            Enabled
+  10) Default Class of Service Configuration:
+   s) Save config to file
+   x) Expand menu
+   q) Quit
+
+Address unconfigured (**) items  (? - help) 7
+
+
+```
+
+
+```bash
+
+```
+
+
+
+
+
 
  
 # SÉCURITÉ - Mettre en place un serveur de gestion de mot de passe **Passbolt**
