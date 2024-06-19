@@ -3,7 +3,22 @@
 
 ## 1 Mise en place du conteneur 
 
-*Pré requis :* 
+Nous allons mettre en place un conteneur pour accueillir Zimbra, avec les configurations ci dessous :
+
+Hostname : `mail` (Indispensable)
+Mot de passe : `Azerty1*`
+
+Template : `Ubuntu 20.04` (Indispensable)
+
+Disk : `10 Go` dans l'emplacement `local-datas`
+CPU : 2 coeurs
+RAM : `6 Go`
+
+Network : `IPv4 172.19.0.50/24` (Adresse IP de notre conteneur)
+Gateway : `172.19.0.254` (Passerelle du routeur)
+
+DNS domain : `billu.lan` (Le même nom que le domaine de notre DC)
+DNS servers : `172.19.0.2` (Adresse IP de notre serveur DNS)
 
 
 ![image](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/9aa5cd43-4bc0-4e25-b109-8f82231a386c)
@@ -21,10 +36,6 @@
 
 
 ![image4](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/cf1a7b40-0fb3-44da-b864-0bea8126c7e9)
-
-
-
-![image5](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/72c91c6c-6b7f-47a0-8e09-8826a445a848)
 
 
 
@@ -49,7 +60,8 @@
 
 ## 2 Configuration du DNS 
 
-
+Sur le serveur principal, dans le DNS Manager, il faudra enregistrer un hôte A et un Mail Exchanger MX
+Ci-dessous les configurations à respecter : 
 
 ![image10](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/36b40288-e7e8-44ec-b54a-87fb4df9897c)
 
@@ -60,25 +72,42 @@
 
 
 
+## 3 Installation de Zimbra sur le conteneur 
 
 
 
+
+```bash
 sudo apt update && sudo apt upgrade -y
+```
 
+```bash
 sudo apt install -y gnupg gnupg1 gnupg2
+```
 
+```bash
 sudo systemctl stop postfix
+```
 
+```bash
 sudo apt remove postfix -y
+```
 
+```bash
 wget https://files.zimbra.com/downloads/8.8.15_GA/zcs-8.8.15_GA_4179.UBUNTU20_64.20211118033954.tgz
+```
 
+```bash
 tar xzf zcs-8.8.15_GA_4179.UBUNTU20_64.20211118033954.tgz
+```
 
+```bash
 cd zcs-8.8.15_GA_4179.UBUNTU20_64.20211118033954
+```
 
+```bash
 ./install.sh
-
+```
 
 
  
