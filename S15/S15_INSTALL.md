@@ -74,36 +74,46 @@ Ci-dessous les configurations à respecter :
 
 ## 3 Installation de Zimbra sur le conteneur 
 
-
-
+Mise à jour d'Ubuntu 
 
 ```bash
 sudo apt update && sudo apt upgrade -y
 ```
 
+Installation du paquet *GNUPG*, nécessaire à la récupération de la clé GPG de Zimbra 
+
 ```bash
 sudo apt install -y gnupg gnupg1 gnupg2
 ```
 
+Arrêt et désinstallation du service POSTFIX ( service mail d'origine installé )
+
 ```bash
 sudo systemctl stop postfix
 ```
-
 ```bash
 sudo apt remove postfix -y
 ```
+
+Téléchargement de l'archive de Zimbra 8.8.15
 
 ```bash
 wget https://files.zimbra.com/downloads/8.8.15_GA/zcs-8.8.15_GA_4179.UBUNTU20_64.20211118033954.tgz
 ```
 
+Décompression de l'archive 
+
 ```bash
 tar xzf zcs-8.8.15_GA_4179.UBUNTU20_64.20211118033954.tgz
 ```
 
+Déplacement vers le dossier Zimbra
+
 ```bash
 cd zcs-8.8.15_GA_4179.UBUNTU20_64.20211118033954
 ```
+
+Execution du script de l'installation de Zimbra
 
 ```bash
 ./install.sh
