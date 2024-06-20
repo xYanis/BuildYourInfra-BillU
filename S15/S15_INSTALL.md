@@ -368,7 +368,7 @@ Entrer une adresse mail, préalablement créée via l'interface web de Zimbra ; 
 
 ![2024-06-20 17_59_51-wcs-cyber-node05 - Proxmox Virtual Environment](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/4ec73f35-ade6-494a-92c4-c9066803c881)
 
-Une fois l'adresse et le mot de passe entrés, Thunderbird cherchera (et trouvera !) le serveur mail correspondant au domaine `billu.lan`
+Une fois l'adresse et le mot de passe entrés, Thunderbird cherchera (*et trouvera !*) le serveur mail correspondant au domaine `billu.lan`
 
 ![2024-06-20 18_01_21-wcs-cyber-node05 - Proxmox Virtual Environment](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/888facac-2a96-4f92-8515-cee5a6727b3d)
 
@@ -384,8 +384,28 @@ Un pop-up apparaîtra pour demander de définir Thunderbird par défaut pour la 
 
 ![2024-06-20 18_03_13-wcs-cyber-node05 - Proxmox Virtual Environment](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/d88a597c-0cac-45c7-b39b-9c6742679737)
 
+Le compte nouvellement créé appraîtra sur la gauche de Thunderbird : 
 
- 
+![2024-06-20 18_03_30-wcs-cyber-node05 - Proxmox Virtual Environment](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/7e7a018d-9e0a-42d8-8698-bd71f8dac178)
+
+Dans le cas de l'ajout d'un nouveau compte, il faut : 
+- Faire un clic-droit sur un compte de messagerie existant
+- Cliquer sur `Paramètres`
+- Cliquer sur `Gestion des comptes`
+- Cliquer sur `Ajouter un compte de messagerie`
+
+![2024-06-20 18_04_21-wcs-cyber-node05 - Proxmox Virtual Environment](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/eb063d64-a9a9-4ac6-8561-a05c4f12ce5a)
+
+Pour les besoins du projet, nous avons créé un deuxième compte, pour tester le bon fonctionnement de l'envoi/reception de mails : 
+
+![2024-06-20 18_09_39-wcs-cyber-node05 - Proxmox Virtual Environment](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/58522c78-3ea0-44d4-a96a-7a43257006da)
+
+ATTENTION : Lors du 1er envoi de mail, un pop-up similaire à celui affiché lors de la création de compte appraîtra, il faudra procéder de la même manière que précédemment : 
+
+![2024-06-20 18_08_15-wcs-cyber-node05 - Proxmox Virtual Environment](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/a84e7337-6040-42ea-a47f-cadcc2ae9627)
+
+**Thunderbird est dorénavant configuré !**
+
 # SÉCURITÉ - Mettre en place un serveur de gestion de mot de passe **Passbolt**
 	
 Création d'un conteneur avec une image debian 12 avec comme configuration 2GO de RAM, 2 cores, 8GO de stockage et une carte réseau configurer en 172.19.0.25/24 avec comme passerelle l'interface du routeur VyOS (172.19.0.254) et désactivation du firewall
