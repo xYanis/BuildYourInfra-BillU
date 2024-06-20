@@ -406,4 +406,29 @@ Sur la prochaine image nous voyons une petite clé blanche sur fond rouge et si 
 ![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/Screenshot%202024-06-19%20at%2017-38-51%20wcs-cyber-node05%20-%20Proxmox%20Virtual%20Environment.png?raw=true)
  
 # GESTION DE PROJET/SUIVI DE TÂCHES - Mettre en place un serveur **RedMine** 
-	
+
+ 
+![Capture d'écran 2024-06-20 095846](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/160050170/40eaffb4-6488-4512-9758-93e2b8f914b3)
+
+
+![Capture d'écran 2024-06-20 100046](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/160050170/3bb43099-29c5-489a-8777-81934dedaf58)
+
+![Capture d'écran 2024-06-20 100121](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/160050170/c166fc58-b708-41d6-ad6b-3cefdf314e00)
+
+![Capture d'écran 2024-06-20 100153](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/160050170/6db9e39f-9af9-4938-9bde-9f0404671511)
+
+![Capture d'écran 2024-06-20 100231](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/160050170/9501ffde-e858-4429-acef-2695ec1275d8)
+
+
+![Capture d'écran 2024-06-20 100312](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/160050170/22667f13-1b3d-4577-9094-7a3cdabc1c64)
+
+
+![Capture d'écran 2024-06-20 100344](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/160050170/a5f2bb62-8f3b-405e-8089-648ff438043f)
+
+![Capture d'écran 2024-06-20 100359](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/160050170/87188798-114d-4a26-bd76-ec900017e704)
+
+
+
+
+
+
