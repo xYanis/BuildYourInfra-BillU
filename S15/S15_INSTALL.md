@@ -340,10 +340,49 @@ zimbra@mail:/root$
 
 ## 5 Configuration Zimbra ( interface Web )
 
+## 6 Installation et configuration de Thunderbird (Client de messagerie)
 
+***Ndlr : Dans ce chapitre, nous allons installer et utiliser Thunderbird sous Windows 10 Pro***
 
+Dans un premier temps, se rendre sur le site officiel de Thunderbird pour télécharger la dernière version de [Thunderbird](https://www.thunderbird.net/fr/thunderbird/all/)
 
+Pour des raisons pratiques, nous allons télécharger la version `64-bit (.msi)`, potentiellement déployable sur des postes via une GPO
 
+![2024-06-20 18_27_54-Télécharger — Thunderbird](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/d62d4af4-6b31-4cfa-811c-b2fbe0e74de7)
+
+Une fois téléchargée, le fichier `.msi` devrait apparaître dans le dossier `Téléchargements`
+
+![2024-06-20 17_46_43-wcs-cyber-node05 - Proxmox Virtual Environment](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/a8608dff-92a6-48fc-b297-ae6d2667c177)
+
+Double-cliquer dessus, et attendre la fin de l'installation : 
+
+![2024-06-20 17_47_34-wcs-cyber-node05 - Proxmox Virtual Environment](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/082b16da-e2d5-4821-bd02-3433c2219ad0)
+
+Une fois Thunderbird installé, l'éxécuter
+
+Au 1er démarrage, cet écran apparaît : 
+
+![2024-06-20 17_58_55-wcs-cyber-node05 - Proxmox Virtual Environment](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/a555737d-7db5-4e50-a35c-682bdea357e5)
+
+Entrer une adresse mail, préalablement créée via l'interface web de Zimbra ; Dans notre cas, il s'agira de `Camille Martin` : 
+
+![2024-06-20 17_59_51-wcs-cyber-node05 - Proxmox Virtual Environment](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/4ec73f35-ade6-494a-92c4-c9066803c881)
+
+Une fois l'adresse et le mot de passe entrés, Thunderbird cherchera (et trouvera !) le serveur mail correspondant au domaine `billu.lan`
+
+![2024-06-20 18_01_21-wcs-cyber-node05 - Proxmox Virtual Environment](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/888facac-2a96-4f92-8515-cee5a6727b3d)
+
+Une fois la configuration validée, Thunderbird fera apparaître un pop-up indiquant l'ajout d'une exception de sécurité pour le serveur `mail.billu.lan`, cliquer sur `Confirmer l'exeption de sécurité` en laissant la case `Conserver cette exception de façon permanente` cochée : 
+
+![2024-06-20 18_01_51-wcs-cyber-node05 - Proxmox Virtual Environment](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/7ea6386b-4aa2-466f-8353-cb27c43ec0f4)
+
+Une fois validée, une fenêtre indiquera que la création du compte de messagerie a été réussie : 
+
+![2024-06-20 18_02_56-wcs-cyber-node05 - Proxmox Virtual Environment](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/169360e0-977e-43ee-b4a7-a8af0b56b9e0)
+
+Un pop-up apparaîtra pour demander de définir Thunderbird par défaut pour la lecture des e-mails et autres, laisser tout coché et appuyer sur `Définir par défaut` :
+
+![2024-06-20 18_03_13-wcs-cyber-node05 - Proxmox Virtual Environment](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/d88a597c-0cac-45c7-b39b-9c6742679737)
 
 
  
