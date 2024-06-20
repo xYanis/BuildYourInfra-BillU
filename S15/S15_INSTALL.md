@@ -407,9 +407,10 @@ Sur la prochaine image nous voyons une petite clé blanche sur fond rouge et si 
  
 # GESTION DE PROJET/SUIVI DE TÂCHES - Mettre en place un serveur **RedMine** 
 
+## Installation à partir d'un CT Template Turnkey-Redmine
+
  
 ![Capture d'écran 2024-06-20 095846](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/160050170/40eaffb4-6488-4512-9758-93e2b8f914b3)
-
 
 ![Capture d'écran 2024-06-20 100046](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/160050170/3bb43099-29c5-489a-8777-81934dedaf58)
 
@@ -419,16 +420,13 @@ Sur la prochaine image nous voyons une petite clé blanche sur fond rouge et si 
 
 ![Capture d'écran 2024-06-20 100231](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/160050170/9501ffde-e858-4429-acef-2695ec1275d8)
 
-
 ![Capture d'écran 2024-06-20 100312](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/160050170/22667f13-1b3d-4577-9094-7a3cdabc1c64)
-
 
 ![Capture d'écran 2024-06-20 100344](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/160050170/a5f2bb62-8f3b-405e-8089-648ff438043f)
 
 ![Capture d'écran 2024-06-20 100359](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/160050170/87188798-114d-4a26-bd76-ec900017e704)
 
-
-
+![Capture d'écran 2024-06-20 143545](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/160050170/2f4bf427-71cb-4cc1-ad35-963ae1516cb8)
 
 
 
