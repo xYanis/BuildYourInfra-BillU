@@ -62,10 +62,10 @@ define('GLPI_LOG_DIR', '/var/log/glpi');
 EOF
 
 # Configuration Apache2 pour GLPI
-touch /etc/apache2/sites-available/support.pharmgreen.org.conf
-cat > /etc/apache2/sites-available/support.pharmgreen.org.conf <<EOF
+touch /etc/apache2/sites-available/support.billu.net.conf
+cat > /etc/apache2/sites-available/support.billu.net.conf <<EOF
 <VirtualHost *:80>
-    ServerName pharmgreen.org
+    ServerName support.billu.net
 
     DocumentRoot /var/www/glpi/public
 
@@ -84,7 +84,7 @@ cat > /etc/apache2/sites-available/support.pharmgreen.org.conf <<EOF
 EOF
 
 # Activer le site GLPI et modules Apache
-a2ensite support.pharmgreen.org
+a2ensite support.billu.net
 a2dissite 000-default.conf
 a2enmod rewrite
 
