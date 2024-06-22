@@ -1,8 +1,20 @@
 # TSSR-2402-P3-G1-BuildYourInfra-BillU
 
-## INSTALL GUIDE Infrastructure sécurisée pour BillU
+# INSTALL GUIDE Infrastructure sécurisée pour BillU
 
-# Objectifs
+# Sommaire
+
+## 1 Mettre en place des dossiers réseaux pour les utilisateurs
+
+## 2 Mettre en place du RAID 1 sur le volume système des serveurs
+
+## 3 Mettre en place une sauvegarde du volume qui contient les dossiers partagés des utilisateurs
+
+## 4 Mise en place de LAPS
+
+## 5 Automatisation du placement dans la bonne OU
+
+
 
 ## 1 - DOSSIERS PARTAGES - Mettre en place des dossiers réseaux pour les utilisateurs  
 
