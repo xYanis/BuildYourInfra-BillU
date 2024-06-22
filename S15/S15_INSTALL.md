@@ -1,4 +1,12 @@
-# MESSAGERIE - Mettre en place un serveur de messagerie **Zimbra**
+# Sommaire 
+## 1 Serveur de messagerie **Zimbra**
+## 2 Mettre en place un serveur de gestion de mot de passe **Passbolt**
+## 3 Mettre en place un serveur de gestion de projet **RedMine** 
+
+
+
+
+## MESSAGERIE - Mettre en place un serveur de messagerie **Zimbra**
 
 
 ## 1 Mise en place du conteneur 
@@ -406,7 +414,7 @@ ATTENTION : Lors du 1er envoi de mail, un pop-up similaire à celui affiché lor
 
 **Thunderbird est dorénavant configuré !**
 
-# SÉCURITÉ - Mettre en place un serveur de gestion de mot de passe **Passbolt**
+# 2 SÉCURITÉ - Mettre en place un serveur de gestion de mot de passe **Passbolt**
 	
 Création d'un conteneur avec une image debian 12 avec comme configuration 2GO de RAM, 2 cores, 8GO de stockage et une carte réseau configurer en 172.19.0.25/24 avec comme passerelle l'interface du routeur VyOS (172.19.0.254) et désactivation du firewall
 
