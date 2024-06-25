@@ -325,6 +325,31 @@ systemctl start guacd
 systemctl enable guacd
 ```
 
+On vérifie le status de *guacd*
+
+```
+systemctl status guacd
+```
+
+On va créer un dossier *extensions*
+
+```
+mkdir -p /etc/guacamole/{extensions,lib}
+```
+
+On ajoute le dépôt Debian Bullseye à la liste des sources APT
+
+```
+echo "deb http://deb.debian.org/debian/ bullseye main" > /etc/apt/sources.list.d/bullseye.list
+```
+
+On vas mettre à jour les paquets
+
+```
+apt update
+```
+
+
 On installe Tomcat 9 et ses composants administratifs et communs.
 
 ```
@@ -358,45 +383,59 @@ systemctl restart tomcat9
 
 On installe le serveur de base de données MariaDB.
 
-```apt-get install mariadb-server```
+```
+apt-get install mariadb-server
+```
 
 On exécute le script de sécurisation de l'installation de MySQL.
-```mysql_secure_installation```
+
+```
+mysql_secure_installation
+```
 
 On ouvre une session MySQL en tant qu'utilisateur root. Demande le mot de passe root pour MySQL.
-```mysql -u root -p```
+
+```
+mysql -u root -p
+```
 
 
 On télécharge les extensions d'authentification JDBC pour Guacamole.
+
 ```
 wget https://downloads.apache.org/guacamole/1.5.5/binary/guacamole-auth-jdbc-1.5.5.tar.gz
 ```
 
 
 On extrait les fichiers de l'archive tar.gz téléchargée.
+
 ```
 tar -xzf guacamole-auth-jdbc-1.5.5.tar.gz
 ```
 
 
 On déplace le fichier JAR de l'extension JDBC MySQL vers le répertoire des extensions de Guacamole.
+
 ```
 mv guacamole-auth-jdbc-mysql-1.5.5.jar /etc/guacamole/extensions/
 ```
 
 On télécharge le connecteur JDBC de MySQL.
+
 ```
 wget https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-j-8.4.0.tar.gz
 ```
 
 
 On extrait les fichiers de l'archive tar.gz téléchargée.
+
 ```
 tar -xzf mysql-connector-j-8.4.0.tar.gz
 ```
 
 
 On copie le fichier JAR du connecteur MySQL vers le répertoire de la bibliothèque de Guacamole.
+
 ```
 cp mysql-connector-j-8.4.0/mysql-connector-j-8.4.0.jar /etc/guacamole/lib/
 ```
@@ -430,7 +469,7 @@ On redémarre les services MariaDB, Guacamole Daemon (guacd) et Tomcat 9 pour ap
 systemctl restart mariadb guacd tomcat9
 ```
 
-
+Merci Maggio Di Pasta pour l'accompagnement 
 
 
 
