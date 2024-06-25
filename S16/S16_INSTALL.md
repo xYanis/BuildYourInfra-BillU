@@ -5,13 +5,25 @@
 # Sommaire 
 
 ### 1 - AD - Rôles FSMO
+### 2 - SÉCURITÉ - Mettre en place un serveur de gestion des mises à jour **WSUS**
+### 3 - PARTENARIAT D'ENTREPRISE - VPN site-à-site
+### 4 - PARTENARIAT D'ENTREPRISE - FIREWALL
+### 5 - PARTENARIAT D'ENTREPRISE - Active Directory
+### 6 - PARTENARIAT D'ENTREPRISE - SUPERVISION
+### 7 - PARTENARIAT D'ENTREPRISE - STOCKAGE
 
-Installation d'un nouveau serveur Windows Server Core BILLU-CORE-TWO en 172.19.0.5/24
+🚩
+> **A partir de ce sprint, l'entreprise BillU est dorénavant liée à l'entreprise EcoTech Solutions**  
+> **Ce partenariat aura pour objectif de renforcer la présence de ces deux entreprises à un niveau international encore jamais imaginé !**  
+> **Les nouveaux objectifs seront désormais adaptés à cette nouvelle infrastructure**
 
-Installation des rôles ADDS
+## 1 - AD - Rôles FSMO
 
-Transfert des rôles FSMO
-
+Objectifs : 
+- Installation d'un nouveau serveur Windows Server Core `BILLU-CORE-TWO` en `172.19.0.5/24`
+- Installation des rôles **ADDS**
+- Transfert des rôles **FSMO**
+  
 Sur le serveur principal ( GUI ) 
 
 Ouvrir une console CMD en admin puis taper `ntdsutil.exe` , la liste des commandes se consulte en tapant `?`
@@ -42,7 +54,7 @@ Pour vérifier lancer un CMD et la commande suivante `NETDOM QUERY /Domain:BillU
 
 ### 2 - SÉCURITÉ - Mettre en place un serveur de gestion des mises à jour **WSUS**
 
-## 1 Installation du rôle WSUS
+### Installation du rôle WSUS
 
 L’installation du rôle WSUS sur Windows Server 2022, ou une autre version, s’effectue de façon classique c’est-à-dire à partir du Gestionnaire de serveur. Une configuration initiale est nécessaire dans la continuité de l’installation du rôle.
 
@@ -99,18 +111,6 @@ Cliquez sur « Installer » pour démarrer l’installation de WSUS et des fonct
 En temps normal, l’installation ne prend que quelques minutes, mais elle ne s’arrête pas là. Au sein du « Gestionnaire de serveur », nous pouvons remarquer un avertissement en haut à droite : il faut démarrer les tâches de post-installation de WSUS en cliquant sur le lien.
 
 ![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/Screenshot%202024-06-25%20at%2011-29-31%20wcs-cyber-node05%20-%20Proxmox%20Virtual%20Environment.png?raw=true)
-
-
-### 3 - PARTENARIAT D'ENTREPRISE - VPN site-à-site
-### 4 - PARTENARIAT D'ENTREPRISE - FIREWALL
-### 5 - PARTENARIAT D'ENTREPRISE - Active Directory
-### 6 - PARTENARIAT D'ENTREPRISE - SUPERVISION
-### 7 - PARTENARIAT D'ENTREPRISE - STOCKAGE
-
-A partir de ce sprint, l'entreprise BillU est dorénavant liée à l'entreprise EcoTech Solutions.  
-Ce partenariat aura pour objectif de renforcer la présence de ces deux entreprises à un niveau international encore jamais imaginé !  
-
-Les nouveaux objectifs seront désormais adaptés à cette nouvelle infrastructure
 
 ## 3 - PARTENARIAT D'ENTREPRISE - VPN site-à-site 
 
