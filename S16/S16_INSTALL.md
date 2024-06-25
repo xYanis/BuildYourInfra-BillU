@@ -41,6 +41,66 @@ Pour vérifier lancer un CMD et la commande suivante `NETDOM QUERY /Domain:BillU
 ![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/Screenshot%202024-06-25%20at%2010-43-31%20wcs-cyber-node05%20-%20Proxmox%20Virtual%20Environment.png?raw=true)
 
 ### 2 - SÉCURITÉ - Mettre en place un serveur de gestion des mises à jour **WSUS**
+
+## 1 Installation du rôle WSUS
+
+L’installation du rôle WSUS sur Windows Server 2022, ou une autre version, s’effectue de façon classique c’est-à-dire à partir du Gestionnaire de serveur. Une configuration initiale est nécessaire dans la continuité de l’installation du rôle.
+
+Avant de démarrer l’installation, intégrez le serveur WSUS au domaine Active Directory.
+
+Ouvrez le « Gestionnaire de serveur », cliquez sur « Gérer » puis « Ajouter des rôles et fonctionnalités ».
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/Screenshot%202024-06-25%20at%2011-19-23%20wcs-cyber-node05%20-%20Proxmox%20Virtual%20Environment.png?raw=true)
+
+Passez le premier écran, et comme « Type d’installation », prenez la première option. Poursuivez.
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/Screenshot%202024-06-25%20at%2011-19-36%20wcs-cyber-node05%20-%20Proxmox%20Virtual%20Environment.png?raw=true)
+
+Selectionnez le serveur sur lequel vous voulez installer le rôle WSUS, ici le serveur BILLU-FILES.
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/Screenshot%202024-06-25%20at%2011-19-56%20wcs-cyber-node05%20-%20Proxmox%20Virtual%20Environment.png?raw=true)
+
+Concernant l’étape « Rôles de serveurs », choisissez « Windows Server Update Services » tout en bas de la liste. L’assistant vous demande si vous souhaitez installer les dépendances, notamment les outils d’administration afin d’avoir la console de gestion, ainsi que le serveur web IIS qui est indispensable au bon fonctionnement de WSUS. Cliquez sur « Ajouter des fonctionnalités » pour valider.
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/Screenshot%202024-06-25%20at%2011-20-27%20wcs-cyber-node05%20-%20Proxmox%20Virtual%20Environment.png?raw=true)
+
+À l’étape suivante, cliquez tout simplement sur « Suivant ».
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/Screenshot%202024-06-25%20at%2011-21-43%20wcs-cyber-node05%20-%20Proxmox%20Virtual%20Environment.png?raw=true)
+
+Cochez les cases « WID Connectivity » et « WSUS Services », tout en sachant qu’il y a deux possibilités pour la base de données WSUS.
+
+En effet, il y a l’option par défaut « WID Connectivity », où WID correspond à « Windows Internal Database », une alternative à SQL Server Express qui est intégrée à Windows. Dans une très grande majorité des cas, la base WID est utilisée. C’est le choix que je vous propose de faire dès à présent.
+
+A titre d'information, sachez que la seconde option, nommée « SQL Server Connectivity » permet d’utiliser une instance SQL Server ou SQL Server Express pour la base de données WSUS. Je vous rappelle que SQL Server est payant, tandis que SQL Server Express est gratuit, mais limité (par exemple, la taille de la base de données ne peut pas dépasser 10 Go).
+
+Il peut s’avérer judicieux d’utiliser la connectivité SQL Server si vous avez de nombreuses versions différentes de Windows desktop dans votre parc informatique (par exemple, Windows 11, Windows 10 et Windows 7) et un très grand nombre de machines à gérer.
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/Screenshot%202024-06-25%20at%2011-22-12%20wcs-cyber-node05%20-%20Proxmox%20Virtual%20Environment.png?raw=true)
+
+Indiquez l’emplacement des données WSUS, notamment les fichiers de mises à jour. Je vous recommande d’utiliser un volume dédié sur votre serveur, plutôt que le disque « C ». Par exemple, le volume « W: » au sein du dossier « WSUS », tout en sachant qu’un dossier « WsusContent » sera créé.
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/Screenshot%202024-06-25%20at%2011-23-57%20wcs-cyber-node05%20-%20Proxmox%20Virtual%20Environment.png?raw=true)
+
+L’assistant nous informe qu’un serveur Web « IIS » va être mis en place sur notre serveur. C’est un prérequis, car WSUS s’appuie sur un site et des connexions HTTP/HTTPS pour distribuer les mises à jour aux clients. Cliquez sur « Suivant ».
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/Screenshot%202024-06-25%20at%2011-24-05%20wcs-cyber-node05%20-%20Proxmox%20Virtual%20Environment.png?raw=true)
+
+Cliquez sur « Suivant », il n’y a pas de modifications à apporter.
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/Screenshot%202024-06-25%20at%2011-24-14%20wcs-cyber-node05%20-%20Proxmox%20Virtual%20Environment.png?raw=true)
+
+Cliquez sur « Installer » pour démarrer l’installation de WSUS et des fonctionnalités associées.
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/Screenshot%202024-06-25%20at%2011-24-19%20wcs-cyber-node05%20-%20Proxmox%20Virtual%20Environment.png?raw=true)
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/Screenshot%202024-06-25%20at%2011-24-33%20wcs-cyber-node05%20-%20Proxmox%20Virtual%20Environment.png?raw=true)
+
+En temps normal, l’installation ne prend que quelques minutes, mais elle ne s’arrête pas là. Au sein du « Gestionnaire de serveur », nous pouvons remarquer un avertissement en haut à droite : il faut démarrer les tâches de post-installation de WSUS en cliquant sur le lien.
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/Screenshot%202024-06-25%20at%2011-29-31%20wcs-cyber-node05%20-%20Proxmox%20Virtual%20Environment.png?raw=true)
+
+
 ### 3 - PARTENARIAT D'ENTREPRISE - VPN site-à-site
 ### 4 - PARTENARIAT D'ENTREPRISE - FIREWALL
 ### 5 - PARTENARIAT D'ENTREPRISE - Active Directory
