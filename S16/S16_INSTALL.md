@@ -11,6 +11,8 @@
 ### 5 - PARTENARIAT D'ENTREPRISE - Active Directory
 ### 6 - PARTENARIAT D'ENTREPRISE - SUPERVISION
 ### 7 - PARTENARIAT D'ENTREPRISE - STOCKAGE
+### 8 - PARTENARIAT D'ENTREPRISE - GUACAMOLE
+
 
 🚩
 > **A partir de ce sprint, l'entreprise BillU est dorénavant liée à l'entreprise EcoTech Solutions**  
@@ -236,6 +238,237 @@ Lors de l'éxécution du script, nous devrons entrer les infirmations suivantes 
 ![2024-06-24 16_02_31-QEMU (G1-OpenVPN) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/5f0fc855-a32f-4abc-8026-f7a822661757)
 
 ![2024-06-24 16_14_39-QEMU (G1-OpenVPN) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/953721c9-402b-469b-a71e-e52c6e43d5a4)
+
+
+
+
+
+
+
+
+
+
+## 8 PARTENARIAT D'ENTREPRISE - GUACAMOLE
+
+Nous allons mettre en place un serveur Guacamole sur une VM Debian 12
+
+Dans un premier temps nous créer un VM Debian 12 avec les configurations ci dessous 
+4GB de RAM minimum 
+2 cores minimum
+
+
+
+![2024-06-25 14_38_26-](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/880a3199-521d-4b79-9f2f-7ed9a01f7115)
+
+
+Ensuite nous allons configurer la VM pour la mettre en réseau
+
+
+![2024-06-25 14_42_37-QEMU (G1-Guacamole) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/143ef0be-a340-4911-a1e6-b5fa24d0e1a9)
+
+
+![2024-06-25 14_43_08-QEMU (G1-Guacamole) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/beea7ad7-4df4-49ff-b70a-82c4c4e1dd38)
+
+
+![2024-06-25 14_43_28-QEMU (G1-Guacamole) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/3186a800-1423-47f7-8537-9886cb9670df)
+
+
+On va également vérifier le fichier *source.list* pour pour utiliser le ```apt update```
+
+![2024-06-25 14_45_33-QEMU (G1-Guacamole) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/69742a69-7db2-4652-bc28-fd26bbaf7e8c)
+
+
+```
+apt install -y build-essential
+```
+
+Installe les outils essentiels pour la compilation de logiciels (make, gcc, etc.).
+
+
+```
+apt install -y libaio2-dev libjpeg62-turbo-dev libpng-dev libtool-bin uuid-dev libossp-uuid-dev libavcodec-dev libavformat-dev libavutil-dev libpulse-dev libssl-dev libvorbis-dev libwebp-dev-dev libavcodec-dev libavformat-dev libavutil-dev libvncserver-dev libtelnet-dev libwebsockets-dev libvorbis-dev libwebp-dev libssl-dev
+```
+
+Installe diverses bibliothèques de développement nécessaires pour construire le serveur Guacamole et ses dépendances.
+
+```
+apt install -y libossp-uuid-dev libavcodec-dev libavformat-dev libavutil-dev libpulse-dev libssl-dev libvorbis-dev libwebp-dev libvncserver-dev libtelnet-dev libwebsockets-dev libssl-dev
+```
+
+Installe diverses bibliothèques de développement. Certaines de ces bibliothèques peuvent déjà avoir été installées précédemment (doublon potentiel).
+
+```
+VER=1.5.5
+```
+
+Définit une variable d'environnement VER avec la valeur 1.5.5.
+
+```
+wget https://downloads.apache.org/guacamole/$VER/source/guacamole-server-$VER.tar.gz
+```
+
+Télécharge le fichier source du serveur Guacamole pour la version spécifiée.
+
+```
+tar xzf guacamole-server-$VER.tar.gz
+```
+
+Extrait les fichiers de l'archive tar.gz téléchargée.
+
+```
+cd guacamole-server-$VER/
+```
+
+Change le répertoire courant pour le dossier extrait du serveur Guacamole.
+
+```
+./configure --with-init-dir=/etc/init.d
+```
+
+Configure le projet pour la compilation et spécifie le répertoire d'initialisation pour les scripts de démarrage.
+
+```
+make
+```
+
+Compile le projet.
+
+```
+make install
+```
+
+Installe les fichiers compilés sur le système.
+
+```
+ldconfig
+```
+
+Met à jour les liens et le cache des bibliothèques partagées.
+
+```
+systemctl daemon-reload
+```
+
+Recharge le démon systemd pour prendre en compte les nouvelles unités de service.
+
+```
+systemctl start guacd
+```
+
+Démarre le service Guacamole Daemon (guacd) immédiatement.
+
+```
+systemctl enable guacd
+```
+
+Active le service guacd pour qu'il démarre automatiquement au démarrage du système.
+
+```
+apt-get install tomcat9 tomcat9-admin tomcat9-common tomcat9-user -y
+```
+
+Installe Tomcat 9 et ses composants administratifs et communs.
+
+```
+cd /tmp
+```
+
+Change le répertoire courant pour /tmp.
+
+```
+wget https://downloads.apache.org/guacamole/1.5.5/binary/guacamole-1.5.5.war
+```
+
+Télécharge le fichier WAR de l'application web Guacamole pour la version spécifiée.
+
+```
+mv guacamole-1.5.5.war /var/lib/tomcat9/webapps/guacamole.war
+```
+
+Déplace le fichier WAR téléchargé dans le répertoire des applications web de Tomcat.
+
+```
+systemctl restart tomcat9
+```
+
+Redémarre le service Tomcat 9 pour appliquer les changements.
+apt-get install mariadb-server
+
+Installe le serveur de base de données MariaDB.
+mysql_secure_installation
+
+Exécute le script de sécurisation de l'installation de MySQL.
+mysql -u root -p
+
+Ouvre une session MySQL en tant qu'utilisateur root. Demande le mot de passe root pour MySQL.
+
+```
+wget https://downloads.apache.org/guacamole/1.5.5/binary/guacamole-auth-jdbc-1.5.5.tar.gz
+```
+
+Télécharge les extensions d'authentification JDBC pour Guacamole.
+
+```
+tar -xzf guacamole-auth-jdbc-1.5.5.tar.gz
+```
+
+
+Extrait les fichiers de l'archive tar.gz téléchargée.
+
+```
+mv guacamole-auth-jdbc-mysql-1.5.5.jar /etc/guacamole/extensions/
+```
+
+Déplace le fichier JAR de l'extension JDBC MySQL vers le répertoire des extensions de Guacamole.
+
+```
+wget https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-j-8.4.0.tar.gz
+```
+
+Télécharge le connecteur JDBC de MySQL.
+
+```
+tar -xzf mysql-connector-j-8.4.0.tar.gz
+```
+
+Extrait les fichiers de l'archive tar.gz téléchargée.
+
+```
+cp mysql-connector-j-8.4.0/mysql-connector-j-8.4.0.jar /etc/guacamole/lib/
+```
+
+Copie le fichier JAR du connecteur MySQL vers le répertoire de la bibliothèque de Guacamole.
+
+```
+cd guacamole-auth-jdbc-1.5.5/mysql/schema/
+```
+
+Change le répertoire courant pour le dossier schema des extensions JDBC MySQL de Guacamole.
+
+```
+cat guacamole-auth-jdbc-1.5.5.tar.gz /etc/guacamole/extensions/
+```
+
+```
+nano /etc/guacamole/guacamole.properties
+```
+
+Ouvre le fichier de configuration de Guacamole avec l'éditeur de texte nano.
+
+```
+nano /etc/guacamole/guacd.conf
+```
+
+Ouvre le fichier de configuration du daemon Guacamole (guacd) avec nano.
+
+```
+systemctl restart mariadb guacd tomcat9
+```
+
+Redémarre les services MariaDB, Guacamole Daemon (guacd) et Tomcat 9 pour appliquer les configurations et changements.
+
+
+
 
 
 
