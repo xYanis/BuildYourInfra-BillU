@@ -65,7 +65,7 @@ Ensuite, il faut éditer le fichier /etc/hosts afin de corriger le nom de notre 
 
 ![2024-06-24 22_25_40-QEMU (G1-OpenVPN) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/88423aed-105a-42c7-bbe3-1ace6188bb4b)
 
-Ensuite, il faut éditer le fichier /etc/resolv.conf afin de corriger notre DNS ; Dans notre cas, nous ajouterons les lignes suivantes : 
+Ensuite, il faut éditer le fichier `/etc/resolv.conf` afin de corriger notre DNS ; Dans notre cas, nous ajouterons les lignes suivantes : 
 ```bash
 nameserver 172.19.0.2
 search billu.lan
@@ -73,6 +73,34 @@ search billu.lan
 
 ![2024-06-24 22_16_42-QEMU (G1-OpenVPN) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/81e0c354-8432-4ab7-902d-a420d8fce81c)
 
+Tester le ping vers le domaine :
+```bash
+ping billu.lan
+```
+
+![2024-06-24 21_32_17-QEMU (G1-OpenVPN) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/fe58ba7d-2a41-40b2-a857-e207eaf07df0)
+
+Installer les paquet nécéssaires à l'ajout de la VM au domaine : 
+```bash
+apt-get install realmd sssd-tools sssd libnss-sss libpam-sss adcli samba-common
+```
+
+Dès l'installation terminée, entrer la commande suivante pour ajouter la VM au domaine, et entrer le mot de passe `Azerty1*` quand il vous sera demandé : 
+```bash
+realm join billu.lan --user Administrator
+```
+
+:warning: **Il est possible que la commande précédente ne fonctionne pas ; Dans ce cas, éxécuter la commande suivante :** 
+```bash
+realm --install=/ join billu.lan --user Administrator
+```
+
+Vérifier avec la commande suivante que le serveur est bien situé sur le domaine : 
+```bash
+realm list
+```
+
+![2024-06-24 21_32_45-QEMU (G1-OpenVPN) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/06dfb681-50b7-462e-bf06-e0d18e45065b)
 
 ### Installation d'OpenVPN
 
