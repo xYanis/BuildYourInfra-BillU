@@ -399,10 +399,22 @@ On ouvre une session MySQL en tant qu'utilisateur root. Demande le mot de passe 
 mysql -u root -p
 ```
 
+Les commandes ci-dessous permettent de créer la base de données "guacadb", avec l'utilisateur "guaca_nachos" associé au mot de passe "Azerty1*" (adaptez ces valeurs). Cet utilisateur dispose de quelques droits sur la base de données.
+
+```
+CREATE DATABASE guacadb;
+CREATE USER 'guaca_nachos'@'localhost' IDENTIFIED BY 'Azerty1*';
+GRANT SELECT,INSERT,UPDATE,DELETE ON guacadb.* TO 'guaca_nachos'@'localhost';
+FLUSH PRIVILEGES;
+EXIT;
+```
+
+
 
 On télécharge les extensions d'authentification JDBC pour Guacamole.
 
 ```
+cd/tmp
 wget https://downloads.apache.org/guacamole/1.5.5/binary/guacamole-auth-jdbc-1.5.5.tar.gz
 ```
 
