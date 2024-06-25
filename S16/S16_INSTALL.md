@@ -273,199 +273,164 @@ Ensuite nous allons configurer la VM pour la mettre en réseau
 ![2024-06-25 14_43_28-QEMU (G1-Guacamole) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/3186a800-1423-47f7-8537-9886cb9670df)
 
 
-On va également vérifier le fichier *source.list* pour pour utiliser le ```apt update```
+On va égalemment vérifier le fichier *source.list* pour pour utiliser le ```apt update```
 
 ![2024-06-25 14_45_33-QEMU (G1-Guacamole) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/69742a69-7db2-4652-bc28-fd26bbaf7e8c)
 
+Nous allons installer les différentes  bibliothèques de développement nécessaires pour construire le serveur Guacamole et ses dépendances.
 
 ```
-apt install -y build-essential
+apt install -y build-essential libcairo2-dev libjpeg62-turbo-dev libpng-dev libtool-bin uuid-dev libossp-uuid-dev libavcodec-dev libavformat-dev libavutil-dev libswscale-dev freerdp2-dev libpango1.0-dev libssh2-1-dev libvncserver-dev libtelnet-dev libwebsockets-dev libssl-dev libvorbis-dev libwebp-dev libpulse-dev sudo
 ```
 
-Installe les outils essentiels pour la compilation de logiciels (make, gcc, etc.).
-
-
-```
-apt install -y libaio2-dev libjpeg62-turbo-dev libpng-dev libtool-bin uuid-dev libossp-uuid-dev libavcodec-dev libavformat-dev libavutil-dev libpulse-dev libssl-dev libvorbis-dev libwebp-dev-dev libavcodec-dev libavformat-dev libavutil-dev libvncserver-dev libtelnet-dev libwebsockets-dev libvorbis-dev libwebp-dev libssl-dev
-```
-
-Installe diverses bibliothèques de développement nécessaires pour construire le serveur Guacamole et ses dépendances.
-
-```
-apt install -y libossp-uuid-dev libavcodec-dev libavformat-dev libavutil-dev libpulse-dev libssl-dev libvorbis-dev libwebp-dev libvncserver-dev libtelnet-dev libwebsockets-dev libssl-dev
-```
-
-Installe diverses bibliothèques de développement. Certaines de ces bibliothèques peuvent déjà avoir été installées précédemment (doublon potentiel).
+On définit une variable d'environnement VER avec la valeur 1.5.5. et on télécharge le fichier source du serveur Guacamole pour la version spécifiée.
 
 ```
 VER=1.5.5
-```
-
-Définit une variable d'environnement VER avec la valeur 1.5.5.
-
-```
 wget https://downloads.apache.org/guacamole/$VER/source/guacamole-server-$VER.tar.gz
 ```
 
-Télécharge le fichier source du serveur Guacamole pour la version spécifiée.
+On extrait les fichiers de l'archive tar.gz téléchargée.
 
 ```
 tar xzf guacamole-server-$VER.tar.gz
 ```
 
-Extrait les fichiers de l'archive tar.gz téléchargée.
+On va changer de répertoire courant pour le dossier extrait du serveur Guacamole.
 
 ```
 cd guacamole-server-$VER/
 ```
 
-Change le répertoire courant pour le dossier extrait du serveur Guacamole.
+On configure le projet pour la compilation et spécifie le répertoire d'initialisation pour les scripts de démarrage.
 
 ```
 ./configure --with-init-dir=/etc/init.d
 ```
 
-Configure le projet pour la compilation et spécifie le répertoire d'initialisation pour les scripts de démarrage.
+On compile le projet, on installe les fichiers compilés sur le système et on met à jour les liens et le cache des bibliothèques partagées.
+
 
 ```
 make
-```
-
-Compile le projet.
-
-```
 make install
-```
-
-Installe les fichiers compilés sur le système.
-
-```
 ldconfig
 ```
 
-Met à jour les liens et le cache des bibliothèques partagées.
+Recharge le démon systemd pour prendre en compte les nouvelles unités de service, on démarre le service Guacamole Daemon (guacd). Et on active le service guacd pour qu'il démarre automatiquement au démarrage du système.
 
 ```
 systemctl daemon-reload
-```
-
-Recharge le démon systemd pour prendre en compte les nouvelles unités de service.
-
-```
 systemctl start guacd
-```
-
-Démarre le service Guacamole Daemon (guacd) immédiatement.
-
-```
 systemctl enable guacd
 ```
 
-Active le service guacd pour qu'il démarre automatiquement au démarrage du système.
+On installe Tomcat 9 et ses composants administratifs et communs.
 
 ```
 apt-get install tomcat9 tomcat9-admin tomcat9-common tomcat9-user -y
 ```
 
-Installe Tomcat 9 et ses composants administratifs et communs.
+On change le répertoire courant pour /tmp.
 
 ```
 cd /tmp
 ```
 
-Change le répertoire courant pour /tmp.
+On télécharge le fichier WAR de l'application web Guacamole pour la version spécifiée.
 
 ```
 wget https://downloads.apache.org/guacamole/1.5.5/binary/guacamole-1.5.5.war
 ```
 
-Télécharge le fichier WAR de l'application web Guacamole pour la version spécifiée.
+On déplace le fichier WAR téléchargé dans le répertoire des applications web de Tomcat.
+
 
 ```
 mv guacamole-1.5.5.war /var/lib/tomcat9/webapps/guacamole.war
 ```
 
-Déplace le fichier WAR téléchargé dans le répertoire des applications web de Tomcat.
+On redémarre le service Tomcat 9 pour appliquer les changements.
 
 ```
 systemctl restart tomcat9
 ```
 
-Redémarre le service Tomcat 9 pour appliquer les changements.
-apt-get install mariadb-server
+On installe le serveur de base de données MariaDB.
 
-Installe le serveur de base de données MariaDB.
-mysql_secure_installation
+```apt-get install mariadb-server```
 
-Exécute le script de sécurisation de l'installation de MySQL.
-mysql -u root -p
+On exécute le script de sécurisation de l'installation de MySQL.
+```mysql_secure_installation```
 
-Ouvre une session MySQL en tant qu'utilisateur root. Demande le mot de passe root pour MySQL.
+On ouvre une session MySQL en tant qu'utilisateur root. Demande le mot de passe root pour MySQL.
+```mysql -u root -p```
 
+
+On télécharge les extensions d'authentification JDBC pour Guacamole.
 ```
 wget https://downloads.apache.org/guacamole/1.5.5/binary/guacamole-auth-jdbc-1.5.5.tar.gz
 ```
 
-Télécharge les extensions d'authentification JDBC pour Guacamole.
 
+On extrait les fichiers de l'archive tar.gz téléchargée.
 ```
 tar -xzf guacamole-auth-jdbc-1.5.5.tar.gz
 ```
 
 
-Extrait les fichiers de l'archive tar.gz téléchargée.
-
+On déplace le fichier JAR de l'extension JDBC MySQL vers le répertoire des extensions de Guacamole.
 ```
 mv guacamole-auth-jdbc-mysql-1.5.5.jar /etc/guacamole/extensions/
 ```
 
-Déplace le fichier JAR de l'extension JDBC MySQL vers le répertoire des extensions de Guacamole.
-
+On télécharge le connecteur JDBC de MySQL.
 ```
 wget https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-j-8.4.0.tar.gz
 ```
 
-Télécharge le connecteur JDBC de MySQL.
 
+On extrait les fichiers de l'archive tar.gz téléchargée.
 ```
 tar -xzf mysql-connector-j-8.4.0.tar.gz
 ```
 
-Extrait les fichiers de l'archive tar.gz téléchargée.
 
+On copie le fichier JAR du connecteur MySQL vers le répertoire de la bibliothèque de Guacamole.
 ```
 cp mysql-connector-j-8.4.0/mysql-connector-j-8.4.0.jar /etc/guacamole/lib/
 ```
 
-Copie le fichier JAR du connecteur MySQL vers le répertoire de la bibliothèque de Guacamole.
+
+On change le répertoire courant pour le dossier schema des extensions JDBC MySQL de Guacamole.
 
 ```
 cd guacamole-auth-jdbc-1.5.5/mysql/schema/
 ```
 
-Change le répertoire courant pour le dossier schema des extensions JDBC MySQL de Guacamole.
-
-```
-cat guacamole-auth-jdbc-1.5.5.tar.gz /etc/guacamole/extensions/
-```
+On édite le fichier de configuration de Guacamole avec l'éditeur de texte nano.
 
 ```
 nano /etc/guacamole/guacamole.properties
 ```
 
-Ouvre le fichier de configuration de Guacamole avec l'éditeur de texte nano.
+![2024-06-25 15_17_17-QEMU (G1-Guacamole) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/623d16e7-d5c3-47ea-93b8-62c1edbf6473)
+
+On édite le fichier de configuration du daemon Guacamole (guacd) avec nano.
 
 ```
 nano /etc/guacamole/guacd.conf
 ```
 
-Ouvre le fichier de configuration du daemon Guacamole (guacd) avec nano.
+![2024-06-25 15_17_50-QEMU (G1-Guacamole) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/8a6dfc1b-ca83-482a-99a7-b9121fbee0f5)
+
+On redémarre les services MariaDB, Guacamole Daemon (guacd) et Tomcat 9 pour appliquer les configurations et changements.
 
 ```
 systemctl restart mariadb guacd tomcat9
 ```
 
-Redémarre les services MariaDB, Guacamole Daemon (guacd) et Tomcat 9 pour appliquer les configurations et changements.
+
 
 
 
