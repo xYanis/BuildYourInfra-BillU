@@ -148,15 +148,15 @@ Dans un premier temps, nous devons effectuer les mises à jour de l'OS avec la c
 apt update && apt upgrade
 ```
 
-Ensuite, il faut éditer le fichier /etc/network/interfaces afin de configurer correctement notre adresse IP :
+Ensuite, il faut éditer le fichier `/etc/network/interfaces` afin de configurer correctement notre adresse IP :
 
 ![2024-06-24 22_15_18-QEMU (G1-OpenVPN) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/8cbb6ee5-1b60-430e-8b3f-2461bafd196d)
 
-Ensuite, il faut éditer le fichier /etc/hosts afin de corriger l'adresse IP de notre serveur ; Dans notre cas, ce sera `172.19.11.2` :
+Ensuite, il faut éditer le fichier `/etc/hosts` afin de corriger l'adresse IP de notre serveur ; Dans notre cas, ce sera `172.19.11.2` :
 
 ![2024-06-24 22_23_12-QEMU (G1-OpenVPN) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/332dd3fd-b6e0-46a4-9cce-d8e7af74c689)
 
-Ensuite, il faut éditer le fichier /etc/hosts afin de corriger le nom de notre serveur ; Dans notre cas, ce sera `BillU-VPN` :
+Ensuite, il faut éditer le fichier `/etc/hosts` afin de corriger le nom de notre serveur ; Dans notre cas, ce sera `BillU-VPN` :
 
 ![2024-06-24 22_25_40-QEMU (G1-OpenVPN) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/88423aed-105a-42c7-bbe3-1ace6188bb4b)
 
