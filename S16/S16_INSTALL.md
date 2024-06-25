@@ -5,6 +5,41 @@
 # Sommaire 
 
 ### 1 - AD - Rôles FSMO
+
+Installation d'un nouveau serveur Windows Server Core BILLU-CORE-TWO en 172.19.0.5/24
+
+Installation des rôles ADDS
+
+Transfert des rôles FSMO
+
+Sur le serveur principal ( GUI ) 
+
+Ouvrir une console CMD en admin puis taper `ntdsutil.exe` , la liste des commandes se consulte en tapant `?`
+
+Taper `role` pour rentrer en mode de maintenance FSMO, ensuite `Connections` et `connect to server BILLU-CORE-TWO`
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/Screenshot%202024-06-25%20at%2010-26-39%20wcs-cyber-node05%20-%20Proxmox%20Virtual%20Environment.png?raw=true)
+
+`q` pour revenir au menu précédent et `transfer RID master`
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/Screenshot%202024-06-25%20at%2010-40-06%20wcs-cyber-node05%20-%20Proxmox%20Virtual%20Environment.png?raw=true)
+
+Cliquer sur `Yes`
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/Screenshot%202024-06-25%20at%2010-40-16%20wcs-cyber-node05%20-%20Proxmox%20Virtual%20Environment.png?raw=true)
+
+Retourner dans le mode de connection avec `Connections` puis `connecto to server BILLU-FILES-REC`
+
+`q` puis `transfer schema master`
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/Screenshot%202024-06-25%20at%2010-41-50%20wcs-cyber-node05%20-%20Proxmox%20Virtual%20Environment.png?raw=true)
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/Screenshot%202024-06-25%20at%2010-41-56%20wcs-cyber-node05%20-%20Proxmox%20Virtual%20Environment.png?raw=true)
+
+Pour vérifier lancer un CMD et la commande suivante `NETDOM QUERY /Domain:BillU.lan FSMO`
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/Screenshot%202024-06-25%20at%2010-43-31%20wcs-cyber-node05%20-%20Proxmox%20Virtual%20Environment.png?raw=true)
+
 ### 2 - SÉCURITÉ - Mettre en place un serveur de gestion des mises à jour **WSUS**
 ### 3 - PARTENARIAT D'ENTREPRISE - VPN site-à-site
 ### 4 - PARTENARIAT D'ENTREPRISE - FIREWALL
