@@ -240,11 +240,111 @@ Lors de l'éxécution du script, nous devrons entrer les infirmations suivantes 
 ![2024-06-24 16_14_39-QEMU (G1-OpenVPN) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/953721c9-402b-469b-a71e-e52c6e43d5a4)
 
 
+### Copie du fichier sur les postes distants
+
+> Comme indiqué à la fin de l'installation, nous devons télécharger le fichier `.ovpn` sur le poste distant.  
+
+#### 1ère etape : Installation des utilitaires nécéssaires sur le serveur OpenVPN
+
+Installation de [XORG](https://doc.ubuntu-fr.org/xorg) : 
+```bash
+apt install xorg
+```
+
+![2024-06-26 11_00_13-QEMU (G1-OpenVPN) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/a401da15-dd2a-45bd-b703-0989fabd4b9f)
+
+Installation de [Gedit](https://doc.ubuntu-fr.org/gedit) : 
+```bash
+apt install gedit
+```
+
+![2024-06-26 11_09_12-QEMU (G1-OpenVPN) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/93f8333e-7b45-4b2e-a6ec-044a00e24f8c)
 
 
+Installation de [GTK](https://www.gtk.org/) : 
+
+```bash
+apt install libcanberra-gtk-module libcanberra-gtk3-module
+```
+
+![2024-06-26 11_31_09-QEMU (G1-OpenVPN) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/fd984b3b-3e6c-48f9-868b-da29ef5e0b80)
 
 
+Edition du fichier `/etc/ssh/sshd_config`, pour ajouter la ligne `X11Forwarding yes` *(Même si elle devrait dejà être présente)*
 
+![2024-06-26 11_04_45-QEMU (G1-OpenVPN) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/0f65524f-47d2-4d08-b705-33831355cf78)
+
+
+Redémarrage su service `SSH` : 
+
+```bash
+systemctl restart sshd
+```
+
+![2024-06-26 11_05_32-QEMU (G1-OpenVPN) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/b6bd635d-a20e-463d-aa6b-e267ba795fbc)
+
+Pour l'étape suivante, nous aurons besoin de copier le fichier `.ovpn` dans le dossier personnel de l'utilisateur `wilder` : 
+
+```bash
+cp <nom_du_fichier>.ovpn /home/wilder
+```
+
+![2024-06-26 11_08_00-QEMU (G1-OpenVPN) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/c4070c13-a96b-47be-bf66-be6fc0c494fa)
+
+> Les commandes éxécutées ci-dessus permettront d'utiliser le protocole X11 Forwarding sur le poste client.
+
+#### 2ème etape : Installation de [Gedit](https://doc.ubuntu-fr.org/gedit) sur un poste client Ubuntu, et création d'une copie du fichier `.ovpn` original
+
+> Dans cette section, nous allons devoir copier le contenu du fichier `.ovpn` disponible sur le serveur OpenVPN, afin de pouvoir le diffuser sur d'autres postes. 
+
+Installation de [Gedit](https://doc.ubuntu-fr.org/gedit) : 
+
+```bash
+sudo apt install gedit
+```
+
+![2024-06-26 11_38_25-QEMU (G1-Ubuntu-Client2) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/effd858a-9771-4562-8d11-7ac81d4b899b)
+
+Connexion en `SSH X11` sur le serveur OpenVPN : 
+```bash
+ssh -X wilder@<addresseIPServeur>
+```
+
+![2024-06-26 11_06_34-QEMU (G1-Ubuntu-Client2) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/2bd7c151-eee6-49ff-9831-48d09db35eda)
+
+Ouverture du fichier `.ovpn` via l'outil [Gedit](https://doc.ubuntu-fr.org/gedit), installé sur le serveur OpenVPN : 
+
+```bash
+gedit <nom_du_fichier>.ovpn
+```
+
+![2024-06-26 11_33_41-QEMU (G1-Ubuntu-Client2) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/ae6b735d-d6de-4ff8-8c60-92e7c1655fdd)
+
+Copie du contenu du fichier : 
+
+![2024-06-26 11_37_31-QEMU (G1-Ubuntu-Client2) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/14da2b67-b94a-42a7-971f-c21f773cb3c0)
+
+Fermeture de la connexion `SSH X11` (dans le terminal) : 
+
+```bash
+exit
+```
+
+Exécution de [Gedit](https://doc.ubuntu-fr.org/gedit) dans le terminal (Cette fois-çi, nous sommes bien sur le terminal du poste client) :
+
+```bash
+gedit
+```
+
+![2024-06-26 11_39_21-QEMU (G1-Ubuntu-Client2) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/a66ed281-c2bc-4602-a340-282685ca0100)
+
+
+Et enfin, coller le contenu du presse-papiers dans ce nouveau document, et l'enregistrer dans un format `<nom_du_fichier>.ovpn`
+
+![2024-06-26 11_40_11-QEMU (G1-Ubuntu-Client2) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/8fc671dd-b99e-497c-a8c9-ff39b816bf93)
+
+Une fois ce fichier créé sur le poste client (Qui est donc une copie exacte du fichier `.ovpn` original situé sur le serveur), il nous faudra le transférer sur le/les poste(s) qui se connecteront via le VPN.  
+Le transfert peut se faire via mail / Drive Google / Plateforme de stockage de fichiers / etc ...
 
 
 
