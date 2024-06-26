@@ -346,6 +346,44 @@ Et enfin, coller le contenu du presse-papiers dans ce nouveau document, et l'enr
 Une fois ce fichier créé sur le poste client (Qui est donc une copie exacte du fichier `.ovpn` original situé sur le serveur), il nous faudra le transférer sur le/les poste(s) qui se connecteront via le VPN.  
 Le transfert peut se faire via mail / Drive Google / Plateforme de stockage de fichiers / etc ...
 
+### Installation d'OpenVPN-GUI sur les postes serveurs / clients
+
+Nous allons dans un premier temps télécharger la version de [OpenVPN-GUI](https://swupdate.openvpn.org/community/releases/OpenVPN-2.6.11-I001-amd64.msi) depuis le serveur Windows Server GUI, avec l'extension .msi afin de pouvoir la déployer sur les postes clients
+
+![2024-06-26 19_20_01-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/1f012094-0eee-471c-a540-f6ac70ae298f)
+
+Une fois le fichier téléchargé, nous allons créér une GPO afin de pouvoir le déployer sur tous les postes clients de notre infrastructure
+
+![2024-06-26 19_21_13-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/25edaae3-8b76-4e6c-a9e7-4584150fa634)
+
+![2024-06-26 19_22_10-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/c776117e-0382-4592-9c53-d331eb7c082b)
+
+![2024-06-26 19_23_58-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/10193403-f28f-4d2f-bd6c-4e69ad58a9b1)
+
+![2024-06-26 19_46_02-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/d01256ea-04c6-401e-a23c-f797b137e650)
+
+![2024-06-26 19_25_29-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/2224089e-b0f8-441a-98d8-03190ce90624)
+
+Nous installons ensuite OpenVPN-GUI sur notre serveur
+
+Une fois installé, il nous avertira qu'aucun fichier de confifuration n'a été trouvé, ce qui est normal : Faire un clic droit sur l'icône d'OpenVPN-GUI dans la barre des tâches, puis cliquer sur `Import`
+
+![2024-06-26 19_30_29-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/42f46500-3e23-40e2-b375-30d9f05f63b3)
+
+Choisir un des fichiers que nous avons prélabalement récupéré : 
+
+![2024-06-26 19_30_08-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/a9c6c4eb-b830-4619-8079-1853e75f0cfc)
+
+Faire un clic droit sur l'icône d'OpenVPN-GUI dans la barre des tâches, puis cliquer sur `Connect`, et entrer le mot de passe `Azerty1*` pour valider la connexion
+
+![2024-06-26 19_30_54-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/a7708cf7-c7ee-40a0-abc3-bbad6aed3cd8)
+
+Un pop-up apparaîtra pour confirmer la connexion, et nous pouvons également le vérifier via l'interface d'OpenVPN-GUI : 
+
+![2024-06-26 19_31_14-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/c85cddb0-c7b2-44f1-bf14-5bd3307f9670)
+
+![2024-06-26 19_31_40-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/dc0cdc14-a156-46a2-a03e-58878482c027)
+
 
 
 ## 8 PARTENARIAT D'ENTREPRISE - GUACAMOLE
