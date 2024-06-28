@@ -174,8 +174,25 @@ L’étape suivante concerne la classification des mises à jour, c’est-à-dir
 
 Dans un environnement où il y a la volonté de distribuer les mises à niveau de Windows via WSUS, il sera nécessaire de cocher l’option « Upgrades ».
 
+La synchronisation des mises à jour avec les serveurs Microsoft Update doit être planifiée afin d’être sûr de recevoir les dernières mises à jour. De préférence, cette synchronisation sera planifiée la nuit afin de ne pas perturber la production (gestion de la bande passante). Par exemple, une fois par jour à 02:00 du matin comme sur l’exemple ci-dessous.
 
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/Screenshot%202024-06-28%20at%2010-12-01%20wcs-cyber-node05%20-%20Proxmox%20Virtual%20Environment.png?raw=true)
 
+Cochez l’option « Commencer la synchronisation initiale » / « Begin initial synchronization » si vous souhaitez réaliser une première synchronisation dès maintenant.
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/Screenshot%202024-06-28%20at%2010-12-56%20wcs-cyber-node05%20-%20Proxmox%20Virtual%20Environment.png?raw=true)
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/Screenshot%202024-06-28%20at%2010-13-05%20wcs-cyber-node05%20-%20Proxmox%20Virtual%20Environment.png?raw=true)
+
+Cliquez sur « Terminer » / « Finish » : l’initialisation de WSUS est terminée !
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/Screenshot%202024-06-28%20at%2010-13-19%20wcs-cyber-node05%20-%20Proxmox%20Virtual%20Environment.png?raw=true)
+
+Dans la console WSUS, si l’on clique sur la section « Synchronisations » à gauche, nous pouvons voir que la synchronisation est en cours puisqu’elle est sur l’état « En cours » / « Running ».
+
+Pendant ce temps, vous n’avez pas d’autres choix que de patienter : avec WSUS, il vaut mieux se montrer patient de toute façon.
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/Screenshot%202024-06-28%20at%2010-13-57%20wcs-cyber-node05%20-%20Proxmox%20Virtual%20Environment.png?raw=true)
 
 ## 3 - PARTENARIAT D'ENTREPRISE - VPN site-à-site 
 
