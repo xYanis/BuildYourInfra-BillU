@@ -114,6 +114,69 @@ En temps normal, l’installation ne prend que quelques minutes, mais elle ne s�
 
 ![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/Screenshot%202024-06-25%20at%2011-29-31%20wcs-cyber-node05%20-%20Proxmox%20Virtual%20Environment.png?raw=true)
 
+### Configuration de base de WSUS
+
+WSUS est installé sur notre serveur et la base de données est créée, que ce soit via WID ou SQL Server. Désormais, nous pouvons lancer la console « Services WSUS » afin d’effectuer la configuration de base.
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/Screenshot%202024-06-28%20at%2009-48-15%20wcs-cyber-node05%20-%20Proxmox%20Virtual%20Environment.png?raw=true)
+
+Cliquez sur « Suivant » / « Next » pour commencer.
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/Screenshot%202024-06-28%20at%2009-53-37%20wcs-cyber-node05%20-%20Proxmox%20Virtual%20Environment.png?raw=true)
+
+Si vous souhaitez participer du programme d’amélioration de Microsoft Update, cochez l’option, sinon décochez cette option. Poursuivez.
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/Screenshot%202024-06-28%20at%2009-53-50%20wcs-cyber-node05%20-%20Proxmox%20Virtual%20Environment.png?raw=true)
+
+Sur quelle source notre serveur WSUS doit-il s’appuyer pour se synchroniser et obtenir les nouvelles mises à jour ? Deux options : à partir des serveurs de Microsoft Update (Synchronize from Microsoft Update) ou à partir d’un autre serveur WSUS (Synchronize from another Windows Server Update Services server).
+
+La seconde option est nécessaire dans le cas d’une architecture multisite avec un serveur WSUS maître et des serveurs WSUS secondaires, ici nous allons choisir Microsoft Update.
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/Screenshot%202024-06-28%20at%2009-53-58%20wcs-cyber-node05%20-%20Proxmox%20Virtual%20Environment.png?raw=true)
+
+Si vous utilisez un proxy pour accéder à Internet et qu’il doit être déclaré, c’est le moment. Sinon, poursuivez sans cocher l’option.
+
+Note : les communications avec les serveurs de Microsoft Update s’effectuent en HTTPS avec le port 443. Veillez à autoriser ce flux au sein de votre réseau.
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/Screenshot%202024-06-28%20at%2009-54-05%20wcs-cyber-node05%20-%20Proxmox%20Virtual%20Environment.png?raw=true)
+
+Cliquez sur « Démarrer la connexion » / « Start Connecting » pour que notre serveur WSUS se connecte sur les serveurs Microsoft Update. Cela va lui permettre de récupérer la liste des systèmes d’exploitation et logiciels pris en charge, les types de mises à jour, et les langages disponibles. Cette opération est assez longue… Je dirais même que vous avez le temps de prendre un café.
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/Screenshot%202024-06-28%20at%2009-54-11%20wcs-cyber-node05%20-%20Proxmox%20Virtual%20Environment.png?raw=true)
+
+Une fois l’étape précédente terminée, la barre de progression sera pleine et le bouton « Suivant » / « Next » sera accessible.
+
+La prochaine étape consiste à choisir les langues de mises à jour. Si vous utilisez seulement des systèmes d’exploitation en français pour vos postes de travail et vos serveurs, vous pouvez choisir « Français » (ou « French »).
+
+Si vous utilisez Windows en FR sur les postes de travail et en version EN pour les serveurs, choisissez également « Anglais » (ou « English »).
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/Screenshot%202024-06-28%20at%2010-06-49%20wcs-cyber-node05%20-%20Proxmox%20Virtual%20Environment.png?raw=true)
+
+Poursuivez une fois votre choix effectué, tout en sachant que vous pouvez le modifier à tout moment.
+
+Nous devons sélectionner les produits pour lesquels nous souhaitons synchroniser les mises à jour. La liste est très longue et très complète (Exchange, Office, Edge, SQL Server, etc…), vous devez cocher les produits correspondants à ceux que vous utilisez !
+
+Remarque : plus vous sélectionnez de produits, plus votre serveur WSUS aura des données à stocker.
+
+Pour Windows Server 2019 et supérieur, il suffit de cocher « Windows Server 2019 ». Il y a également des catégories de produits correspondantes aux pilotes et aux packs de langues.
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/Screenshot%202024-06-28%20at%2010-12-01%20wcs-cyber-node05%20-%20Proxmox%20Virtual%20Environment.png?raw=true)
+
+Pour Windows 10, sélectionnez « Windows 10, version 1903 and later » pour synchroniser toutes les mises à jour Windows 10 à partir de cette version. Autrement dit, pour Windows 10 21H2, il faut sélectionner cette catégorie : probablement, car ces versions sont très proches.
+
+Cette sélection est modifiable à tout moment. Par exemple, si vous intégrez vos premières machines Windows 11 à votre parc informatique, vous pouvez modifier la configuration WSUS pour inclure les mises à jour Windows 11. En ce qui me concerne, je sélectionne « Windows 11 », car mon « PC-01 » est sous cette version de Windows.
+
+Pour plus d’informations sur les différentes catégories, je vous recommande la lecture de cet article : https://www.it-connect.fr/wsus-classifications-quels-produits-windows-10-choisir/
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/Screenshot%202024-06-28%20at%2010-12-32%20wcs-cyber-node05%20-%20Proxmox%20Virtual%20Environment.png?raw=true)
+
+L’étape suivante concerne la classification des mises à jour, c’est-à-dire les types de mises à jour qu’il faut synchroniser sur le serveur WSUS. Les catégories « Mises à jour critique », « Mise à jour de la sécurité » et « Mise à jour » permettent d’obtenir les mises à jour mensuelles publiées par Microsoft, tandis que la catégorie « Mises à jour de définitions » correspond aux mises à jour Windows Defender.
+
+Dans un environnement où il y a la volonté de distribuer les mises à niveau de Windows via WSUS, il sera nécessaire de cocher l’option « Upgrades ».
+
+
+
+
 ## 3 - PARTENARIAT D'ENTREPRISE - VPN site-à-site 
 
 Afin d'initialiser cette fusion d'entreprise, il est indispensable de procéder à une liaison par VPN entre les deux infrastructures déjà existantes.
