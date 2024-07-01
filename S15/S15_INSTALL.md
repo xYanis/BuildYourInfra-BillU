@@ -354,6 +354,66 @@ zimbra@mail:/root$
 
 ## 5 Configuration Zimbra ( interface Web )
 
+Maintenant que le serveur Zimbra est opérationnel, nous pouvons commencer de créer les différentes adresses mail via l'interface graphique de Zimbra.  
+
+Dans un premier temps, nous allons nous rendre sur un poste client, relié au réseau, et accéder à l'interface graphique de Zimbra via l'adresse suivante : 
+```
+https://mail.billu.lan:7071
+```
+
+![2024-07-01 12_28_26-QEMU (G1-WIN-Client) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/7a08bd8d-815e-489f-89b9-90924383b4df)
+
+Pour accéder à l'interface Administrateur, entrer les informations suivantes :  
+  
+Utilisateur : `admin`  
+Mot de passe : `Azerty1*`  
+
+![2024-07-01 12_29_19-QEMU (G1-WIN-Client) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/6743ce8d-4295-4512-90b3-ac064de83a64)
+
+Nous arrivons sur l'interface Administrateur
+
+![2024-07-01 12_29_34-QEMU (G1-WIN-Client) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/8d661a1c-b642-4da6-b4f7-2e191b734e75)
+
+
+Pour créer une adresse mail, se rendre sur `Gérer`, cliquer sur le roue crantée en haut à droite, et cliquer sur `Nouveau` : 
+
+![2024-07-01 12_29_56-QEMU (G1-WIN-Client) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/c883fa82-c41c-4849-ab40-23ef818b9be9)
+
+Pour créer une adresse mail, nous allons utiliser la nomenclature suivante : 
+  
+Nom du compte : `<prenom.nom>@billu.lan`  
+Prénom : `<Prénom>`  
+Nom de famille : `<Nom>`  
+Mot de passe : `Azerty1*`  
+Confirmation du mot de passe : `Azerty1*`  
+
+Et enfin, cliquer sur `Terminer` *(Remarque, un pop-up appraitra la 1ère fois qu'une adresse sera créée avec un nouveau nom de domaine, ce qui est notre cas pour le domaine `billu.lan`)*  
+
+![2024-07-01 12_30_50-QEMU (G1-WIN-Client) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/4a8e9bc6-7d11-4d9b-8abd-d9f9d4eddb1e)
+
+![2024-07-01 12_31_16-QEMU (G1-WIN-Client) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/8a38e1c4-63d6-4ae6-bc4c-5f073c63ae29)
+
+![2024-07-01 12_32_40-QEMU (G1-WIN-Client) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/f8b35f18-ddf7-4df7-98f4-30e5ee937f98)
+
+
+Pour vérifier que l'adresse mail nouvellement créée soit fonctionnelle, nous allons nous rendre sur l'interface Client via l'adresse suivante : 
+
+```
+https://mail.billu.lan
+```
+
+![2024-07-01 12_33_05-QEMU (G1-WIN-Client) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/3bcdbbe2-ad62-4739-95e7-55ba7b0f2223)
+
+Puis nous allons entrer les informations correspondantes à celles entrées précédemment : 
+
+![2024-07-01 12_34_09-QEMU (G1-WIN-Client) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/45744730-0299-4ea3-b2a5-d39fac687702)
+
+Nous remarquons que l'adresse mail créée est bien fonctionnelle : 
+
+![2024-07-01 12_34_27-QEMU (G1-WIN-Client) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/28a12725-b564-4da1-a36e-1d30c3b61716)
+
+
+
 ## 6 Installation et configuration de Thunderbird (Client de messagerie)
 
 ***Ndlr : Dans ce chapitre, nous allons installer et utiliser Thunderbird sous Windows 10 Pro***
