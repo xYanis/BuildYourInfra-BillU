@@ -214,6 +214,15 @@ Nous ajoutons sur nos deux postes le contact de l'autre puis nous pouvons les ap
 ![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/FreePBX026.png?raw=true)
 
 
+2 - Apache2
+
+👉 Installation
+
+✔️ Pré-requis: 4 Go de RAM et 10 Go de disque dur 
+
+
+
+
 
 
 
