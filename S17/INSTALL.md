@@ -118,3 +118,99 @@ Dans les fenêtres qui s'affichent, clique sur Skip.
 
 ![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/FreePBX018.png?raw=true)
 
+🗓️ Update des modules du serveur
+
+La fenêtre de mise-à-jour des modules va s'afficher automatiquement.
+
+Clique sur Update Now.
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/FreePBX019.png?raw=true)
+
+Attend la mise-à-jour de tous les modules.
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/FreePBX020.png?raw=true)
+
+Une fois que tout est terminé, clique sur Apply config.
+
+Il peut y avoir des erreurs sur le serveurs suite à la mise-à-jour des modules et dans ce cas, l'accès au serveur ne se fait pas.
+
+Les modules incriminés sont précisés et il faut les réinstaller et les activer.
+
+Dans ce cas, sur le serveur en CLI, exécute les commandes suivantes :
+
+fwconsole ma install <module>
+
+fwconsole ma enable <module>
+
+Par exemple pour les modules userman, voicemail, et sysadmin :
+
+fwconsole ma install userman
+
+fwconsole ma enable userman
+
+fwconsole ma install voicemail
+
+fwconsole ma enable voicemail
+
+fwconsole ma install sysadmin
+
+fwconsole ma enable sysadmin
+
+Va sur le serveur en CLI et exécute la commande yum update pour faire la mise-à-jour du serveur.
+
+Répond y lorsque cela sera demandé.
+
+Redémarre le serveur
+
+🗓️ Update complémentaire des modules
+
+Connecte-toi en root via la console web, et vas dans le Dashboard pour voir s'il te manque des modules.
+
+Vas dans le menu Admin puis Modules Admin, et dans l'onglet Module Update.
+
+Dans la fenêtre qui s'affiche, dans la colonne Status, sélectionne ceux qui sont en Disabled; Pending Upgrade... et qui ont une licence GPL.
+
+Sélectionne alors le bouton Upgrade to ....
+
+Quand tu as géré tous les modules, clique sur Process.
+
+Dans la fenêtre qui apparaît, clique sur Confirm.
+
+Quand tout est terminé, clique sur Apply config.
+
+🏗️ Création d'utilisateurs et de lignes sur le serveur
+
+Va dans le menu Applications puis Extensions
+
+Va sur sur l'onglet SIP [chan_pjsip] Extensions puis ici je choisi un utilisateurs de l'AD (Erwan Faure et Camille Martin pour l'exemple )
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/FreePBX023.png?raw=true)
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/FreePBX021.png?raw=true)
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/FreePBX022.png?raw=true)
+
+🔬 Installation du logiciel SIP sur les postes clients
+
+Prendre la source ![ici](https://github.com/WildCodeSchool/TSSR-2402-P3-G4-BuildYourInfra-Pharmgreen/blob/main/Ressources/3cxphone6%20(1).msi)
+
+⚙️ Configuration du logiciel SIP
+
+Sur l'écran du SIP phone, clique sur Set account pour avoir la fenêtre Accounts.
+
+En cliquant sur New, la fenêtre de création de compte Account settings apparaît.
+
+💬 Communication entre les postes
+
+En cliquant sur l'icone contact ( le troisieme en partant de la gauche en bas )
+
+Nous ajoutons sur nos deux postes le contact de l'autre puis nous pouvons les appeller sans taper leur numéro
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/FreePBX024.png?raw=true)
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/FreePBX026.png?raw=true)
+
+
+
+
+
