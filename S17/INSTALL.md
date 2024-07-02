@@ -5,7 +5,7 @@
 
 ### Sommaire
 
-1 - FreePBX
+## 1 - FreePBX
 
 👉 Installation
 
@@ -214,15 +214,106 @@ Nous ajoutons sur nos deux postes le contact de l'autre puis nous pouvons les ap
 ![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/FreePBX026.png?raw=true)
 
 
-2 - Apache2
+## 2 - Apache2
 
 👉 Installation
 
 ✔️ Pré-requis: 4 Go de RAM et 10 Go de disque dur 
 
+On commence par `apt-get update`
+
+On installe ensuite *Apache2*
+
+![2024-07-02 16_35_40-wcs-cyber-node05 - Proxmox Console](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/ba9c2780-4154-43a2-a844-6efe47993fe9)
+
+On vérifie que tout fonctionne
+
+![2024-07-02 16_36_56-wcs-cyber-node05 - Proxmox Console](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/22bafd5c-38a2-416a-b277-c912ed69ff5a)
+
+On peut ensuite avoir l'accès via un navigateur sur une autre machine avec l'adresse IP `172.19.11.5` ( celle du serveur )
+
+![2024-07-02 16_38_45-QEMU (G1-WIN-Client) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/7490b1c7-f2d5-4e37-8a7b-8879185bde7d)
+
+On vient ensuite crée un dossier "répertoire" pour le site web
+
+![2024-07-02 16_40_35-wcs-cyber-node05 - Proxmox Console](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/508bdebc-d940-4bd3-9da2-4902d976bc52)
+
+On se déplace dans le dossier en question
+
+![2024-07-02 16_42_36-wcs-cyber-node05 - Proxmox Console](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/8ad2b97d-ce4b-4b7c-ac56-38da8c56a654)
+
+On va venir créer un fichier `index.html`
+
+![2024-07-02 16_43_05-wcs-cyber-node05 - Proxmox Console](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/b3146d30-db58-4614-99c6-95ad66909bbc)
+
+On va l'éditer de façon basique
+
+![2024-07-02 16_46_12-wcs-cyber-node05 - Proxmox Console](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/75e9b3f1-811b-4519-8177-6882f672d62f)
+
+
+
+![2024-07-02 16_55_46-wcs-cyber-node05 - Proxmox Console](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/cee1c4c1-2a54-400b-b301-2235379c9f58)
+
+
+On va créer ou éditer le fichier ci dessous 
+
+![2024-07-02 17_57_23-wcs-cyber-node05 - Proxmox Console](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/a6cb6fcc-14d9-42aa-aec5-4e21d339cb29)
+
+
+On va activer l'hote virtuel avec la commande
+
+```
+a2ensite site-billu.conf
+
+```
+
+Relancer le service apache2
+
+
+```
+systemctl reload apache2
+```
+
+
+On vérifie les fichiers de configuration 
+
+
+![2024-07-02 17_14_55-wcs-cyber-node05 - Proxmox Console](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/22591f35-ea6b-488b-88f5-2a46f7b9bab8)
+
+Relancer le service apache2 ( oui encore )
+
+
+```
+systemctl reload apache2
+```
+
+On retourne sur le client, on va éditer le fichier host en rajoutant l'IP et l'adresse
+
+
+![2024-07-02 17_21_38-QEMU (G1-WIN-Client) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/3f67c831-9176-4172-99b7-e893fc5fb842)
+
+
+![2024-07-02 17_22_20-QEMU (G1-WIN-Client) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/fc713cbb-2995-40a4-96d9-97415a0c3613)
+
+
+![2024-07-02 17_22_32-QEMU (G1-WIN-Client) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/d444f90c-8a55-4ed2-81fc-db1c4725fb9a)
+
+
+Vous pouvez essayer avec l'adresse et c'est tout bon 
+
+
+![2024-07-02 17_22_49-QEMU (G1-WIN-Client) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/7d8017ca-d0d1-428b-a07b-3e03d62681bf)
+
+
+Vous pouvez toujours éditer le fichier `index.htlm` pour une page plus qualitative.
+
+Fin
 
 
 
 
 
 
+
+
+ 
