@@ -356,7 +356,7 @@ Ces logs sont également consultables depuis l'Observateur d'Evenements.
 
 | #   |  WEB                                                        | Responsable |
 |-----|-------------------------------------------------------------|-------------|
-|  1  |   Mettre en place un serveur WEB (interne ou externe en DMZ | Yanis Hortholary |
+|  1  |   Mettre en place un serveur WEB (interne ou externe en DMZ) | Yanis Hortholary |
 
 
 ### PRA
