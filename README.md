@@ -338,6 +338,47 @@ Ces logs sont également consultables depuis l'Observateur d'Evenements.
 
         - Yanis Hortholary   
         - Alexandre Peyronie 
+        - Thomas Scotti SM     
+        - Sébastien Taiclet PO 
+
+
+
+### VOIP
+
+| #   | VOIP                                             | Responsable |
+|-----|------------------------------------------------------|-------------|
+| 1   | Mettre en place le serveur de téléphonie sur IP **FreePBX**   |  Alexandre Peyronie   |
+
+
+
+
+### WEB
+
+| #   |  WEB                                                        | Responsable |
+|-----|-------------------------------------------------------------|-------------|
+|  1  |   Mettre en place un serveur WEB (interne ou externe en DMZ | Yanis Hortholary |
+
+
+### PRA
+
+| #   |   PRA (Plan de Reprise d'Activité)                         | Responsable |
+|-----|------------------------------------------------------------|-------------|
+| 1   |  Evaluation, Identification, Réparation et Documemntation  | All team    |
+
+### PARTENARIAT D'ENTREPRISE
+
+| #   | PARTENARIAT D'ENTREPRISE                                            | Responsable |
+|-----|--------------------------------------------------------|-------------|
+| 1   | SUPERVISION   |  Sébastien Taiclet                     |
+| 2   | STOCKAGE      | Yanis Hortholary et Thomas Scotti      |
+| 3   | AD            | Thomas Scotti                          |
+
+
+
+# Semaine 18 sprint 10
+
+        - Yanis Hortholary   
+        - Alexandre Peyronie 
         - Thomas Scotti      
         - Sébastien Taiclet  
 
@@ -381,5 +422,4 @@ Ces logs sont également consultables depuis l'Observateur d'Evenements.
 |  |    |            |
 |  |    |            |
 |  |    |            |
-
 
