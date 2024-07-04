@@ -302,49 +302,33 @@ Ces logs sont également consultables depuis l'Observateur d'Evenements.
 
         - Yanis Hortholary   
         - Alexandre Peyronie 
-        - Thomas Scotti      
-        - Sébastien Taiclet  
+        - Thomas Scotti PO     
+        - Sébastien Taiclet SM   
 
 
 
-###
+### Sécurité
 
-| #   |                                             | Responsable |
+| #   |   SÉCURITÉ                                           | Responsable |
 |-----|------------------------------------------------------|-------------|
-|  |    |            |
-|  |    |            |
-|  |    |            |
-|  |    |            |
+| 1 | Mettre en place un serveur de gestion des mises à jour **WSUS**   | Alexandre Peyronie et Sébastien Taiclet |
 
 
-###
 
-| #   |                                             | Responsable |
+### AD
+
+| #   |      AD                                        | Responsable |
+|-----|------------------------------------------------|-------------|
+| 1   |  Rôles FSMO                                    |   Alexandre Peyronie et Sébastien Taiclet          |
+
+
+### PARTENARIAT D'ENTREPRISE
+
+| #   | PARTENARIAT D'ENTREPRISE                                            | Responsable |
 |-----|------------------------------------------------------|-------------|
-|  |    |            |
-|  |    |            |
-|  |    |            |
-|  |    |            |
+| 1   | FIREWALL   | Yanis Hortholary           |
+| 2   | VPN        | Thomas Scotti              |
 
-
-###
-
-| #   |                                             | Responsable |
-|-----|------------------------------------------------------|-------------|
-|  |    |            |
-|  |    |            |
-|  |    |            |
-|  |    |            |
-
-
-###
-
-| #   |                                             | Responsable |
-|-----|------------------------------------------------------|-------------|
-|  |    |            |
-|  |    |            |
-|  |    |            |
-|  |    |            |
 
 
 
