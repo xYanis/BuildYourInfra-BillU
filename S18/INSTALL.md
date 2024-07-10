@@ -122,7 +122,37 @@ Une fois cela fait, cliquer sur Save
 ![2024-07-10 10_40_59-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/56809afa-4853-4219-b244-61f98d535f24)
 
 
+Cliquer en haut sur Interfaces, puis sur Assignements  
+Une fois dans cette section, cliquer sur le bouton + Add en bas à droite, afin d'activer l'interface d'OpenVPN (OPT2), pusi cliquer sur OPT2 afin de la configurer avec les informations suivantes : 
+- Enable : Cocher la case Enable interface
+- Description : OpenVPN
+  
+Une fois cela fait, cliquer sur Save  
 
+![2024-07-10 10_43_08-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/a2994af9-604a-449b-b50a-551817e79a1d)
+![2024-07-10 10_43_35-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/d9c6496f-d427-4d53-a617-1a5f00cfefc6)
 
+Cliquer en haut sur Firewall, puis sur Rules, puis sur l'interface OPENVPN, puis sur le bouton Add, et créer une règle qui autorise tout le trafic : 
 
+![2024-07-10 10_45_32-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/9e5f8ca4-15aa-4183-8038-ae346323d1a8)
+
+Faire de même avec l'interface OpenVPN : 
+
+![2024-07-10 10_46_02-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/ab8ff722-3f10-42fe-9469-cb15b3cd837c)
+
+Cliquer en haut sur System, puis Routing, puis Static Routes, puis sur le bouton + Add, et entrer les informations suivantes : 
+- Destination network : 10.10.0.0 (Réseau LAN de l'entreprise EcoTech)
+- Gateway : OPENVPN_VPNV4 - 10.0.8.1
+- Disabled : Laisser la case décochée
+- Description : Road_To_EcoTech
+
+Faire de même une nouvelle fois avec les informations suivantes : 
+- Destination network : 10.11.0.0 (Réseau DMZ de l'entreprise EcoTech)
+- Gateway : OPENVPN_VPNV4 - 10.0.8.1
+- Disabled : Laisser la case décochée
+- Description : Road_To_EcoTech_DMZ
+  
+![2024-07-10 11_33_36-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/a7ca7281-068f-4120-9af6-044047d0387b)
+
+OpenVPN est désormais installé et configuré pour la communication entre les réseaux des deux entreprises
 
