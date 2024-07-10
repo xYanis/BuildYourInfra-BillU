@@ -377,49 +377,39 @@ Ces logs sont également consultables depuis l'Observateur d'Evenements.
 
 # Semaine 18 sprint 10
 
-        - Yanis Hortholary   
-        - Alexandre Peyronie 
+        - Yanis Hortholary PO
+        - Alexandre Peyronie SM
         - Thomas Scotti      
         - Sébastien Taiclet  
 
 
 
-###
+### RADIUS
 
-| #   |                                             | Responsable |
+| #   |   SERVEUR RADIUS                                          | Responsable |
 |-----|------------------------------------------------------|-------------|
-|  |    |            |
-|  |    |            |
-|  |    |            |
-|  |    |            |
+| 1  | Utilisation de **Free Radius**    |  Thomas Scotti et  Sébastien Taiclet  |
+| 2  | Gestion centralisée du VPN        |   Thomas Scotti  |
 
 
-###
 
-| #   |                                             | Responsable |
+### PINGCASTLE
+
+| #   |  AUDIT DE CONFIGURATION                                           | Responsable |
 |-----|------------------------------------------------------|-------------|
-|  |    |            |
-|  |    |            |
-|  |    |            |
-|  |    |            |
+| 1   |   Utilisation du logiciel  **PingCastle** |  Alexandre Peyronie     |
 
 
-###
+### BLODDHOUND
 
-| #   |                                             | Responsable |
+| #   |   DÉTECTION DES VULNÉRABILITÉS                       | Responsable |
 |-----|------------------------------------------------------|-------------|
-|  |    |            |
-|  |    |            |
-|  |    |            |
-|  |    |            |
+| 1   | Utilisation du logiciel **BloodHound**               |  Yanis Hortholary  |
 
 
-###
+### OpenSCAP
 
-| #   |                                             | Responsable |
+| #   |  ÉVALUATION DE LA CONFORMITÉ                         | Responsable |
 |-----|------------------------------------------------------|-------------|
-|  |    |            |
-|  |    |            |
-|  |    |            |
-|  |    |            |
+| 1   |  Utilisation du logiciel **OpenSCAP**                |  All team   |
 
