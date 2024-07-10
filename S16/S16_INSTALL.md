@@ -196,6 +196,9 @@ Pendant ce temps, vous n’avez pas d’autres choix que de patienter : avec WSU
 
 ## 3 - PARTENARIAT D'ENTREPRISE - VPN site-à-site 
 
+⚠️ 
+> Suite à des complications concernant la communication entre les entreprises BillU et EcoTechSolutions, nous avons décidé de passer par le service OpenVPN intégré directement dans le pare-feu PfSense, la documentation sera disponible dans le fichier [`INSTALL.md` de la semaine 18](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/S18/INSTALL.md)
+
 Afin d'initialiser cette fusion d'entreprise, il est indispensable de procéder à une liaison par VPN entre les deux infrastructures déjà existantes.
 
 ### Préparation de la VM Debian 12
