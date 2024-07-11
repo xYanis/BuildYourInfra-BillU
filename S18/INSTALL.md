@@ -231,17 +231,9 @@ Vous allez ensuite dezipper le dossier et vous rendre dans ce même dossier en l
 
 ![2024-07-11 10_27_39-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/62fbe3ef-ef23-4315-8c02-3a95a2485ec2)
 
-**SharpHound.exe** va extraire des fichier en format **JSON** avec les différentes données de l'AD
+**SharpHound.exe** va extraire des fichiers en format **JSON** avec les différentes données de l'AD
 
 ![2024-07-11 10_28_10-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/f888e9cc-0b77-42a7-b505-8c21479fabe8)
 
-Vous allez transférer le dossier sur votre kali  
-
-
-
-
-Utilisez SharpHound pour collecter des données depuis votre domaine Active Directory. Exécutez SharpHound depuis un terminal ou une session PowerShell sur une machine qui fait partie du domaine.
-
-
-Une fois la collecte de données terminée, téléchargez les fichiers ZIP générés par SharpHound dans l'interface BloodHound. Utilisez l'option "Upload Data" pour importer les fichiers dans la base de données Neo4j.
+Vous allez transférer le dossier sur votre **Kali** et téléchargez les fichiers ZIP générés par SharpHound dans l'interface BloodHound. Utilisez l'option "Upload Data" pour importer les fichiers dans la base de données Neo4j.
 
