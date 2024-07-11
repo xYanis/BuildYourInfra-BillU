@@ -64,11 +64,11 @@ Cette liaison sécurisée a été possible grâce au service OpenVPN intégré d
 
 Nous partons du principe que notre entreprise, BillU, se placera du côté "client VPN", et l'entreprise EcoTechSolutions du côté "serveur VPN".  
 Les différents certificats ainsi que les clés TLS seront générés via le service OpenVPN de l'entreprise EcoTechSolutions, et envoyés (par exemple, par mail) sur le serveur principal de l'entreprise BillU.  
-Vous pourrez retrouver la documentation concernant la génération de certificats et des clés TLS sur le fichier `INSTALL.md` de l'entreprise EcoTechSolutions.  
+Vous pourrez retrouver la documentation concernant la génération de certificats et des clés TLS sur le fichier [`OpenVPN.md`](https://github.com/WildCodeSchool/TSSR-2402-P3-G2-BuildYourInfra-EcoTechSolutions/blob/main/S18/annex/OpenVPN.md) de l'entreprise EcoTechSolutions.  
 
 Nous avons donc en notre possession 4 fichiers : 2 certificats en format `.crt`, une clé en format `.txt`, et une clé en format `.key`
 
-**1ère étape - Import des certificats/clés**
+### 1ère étape - Import des certificats/clés
   
 Se rendre dans l'interface d'administration de PfSense, puis cliquer sur `System`, puis sur `Certificates`.  
   
@@ -96,7 +96,7 @@ Une fois cela fait, cliquer sur `Save`
 ![2024-07-10 10_36_06-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/75c93e8b-3665-4aa7-8d25-bf43cce8e26d)
 ![2024-07-10 10_36_23-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/29067a21-86af-40d3-bae3-c705704bc655)
 
-**2ème étape - Configuration du "client" OpenVPN**
+### 2ème étape - Configuration du "client" OpenVPN
   
 Une fois les certificats importés, nous allons configurer le "client" OpenVPN : Cliquer en haut sur `VPN`, puis sur `OpenVPN`.  
 Une fois arrivé ici, cliquer sur `Clients`, puis sur le bouton `+ Add`, et entrer les informations suivantes : 
@@ -124,7 +124,7 @@ Une fois cela fait, cliquer sur `Save`
 ![2024-07-10 10_40_31-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/22df5007-f4c9-4832-aefd-e07d635f18f6)
 ![2024-07-10 10_40_59-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/56809afa-4853-4219-b244-61f98d535f24)
 
-**3ème étape - Configuration de la nouvelle interface OpenVPN**
+### 3ème étape - Configuration de la nouvelle interface OpenVPN
   
 Cliquer en haut sur `Interfaces`, puis sur `Assignements`  
 Une fois dans cette section, cliquer sur le bouton `+ Add` en bas à droite, afin d'activer l'interface d'OpenVPN `OPT2`, pusi cliquer sur `OPT2` afin de la configurer avec les informations suivantes : 
@@ -136,7 +136,7 @@ Une fois cela fait, cliquer sur `Save`
 ![2024-07-10 10_43_08-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/a2994af9-604a-449b-b50a-551817e79a1d)
 ![2024-07-10 10_43_35-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/d9c6496f-d427-4d53-a617-1a5f00cfefc6)
 
-**4ème étape - Configuration des règles sur les interfaces d'OpenVPN**
+### 4ème étape - Configuration des règles sur les interfaces d'OpenVPN
   
 Cliquer en haut sur `Firewall`, puis sur `Rules`, puis sur l'interface `OPENVPN`, puis sur le bouton `Add`, et créer une règle qui autorise tout le trafic : 
 
@@ -146,7 +146,7 @@ Faire de même avec l'interface `OpenVPN` :
 
 ![2024-07-10 10_46_02-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/ab8ff722-3f10-42fe-9469-cb15b3cd837c)
 
-**5ème étape - Configuration du routage d'OpenVPN**
+### 5ème étape - Configuration du routage d'OpenVPN
   
 Cliquer en haut sur `System`, puis `Routing`, puis `Static Routes`, puis sur le bouton `+ Add`, et entrer les informations suivantes : 
 - Destination network : `10.10.0.0` *(Réseau LAN de l'entreprise EcoTech)*
