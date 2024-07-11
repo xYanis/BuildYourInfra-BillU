@@ -237,3 +237,5 @@ Vous allez ensuite dezipper le dossier et vous rendre dans ce même dossier en l
 
 Vous allez transférer le dossier sur votre **Kali** et téléchargez les fichiers ZIP générés par SharpHound dans l'interface BloodHound. Utilisez l'option "Upload Data" pour importer les fichiers dans la base de données Neo4j.
 
+Bonne chance pour la suite
+
