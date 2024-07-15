@@ -14,7 +14,7 @@
 
 ✔️ **Pré-requis: 1 Go de RAM et 20 Go de disque dur**
 
-L'ISO peut se récupérer ![ici](https://www.freepbx.org/downloads/)
+L'ISO peut se récupérer à cette adresse : https://www.freepbx.org/downloads/
 
 Au démarrage de la VM, dans la liste, choisir la version recommandée.
 
@@ -205,7 +205,7 @@ En cliquant sur `New`, la fenêtre de création de compte `Account settings` app
 
 💬 **Communication entre les postes**
 
-En cliquant sur l'icone `contact` (le troisieme en partant de la gauche en bas)
+En cliquant sur l'icone `contact` (Le troisieme en partant de la gauche en bas)
 
 Nous ajoutons sur nos deux postes le contact de l'autre puis nous pouvons les appeller sans taper leur numéro
 
@@ -222,7 +222,7 @@ Nous ajoutons sur nos deux postes le contact de l'autre puis nous pouvons les ap
 
 On commence par `apt-get update`
 
-On installe ensuite *Apache2*
+On installe ensuite `Apache2`
 
 ![2024-07-02 16_35_40-wcs-cyber-node05 - Proxmox Console](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/ba9c2780-4154-43a2-a844-6efe47993fe9)
 
@@ -230,11 +230,11 @@ On vérifie que tout fonctionne
 
 ![2024-07-02 16_36_56-wcs-cyber-node05 - Proxmox Console](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/22bafd5c-38a2-416a-b277-c912ed69ff5a)
 
-On peut ensuite avoir l'accès via un navigateur sur une autre machine avec l'adresse IP `172.19.11.5` ( celle du serveur )
+On peut ensuite avoir l'accès via un navigateur sur une autre machine avec l'adresse IP `172.19.11.5` (Celle du serveur)
 
 ![2024-07-02 16_38_45-QEMU (G1-WIN-Client) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/7490b1c7-f2d5-4e37-8a7b-8879185bde7d)
 
-On vient ensuite crée un dossier "répertoire" pour le site web
+On vient ensuite crée un dossier `répertoire` pour le site Web
 
 ![2024-07-02 16_40_35-wcs-cyber-node05 - Proxmox Console](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/508bdebc-d940-4bd3-9da2-4902d976bc52)
 
@@ -250,24 +250,22 @@ On va l'éditer de façon basique
 
 ![2024-07-02 16_46_12-wcs-cyber-node05 - Proxmox Console](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/75e9b3f1-811b-4519-8177-6882f672d62f)
 
-
-
 ![2024-07-02 16_55_46-wcs-cyber-node05 - Proxmox Console](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/cee1c4c1-2a54-400b-b301-2235379c9f58)
 
 
-On va créer ou éditer le fichier ci dessous 
+On va créer ou éditer le fichier ci-dessous 
 
 ![2024-07-02 17_57_23-wcs-cyber-node05 - Proxmox Console](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/a6cb6fcc-14d9-42aa-aec5-4e21d339cb29)
 
 
-On va activer l'hote virtuel avec la commande
+On va activer l'hôte virtuel avec la commande
 
 ```
 a2ensite site-billu.conf
 
 ```
 
-Relancer le service apache2
+Relancer le service `apache2`
 
 
 ```
@@ -287,7 +285,7 @@ Relancer le service apache2 ( oui encore )
 systemctl reload apache2
 ```
 
-On retourne sur le client, on va éditer le fichier host en rajoutant l'IP et l'adresse
+On retourne sur le client, on va éditer le fichier `host` en rajoutant l'adresse IP, et l'adresse du site
 
 
 ![2024-07-02 17_21_38-QEMU (G1-WIN-Client) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/3f67c831-9176-4172-99b7-e893fc5fb842)
@@ -299,21 +297,10 @@ On retourne sur le client, on va éditer le fichier host en rajoutant l'IP et l'
 ![2024-07-02 17_22_32-QEMU (G1-WIN-Client) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/d444f90c-8a55-4ed2-81fc-db1c4725fb9a)
 
 
-Vous pouvez essayer avec l'adresse et c'est tout bon 
+Vous pouvez essayer avec l'adresse et c'est tout bon :
 
 
 ![2024-07-02 17_22_49-QEMU (G1-WIN-Client) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/7d8017ca-d0d1-428b-a07b-3e03d62681bf)
 
 
 Vous pouvez toujours éditer le fichier `index.htlm` pour une page plus qualitative.
-
-Fin
-
-
-
-
-
-
-
-
- 
