@@ -3,15 +3,15 @@
 ## INSTALL GUIDE Infrastructure sécurisée pour BillU
 
 
-### 1 Mettre en place des dossiers réseaux pour les utilisateurs
+### 1 - Mettre en place des dossiers réseaux pour les utilisateurs
 
-### 2 Mettre en place du RAID 1 sur le volume système des serveurs
+### 2 - Mettre en place du RAID 1 sur le volume système des serveurs
 
-### 3 Mettre en place une sauvegarde du volume qui contient les dossiers partagés des utilisateurs
+### 3 - Mettre en place une sauvegarde du volume qui contient les dossiers partagés des utilisateurs
 
-### 4 Mise en place de LAPS
+### 4 - Mise en place de LAPS
 
-### 5 Automatisation du placement dans la bonne OU
+### 5 - Automatisation du placement dans la bonne OU
 
 
 
