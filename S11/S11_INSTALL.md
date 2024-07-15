@@ -58,13 +58,23 @@
 
 **Application d'un fond d'écran unique pour tous les utilisateurs**
 
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/local/S11/Ressources/GPO_Wallpaper.jpg?raw=true)
+
 **Mise en place d'un dossier partagé unique pour chaque utilisateur**
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/local/S11/Ressources/GPO_Individual_Folder.jpg?raw=true)
 
 **Déploiement du navigateur Chrome sur tous les postes**
 
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/local/S11/Ressources/GPO_Chrome.jpg?raw=true)
+
 **Déploiement de l'utilitaire 7-Zip sur tous les postes**
 
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/local/S11/Ressources/GPO_7Zip.jpg?raw=true)
+
 **Déploiement du logiciel Thunderbird (mail) sur tous les postes**
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/local/S11/Ressources/GPO_Thunderbird.jpg?raw=true)
 
 ## 3 - Création d'un serveur GLPI sur une VM Debian 12 (CLI)
 
