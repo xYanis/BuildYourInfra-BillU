@@ -126,4 +126,4 @@ Puis utiliser les commandes `sudo dhclient -r` pour libérer l'adresse IP, et `s
 
 ## 3. Sécurité - Gestion de la télémétrie sur un client Windows 10/11, 2 possibilités (au choix)
 
-Pour plus d'informations, se rendre sur le fichier S12_USER_GUIDE.md
+Pour plus d'informations, se rendre sur le fichier [S12_USER_GUIDE.md](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/local/S12/S12_USER_GUIDE.md)
