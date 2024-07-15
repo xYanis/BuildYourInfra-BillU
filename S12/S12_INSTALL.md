@@ -2,7 +2,7 @@
 
 ## INSTALL GUIDE Infrastructure sécurisée pour BillU
 
-#### 1. Firewall - Prise en main du pare-feu pfSense
+### 1. Firewall - Prise en main du pare-feu pfSense
 - Mise en place de règles de pare-feu (WAN et LAN) :
   - Règles de bonnes pratiques
   - Principe du **Deny All**
