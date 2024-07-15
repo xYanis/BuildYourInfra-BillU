@@ -2,8 +2,6 @@
 
 ## INSTALL GUIDE Infrastructure sécurisée pour BillU
 
-# Sommaire 
-
 ### 1 - AD - Rôles FSMO
 ### 2 - SÉCURITÉ - Mettre en place un serveur de gestion des mises à jour **WSUS**
 ### 3 - PARTENARIAT D'ENTREPRISE - VPN site-à-site

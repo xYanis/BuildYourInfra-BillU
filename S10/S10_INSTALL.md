@@ -18,7 +18,7 @@
 
 ## 1 - Création d'un domaine Active Directory
 
-### A - Pré-requis
+### Pré-requis
 
 Nous avons besoin de : 
 - Une VM Windows Server 2022 (GUI)
@@ -54,9 +54,9 @@ Pour l'installation d'une VM :
 
 ![Capture d'écran 2024-05-14 155222](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/69f092bf-8f46-46f2-bbc9-cdb8a984a476)
 
-## *Installation de la VM Windows Server 2022 (GUI)*
+### Installation de la VM Windows Server 2022 (GUI)
 
-### *Nom et configuration IP du serveur Windows Server 2022 (GUI)*
+#### Nom et configuration IP du serveur Windows Server 2022 (GUI)
 
 Dans un premier temps, nous allons remplacer le nom du serveur, et lui attribuer celui de `BillU-Files`
 
@@ -72,7 +72,7 @@ Ensuite, nous allons lui indiquer la configuration IP suivante :
 ![2024-05-14 14_43_40-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/a19b9313-66bc-4b3c-9fac-f26b8a64f3bb)
 
 
-### *Installation des rôles sur le serveur Windows Server 2022 (GUI)*
+#### Installation des rôles sur le serveur Windows Server 2022 (GUI)
 
 Se rendre dans l'application `Server Manager`, puis cliquer sur `Manage`, et enfin sur `Add Roles and Features`
 
@@ -96,7 +96,7 @@ Une fois l'installation terminée, appuyer sur `Close`
 
 ![2024-05-14 14_49_47-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/e94358e6-8c68-4d76-bffa-ed075e25e0e6)
 
-### *Configuration de l'Active Directory*
+#### Promouvoir le serveur en tant que contrôleur du domaine
 
 Se rendre dans l'application `Server Manager`, puis cliquer sur le drapeau en haut de la fenêtre, et enfin sur `Promote this server to a domain controller`
 
@@ -118,14 +118,14 @@ Cliquer sur `Next` aux rubriques `Paths` et `Review Options`, puis cliquer sur `
 
 ![2024-05-14 14_51_54-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/a60fb813-de0f-442b-8b8d-149eda419f3c)
 
-Une fois l'installation terminée, un message indiquera que l'ordinateur va redémarrer ; Une fois cela fait, le domaine Active Directory sera mis en place !
+Une fois l'installation terminée, un message indiquera que l'ordinateur va redémarrer ; Une fois cela fait, le serveur sera contrôleur du domaine.
 
 ![2024-05-14 14_52_49-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/a0af0028-5e6a-4008-a5a1-d4e4a48cc73a)
 
 
-## *Installation de la VM Windows Server 2022 (Core)*
+### Installation de la VM Windows Server 2022 (Core)
 
-### *Nom et configuration IP du serveur Windows Server 2022 (Core)*
+#### Nom et configuration IP du serveur Windows Server 2022 (Core)
 
 Comme pour l'installation de Windows Server 2022 (GUI), nous allons devoir modifier le nom et la configuration IP du serveur
 
@@ -169,7 +169,7 @@ Une fois cela fait, il nous sera demandé de redémarrer l'ordinateur en selecti
 
 ![2024-05-14 14_56_49-QEMU (G1-WServer2022-Core) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/757c65a3-0637-434a-8596-8215449bad79)
 
-### *Installation du rôle AD-DS sur le serveur Windows Server 2022 (Core)*
+#### Installation du rôle AD-DS sur le serveur Windows Server 2022 (Core)
 
 Une fois l'ordinateur redémarré, et de retour sur l'interface principale, nous allons selectionner l'option `15` afin de passer en interface de lignes de commandes (Powershell)
 
@@ -206,11 +206,11 @@ La configuration de Windows Server 2022 (Core) est terminée !
 ![2024-05-14 15_02_26-QEMU (G1-WServer2022-Core) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/6511ee1d-5c6f-4a03-b920-9fc1f3cdd544)
 
 
-## *Réplication des deux serveurs Windows Server 2022*
+## Réplication des deux serveurs Windows Server 2022
 
 Nos deux serveurs étant fraichement installés, nous allons maintenant placer le serveur Windows Server 2022 (Core) en tant que contrôleur de domaine, puis mettre en place une réplication entre les deux serveurs
 
-### *Ajout du serveur Windows Server 2022 (Core) en tant que contrôleur de domaine*
+### Ajout du serveur Windows Server 2022 (Core) en tant que contrôleur de domaine
 
 Démarrer le serveur Windows Server 2022 (GIU), puis se rendre dans le `Server Manager`
 
@@ -271,7 +271,7 @@ Les deux serveurs sont donc bien des contrôleurs de domaine, et en réplication
 
 
 
-## *Gestion de l'arborescence Active Directory*
+## 2 - Gestion de l'arborescence Active Directory
 
 Afin d'accéder à la gestion de l'Active Directory, il faut se rendre sur le `Server Manager`, cliquer sur `Tools`, puis cliquer sur `Active Directory Users and Computers`
 
@@ -341,13 +341,13 @@ Et on rempli les différentes cases comme ci dessous
 
 Suite à la nomenclature choisi,
 
-Le login de **Noémie Leloir** sera: **n.leloir**
+Le login de **Noémie Leloir** sera: **noemie.leloir**
 
 
 ![2024-05-15 12_10_42-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/d0f7c556-497f-46cb-85ca-9ada1203d5fd)
 
 
-Nous entrons ensuite un mdp
+Nous entrons ensuite un mot de passe
 
 
 ![2024-05-15 12_11_10-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/b5ccf405-fe36-43a9-a9d7-1b338140b1f3)
@@ -379,7 +379,10 @@ Nous avons ensuite un message de confirmation de l'ajout de l'utilisateur au gro
 ![2024-05-15 12_15_16-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/e496fd29-f8f1-4f00-b86c-1c9e4e8d2a7b)
 
 
-Pour la partie groupe et utilisateur, vous avez une présentation "manuelle". Un script prendra le relais pour la suite puisque nous n'allons pas effectuer les ajouts un par un, alors qu'un script ajoutera tous les utilisateurs en une fois.
+>:warning:
+>Vous a été présenté ici la méthode "manuelle" pour ajouter des groupes et des utilisateurs.  
+>
+>Pour la suite du projet, un script sera utilisé pour effectuer ces actions, dans le but de simplifier et d'automatiser ces tâches, notamment en se basant sur un fichier .csv contenant les informations nécéssaires.
 
 
 

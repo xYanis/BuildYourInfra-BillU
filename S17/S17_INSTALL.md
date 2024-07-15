@@ -3,18 +3,16 @@
 
 ## INSTALL GUIDE Infrastructure sécurisée pour BillU
 
-### Sommaire
+### FreePBX - Installation d'un serveur VOIP
 
-    -FreePBX
-
-    -Apache
+### Apache - Installation d'un serveur Web
     
 
 ## 1 - FreePBX
 
-👉 Installation
+👉 **Installation**
 
-✔️ Pré-requis: 1 Go de RAM et 20 Go de disque dur
+✔️ **Pré-requis: 1 Go de RAM et 20 Go de disque dur**
 
 L'ISO peut se récupérer ![ici](https://www.freepbx.org/downloads/)
 
@@ -34,13 +32,11 @@ Pendant l'installation, il faut configurer le mot de passe root (`Root password 
 
 ![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/FreePBX004.png?raw=true)
 
-Clique sur ROOT PASSWORD et entre un mot de passe (robuste, est-il besoin de le préciser ?) pour le compte root.
+Cliquer sur `ROOT PASSWORD` et entrer un mot de passe (robuste, est-il besoin de le préciser ?) pour le compte `root`.
 
-Le clavier est en anglais donc attention aux lettres des touches du clavier QWERTY !
+:warning: ***Le clavier est en anglais donc attention aux lettres des touches du clavier QWERTY !***
 
-Puis rebbot la machine à la fin de l'installation
-
-Au redémarrage de la machine, se connecter en root et changer le clavier en FR en tapant
+Une fois l'installation terminée, et au redémarrage de la machine, se connecter en `root` et changer la langue du clavier en `français` en indiquant les commandes suivantes : 
 
 ``` bash
 localectl set-locale LANG=fr_FR.utf8
@@ -50,7 +46,7 @@ localectl set-x11-keymap fr
 
 ![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/FreePBX007.png?raw=true)
 
-Puis changer la configuration IP en tapant!
+Puis changer la configuration IP en éxécutant : 
 
 ``` bash
 nano /etc/sysconfig/network-scripts/ifcfg-eth0
@@ -58,43 +54,44 @@ nano /etc/sysconfig/network-scripts/ifcfg-eth0
 
 ![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/FreePBX006.png?raw=true)
 
-💻 Connexion en web
+💻 **Connexion en web**
 
-A partir de ton navigateur web, connecte-toi sur l'adresse du serveur et tu arriveras sur l'interface de gestion de FreePBX. Ici j'ai pointé le DNS pour pouvoir y accéder en tapant http://freepbx comme URL
+A partir d'un navigateur web, se connecter sur l'adresse du serveur afin d'arriver sur l'interface de gestion de `FreePBX`.
+Ici, le DNS a été pointé pour pouvoir y accéder en indiquant l'URL `http://freepbx`
 
 ![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/FreePBX009.png?raw=true)
 
-⚙️ Démarrage et première configuration
+⚙️ **Démarrage et première configuration**
 
-Par l'interface web, connecte-toi en root sur la VM avec le mot de passe associé (à mettre 2 fois).
+Par l'interface web, se connecter `root` sur la VM avec le mot de passe associé (à mettre 2 fois).
 
-Indique également une addresse mail pour les notifications et clique sur Setup System
+Indiquer également une addresse mail pour les notifications et cliquer sur `Setup System`
 
-Dans la fenêtre, clique sur FreePBX Administration et reconnecte-toi en root.
+Dans la fenêtre, cliquer sur `FreePBX Administration` et se reconnecter en `root`.
 
 ![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/FreePBX010.png?raw=true)
 
 ![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/FreePBX011.png?raw=true)
 
-Laisse les langages par défaut et clique sur Submit
+Laisser les langages par défaut et cliquer sur `Submit`
 
 ![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/FreePBX012.png?raw=true)
 
-A la fenêtre d'activation du firewall, clique sur Abort
+A la fenêtre d'activation du firewall, cliquer sur `Abort`
 
 ![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/FreePBX013.png?raw=true)
 
-A la fenêtre de l'essais de SIP Station clique sur Not Now
+A la fenêtre de l'essais de SIP Station cliquer sur `Not Now`
 
-Tu arrive sur le tableau de bord, clique sur Apply Config (en rouge)pour valider tout ce que tu viens de faire
+Arrivé sur le tableau de bord, cliquer sur `Apply Config` (en rouge) pour valider tout ce qui a été réalisé précédemment
 
 ![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/FreePBX014.png?raw=true)
 
-💻 Activation du serveur
+💻 **Activation du serveur**
 
 Cette activation n'est pas obligatoire, mais elle permet d'avoir accès à l'ensemble des fonctionnalités du serveur.
 
-Va dans le menu Admin puis System Admin.
+Va dans le menu `Admin` puis `System Admin`.
 
 [](https://github.com/WildCodeSchool/TSSR_Resources/blob/main/Ressources_quetes/freePBX-16.png?raw=true)
 
@@ -102,95 +99,93 @@ Un message indique que le système n'est pas activé.
 
 ![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/FreePBX015.png?raw=true)
 
-Clique sur Activation puis Activate
+Cliquer sur `Activation` puis `Activate`
 
 ![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/FreePBX016.png?raw=true)
 
-Dans la fenêtre qui s'affiche, clique sur Activate
+Dans la fenêtre qui s'affiche, cliquer sur `Activate`
 
 ![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/FreePBX017.png?raw=true)
 
-Entre une adresse email et attend quelques instant.
+Entrer une adresse e-mail et attendre quelques instant.
 
-Dans la fenêtre qui s'affiche, renseigne les différentes informations, et :
+Dans la fenêtre qui s'affiche, renseigner les différentes informations, et :
 
-    Pour Which best describes you mets I use your products and services with my Business(s) and do not want to resell it
-    Pour Do you agree to receive product and marketing emails from Sangoma ? coche No
-    Clique sur Create
+- Pour `Which best describes you` : `I use your products and services with my Business(s) and do not want to resell it`
+- Pour `Do you agree to receive product and marketing emails from Sangoma ?` cocher `No`
+- Cliquer sur `Create`
 
 ![](https://github.com/WildCodeSchool/TSSR_Resources/blob/main/Ressources_quetes/freePBX-19.png?raw=true)
 
-Dans la fenêtre d'activation, clique sur Activate et attends que l'activation se fasse.
+Dans la fenêtre d'activation, cliquer sur `Activate` et attendre que l'activation se fasse.
 
-Dans les fenêtres qui s'affichent, clique sur Skip.
+Dans les fenêtres qui s'affichent, cliquer sur `Skip`.
 
 ![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/FreePBX018.png?raw=true)
 
-🗓️ Update des modules du serveur
+🗓️ **Update des modules du serveur**
 
 La fenêtre de mise-à-jour des modules va s'afficher automatiquement.
 
-Clique sur Update Now.
+Cliquer sur `Update Now`.
 
 ![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/FreePBX019.png?raw=true)
 
-Attend la mise-à-jour de tous les modules.
+Attendre la mise-à-jour de tous les modules.
 
 ![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/FreePBX020.png?raw=true)
 
-Une fois que tout est terminé, clique sur Apply config.
+Une fois que tout est terminé, cliquer sur `Apply config`.
 
 Il peut y avoir des erreurs sur le serveurs suite à la mise-à-jour des modules et dans ce cas, l'accès au serveur ne se fait pas.
 
 Les modules incriminés sont précisés et il faut les réinstaller et les activer.
 
-Dans ce cas, sur le serveur en CLI, exécute les commandes suivantes :
-
+Dans ce cas, sur le serveur en CLI, exécuter les commandes suivantes :
+```bash
 fwconsole ma install <module>
-
 fwconsole ma enable <module>
+```
+Par exemple pour les modules `userman`, `voicemail`, et `sysadmin` :
 
-Par exemple pour les modules userman, voicemail, et sysadmin :
-
+```bash
 fwconsole ma install userman
-
 fwconsole ma enable userman
-
 fwconsole ma install voicemail
-
 fwconsole ma enable voicemail
-
 fwconsole ma install sysadmin
-
 fwconsole ma enable sysadmin
+```
 
-Va sur le serveur en CLI et exécute la commande yum update pour faire la mise-à-jour du serveur.
+Se rendre sur le serveur en CLI et exécuter la commande suivante pour faire la mise-à-jour du serveur : 
+```bash
+yum update
+```
 
-Répond y lorsque cela sera demandé.
 
-Redémarre le serveur
+Et enfin, redémarrer le serveur
 
-🗓️ Update complémentaire des modules
+🗓️ **Update complémentaire des modules**
 
-Connecte-toi en root via la console web, et vas dans le Dashboard pour voir s'il te manque des modules.
+Se connecter en `root` via la console web, et vse rendre dans le Dashboard pour voir s'il manque des modules.
 
-Vas dans le menu Admin puis Modules Admin, et dans l'onglet Module Update.
+Se rendre dans le menu `Admin` puis `Modules Admin`, et dans l'onglet `Module Update`.
 
-Dans la fenêtre qui s'affiche, dans la colonne Status, sélectionne ceux qui sont en Disabled; Pending Upgrade... et qui ont une licence GPL.
+Dans la fenêtre qui s'affiche, dans la colonne `Status`, sélectionnerceux qui sont en `Disabled`, `Pending Upgrade...` et qui ont une licence GPL.
 
-Sélectionne alors le bouton Upgrade to ....
+Sélectionner alors le bouton `Upgrade to ....`
 
-Quand tu as géré tous les modules, clique sur Process.
+Cliquer sur `Process`.
 
-Dans la fenêtre qui apparaît, clique sur Confirm.
+Dans la fenêtre qui apparaît, cliquer sur `Confirm`.
 
-Quand tout est terminé, clique sur Apply config.
+Quand tout est terminé, cliquer sur `Apply config`.
 
-🏗️ Création d'utilisateurs et de lignes sur le serveur
+🏗️ **Création d'utilisateurs et de lignes sur le serveur**
 
-Va dans le menu Applications puis Extensions
+Se rendre dans le menu `Applications` puis `Extensions`
 
-Va sur sur l'onglet SIP [chan_pjsip] Extensions puis ici je choisi un utilisateurs de l'AD (Erwan Faure et Camille Martin pour l'exemple )
+Aller sur l'onglet SIP [chan_pjsip] `Extensions` puis choisir des utilisateurs de l'AD (*Erwan Faure* et *Camille Martin* pour l'exemple)
 
 ![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/FreePBX023.png?raw=true)
 
@@ -198,19 +193,19 @@ Va sur sur l'onglet SIP [chan_pjsip] Extensions puis ici je choisi un utilisateu
 
 ![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/FreePBX022.png?raw=true)
 
-🔬 Installation du logiciel SIP sur les postes clients
+🔬 **Installation du logiciel SIP sur les postes clients**
 
 Prendre la source ![ici](https://github.com/WildCodeSchool/TSSR-2402-P3-G4-BuildYourInfra-Pharmgreen/blob/main/Ressources/3cxphone6%20(1).msi)
 
-⚙️ Configuration du logiciel SIP
+⚙️ **Configuration du logiciel SIP**
 
-Sur l'écran du SIP phone, clique sur Set account pour avoir la fenêtre Accounts.
+Sur l'écran du **SIP phone**, cliquer sur `Set account` pour avoir la fenêtre `Accounts`.
 
-En cliquant sur New, la fenêtre de création de compte Account settings apparaît.
+En cliquant sur `New`, la fenêtre de création de compte `Account settings` apparaît.
 
-💬 Communication entre les postes
+💬 **Communication entre les postes**
 
-En cliquant sur l'icone contact ( le troisieme en partant de la gauche en bas )
+En cliquant sur l'icone `contact` (le troisieme en partant de la gauche en bas)
 
 Nous ajoutons sur nos deux postes le contact de l'autre puis nous pouvons les appeller sans taper leur numéro
 

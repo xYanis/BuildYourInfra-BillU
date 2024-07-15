@@ -2,59 +2,69 @@
 
 ## INSTALL GUIDE Infrastructure sécurisée pour BillU
 
-### 1 - Création de 10 GPO de sécurité (Minimum)
+#### 1 - Création de 10 GPO de sécurité (Minimum)
 
-### 2 - Création de 5 GPO standar (Minimum)
+#### 2 - Création de 5 GPO standard (Minimum)
 
-### 3 - Création d'un serveur GLPI sur une VM Debian 12 (CLI)
+#### 3 - Création d'un serveur GLPI sur une VM Debian 12 (CLI)
 
-### 4 - Scripts d'automatisation sur Debian et Windows Server (Core)
+#### 4 - Scripts d'automatisation sur Debian et Windows Server (Core)
 
 ## 1 - Création de 10 GPO de sécurité (Minimum)
 
-1 - Politique de mot de passe (complexité, longueur, etc.)
+**Politique de mot de passe (complexité, longueur, etc.)**
 
 ![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/GPOUserPasswordSecurity.png?raw=true)
 
-2 - Verrouillage de compte (Blocage de l'accès à la session après quelques erreurs de mot de passe)
+**Verrouillage de compte (Blocage de l'accès à la session après quelques erreurs de mot de passe)**
 
 ![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/GPOComputerLockWrongPassword.png?raw=true)
 
-3 - Restriction d'installation de logiciels pour les utilisateurs non-administrateurs
+**Restriction d'installation de logiciels pour les utilisateurs non-administrateurs**
 
 ![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/GPOUserInstallSoftwareDeny.png?raw=true)
 
-4 - Blocage de l'accès à la base de registre
+**Blocage de l'accès à la base de registre**
 
 ![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/GPOUserRegeditDeny.png?raw=true)
 
-5 - Gestion du pare-feu
+**Gestion du pare-feu**
 
 ![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/GPOUserFirewallDeny.png?raw=true)
 
-6 - Écran de veille avec mot de passe en sortie
+**Écran de veille avec mot de passe en sortie**
 
 ![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/GPOUserPasswordScreensaver.png?raw=true)
 
-7 - Politique de sécurité PowerShell
+**Politique de sécurité PowerShell**
 
 ![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/GPOUserPowershellDeny.png?raw=true)
 
-8 - Bloquer l'accès au lecteur C
+**Bloquer l'accès au lecteur C**
 
 ![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/GPOUserDiskCDeny.png?raw=true)
 
-9 - Bloquer l'accès au panneau de configuration
+**Bloquer l'accès au panneau de configuration**
 
 ![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/GPOUserControlPanelDeny.png?raw=true)
 
-10 - Déconnexion en dehors des horaires prédéfinis
+**Déconnexion en dehors des horaires prédéfinis**
 
 ![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/GPOUserAutomaticLogoff.png?raw=true)
 
 
 
 ## 2 - Création de 5 GPO de sécurité (Minimum)
+
+**Application d'un fond d'écran unique pour tous les utilisateurs**
+
+**Mise en place d'un dossier partagé unique pour chaque utilisateur**
+
+**Déploiement du navigateur Chrome sur tous les postes**
+
+**Déploiement de l'utilitaire 7-Zip sur tous les postes**
+
+**Déploiement du logiciel Thunderbird (mail) sur tous les postes**
 
 ## 3 - Création d'un serveur GLPI sur une VM Debian 12 (CLI)
 
@@ -329,9 +339,7 @@ sudo systemctl restart apache2
 
 **La configuration de GLPI est terminée**
 
-### C - Installation du serveur GLPI
-
-### ***Via Interface Graphique***
+### C - Installation du serveur GLPI (Via l'interface graphique)
 
 Dans un premier temps, nous devons nous rendre sur un hôte disposant d'une interface graphique, et connecté sur le même réseau que celui qui heberge le serveur GLPI.  
 Dans notre cas, ce sera une VM `WIndows 10 Pro` ayant comme adresse IP `172.19.5.10`
@@ -371,3 +379,11 @@ Séléctionner la base de données créée précédemment :`billu_glpi`, puis cl
 ![2024-05-23 10_04_50-QEMU (G1-W10-Client1) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/159007018/a4634ac0-764f-4463-ba57-4e23c7b85f31)
 
 **L'installation du serveur GLPI est terminée**
+
+## 4 - Scripts d'automatisation sur Debian et Windows Server (Core)
+
+Dans le but d'automatiser l'installation et la configuration des serveurs GLPI (Debian) et Windows Server (Core), nous avons mis en place un script pour chaque serveur.
+
+Vous pouvez retrouver toutes les infomations nécéssaires sur les annexes ci-dessous : 
+[Script GLPI]
+[Script Windows Server Core]
