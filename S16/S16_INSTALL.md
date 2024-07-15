@@ -700,7 +700,7 @@ On redémarre les services MariaDB, Guacamole Daemon (guacd) et Tomcat 9 pour ap
 systemctl restart mariadb guacd tomcat9
 ```
 
-Merci Maggio Di Pasta pour l'accompagnement 
+> 🏴 *Merci Maggio Di Pasta pour l'accompagnement*
 
 
 
