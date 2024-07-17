@@ -2,10 +2,9 @@
 
 ## INSTALL GUIDE Infrastructure sécurisée pour BillU
 
-# Sommaire 
-# 1 Serveur de messagerie **Zimbra**
-# 2 Mettre en place un serveur de gestion de mot de passe **Passbolt**
-# 3 Mettre en place un serveur de gestion de projet **RedMine** 
+### 1 - Serveur de messagerie **Zimbra**
+### 2 - Mettre en place un serveur de gestion de mot de passe **Passbolt**
+### 3 - Mettre en place un serveur de gestion de projet **RedMine** 
 
 
 
@@ -15,7 +14,7 @@
 ## MESSAGERIE - Mettre en place un serveur de messagerie **Zimbra**
 
 
-## 1 Mise en place du conteneur 
+### 1 - Mise en place du conteneur 
 
 Nous allons mettre en place un conteneur pour accueillir Zimbra, avec les configurations ci dessous :
 
@@ -72,7 +71,7 @@ DNS servers : `172.19.0.2` (Adresse IP de notre serveur DNS)
 ![image9](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/873b4e0f-b810-4ed5-bf65-592bfa336919)
 
 
-## 2 Configuration du DNS 
+### 2 - Configuration du DNS 
 
 Sur le serveur principal, dans le DNS Manager, il faudra enregistrer un hôte A et un Mail Exchanger MX
 Ci-dessous les configurations à respecter : 
@@ -86,7 +85,7 @@ Ci-dessous les configurations à respecter :
 
 
 
-## 3 Installation de Zimbra sur le conteneur 
+### 3 - Installation de Zimbra sur le conteneur 
 
 Mise à jour d'Ubuntu 
 
@@ -133,7 +132,7 @@ Execution du script de l'installation de Zimbra
 ./install.sh
 ```
 
-## 4 Menu d'installation Zimbra
+### 4 - Menu d'installation Zimbra
 
 Après l'execution du script d'installation, plusieurs choix s'offrent à vous, ci dessous ce qu'il faudra indiqué :
 
@@ -352,7 +351,7 @@ Host mail.billu.lan
 zimbra@mail:/root$
 ```
 
-## 5 Configuration Zimbra ( interface Web )
+### 5 - Configuration Zimbra ( Interface Web )
 
 Maintenant que le serveur Zimbra est opérationnel, nous pouvons commencer de créer les différentes adresses mail via l'interface graphique de Zimbra.  
 
@@ -414,7 +413,7 @@ Nous remarquons que l'adresse mail créée est bien fonctionnelle :
 
 
 
-## 6 Installation et configuration de Thunderbird (Client de messagerie)
+### 6 - Installation et configuration de Thunderbird (Client de messagerie)
 
 ***Ndlr : Dans ce chapitre, nous allons installer et utiliser Thunderbird sous Windows 10 Pro***
 
@@ -480,25 +479,32 @@ ATTENTION : Lors du 1er envoi de mail, un pop-up similaire à celui affiché lor
 
 **Thunderbird est dorénavant configuré !**
 
-# 2 SÉCURITÉ - Mettre en place un serveur de gestion de mot de passe **Passbolt**
+## 2 SÉCURITÉ - Mettre en place un serveur de gestion de mot de passe **Passbolt**
 	
-Création d'un conteneur avec une image debian 12 avec comme configuration 2GO de RAM, 2 cores, 8GO de stockage et une carte réseau configurer en 172.19.0.25/24 avec comme passerelle l'interface du routeur VyOS (172.19.0.254) et désactivation du firewall
+Création d'un conteneur avec une image Debian 12 avec
+- 2GO de RAM
+- 2 cores
+- 8GO de stockage 
+- Carte réseau configurée en 172.19.0.25/24
+- Passerelle : l'interface du routeur VyOS (172.19.0.254)
+- Désactivation du firewall
 
 Dans un premier temps télécharger curl avec la commande:
-
-`apt-get instal curl`
-
+```bash
+apt-get instal curl
+```
 Puis télécharger et lancer le script de Passbolt via:
 
-`curl -LO https://download.passbolt.com/ce/installer/passbolt-repo-setup.ce.sh`
+```
+curl -LO https://download.passbolt.com/ce/installer/passbolt-repo-setup.ce.sh
+bash ./passbolt-repo-setup.ce.sh
+```
 
-`bash ./passbolt-repo-setup.ce.sh`
-
-Installer Passbolt
-
-`apt install passbolt-ce-server`
-
-Configuration de mariadb
+Et enfin, installer Passbolt
+```bash
+apt install passbolt-ce-server
+```
+**Configuration de MariaDB**
 
 ![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/configure_mysql.png?raw=true)
 
@@ -510,27 +516,27 @@ Configuration de mariadb
 
 ![]([https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/passbolt_db_user_pass.png?raw=true](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/Capture%20d'%C3%A9cran%202024-06-19%20175811.png?raw=true))
 
- Configuration de Passbolt
+**Configuration de Passbolt**
 
-Sur une machine avec interface graphique et navigateur internet, lancer un navigateur et taper dans la barre d'addresse
-
-`http://adresse_ip_serveur_passbolt`
-
+Sur un poste avec une interface graphique et un navigateur internet, lancer ce dernier et indiquer l'adresse suivante : 
+```
+http://adresse_ip_serveur_passbolt
+```
 ![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/Screenshot%202024-06-19%20at%2014-42-46%20wcs-cyber-node05%20-%20Proxmox%20Virtual%20Environment.png?raw=true)
 
 ![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/Screenshot%202024-06-19%20at%2014-43-03%20wcs-cyber-node05%20-%20Proxmox%20Virtual%20Environment.png?raw=true)
 
-Dans la deuxieme partie de la configuration faire comme ci dessous
+Dans la 2ème de la configuration, faire comme ci-dessous : 
 
 ![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/Capture%20d'%C3%A9cran%202024-06-19%20180247.png?raw=true)
 
 ![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/Screenshot%202024-06-19%20at%2015-23-48%20wcs-cyber-node05%20-%20Proxmox%20Virtual%20Environment.png?raw=true)
 
-Après la configuration la page vous invite à installer le plug in passbolt
+Après la configuration, la page vous invite à installer le `plug-in Passbolt`
 
-Ensuite on vous demande une passphrase ici : jemangedescaillou
+Ensuite on vous demande une passphrase, (Dans notre cas : `jemangedescaillou`)
 
-Création d'un mot de passe dans Passbolt
+**Création d'un mot de passe dans Passbolt**
 
 ![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/Screenshot%202024-06-19%20at%2017-37-17%20wcs-cyber-node05%20-%20Proxmox%20Virtual%20Environment.png?raw=true)
 
@@ -538,28 +544,37 @@ Sur la prochaine image nous voyons une petite clé blanche sur fond rouge et si 
 
 ![](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/blob/main/RESSOURCES/Screenshot%202024-06-19%20at%2017-38-51%20wcs-cyber-node05%20-%20Proxmox%20Virtual%20Environment.png?raw=true)
  
-# GESTION DE PROJET/SUIVI DE TÂCHES - Mettre en place un serveur **RedMine** 
+## GESTION DE PROJET/SUIVI DE TÂCHES - Mettre en place un serveur **RedMine** 
 
-## Installation à partir d'un CT Template Turnkey-Redmine
+### Installation à partir d'un CT Template Turnkey-Redmine
 
  
 ![Capture d'écran 2024-06-20 095846](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/160050170/40eaffb4-6488-4512-9758-93e2b8f914b3)
+- Définir un mot de passe comme montré ci-dessus.
 
 ![Capture d'écran 2024-06-20 100046](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/160050170/3bb43099-29c5-489a-8777-81934dedaf58)
+- Renseigner une adresse mail, en l'occurrence une adresse faisant partie du domaine BillU.
 
 ![Capture d'écran 2024-06-20 100121](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/160050170/c166fc58-b708-41d6-ad6b-3cefdf314e00)
+- Sur cette page sélectionnez `Skip`, nous ne partagerons pas notre clé API avec les services TurnKey.
 
 ![Capture d'écran 2024-06-20 100153](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/160050170/6db9e39f-9af9-4938-9bde-9f0404671511)
+- Comme sur la page précédente, on sélectionne `Skip` pour ne pas souscrire à la newsletter.
 
 ![Capture d'écran 2024-06-20 100231](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/160050170/9501ffde-e858-4429-acef-2695ec1275d8)
+- On sélectionne `Install`, pour bénéficier des dernières mises à jour.
 
 ![Capture d'écran 2024-06-20 100312](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/160050170/22667f13-1b3d-4577-9094-7a3cdabc1c64)
+- Après un rapide contrôle des données affichées, on les valide en appuyant sur `Advanced Menu`.
 
 ![Capture d'écran 2024-06-20 100344](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/160050170/a5f2bb62-8f3b-405e-8089-648ff438043f)
+- Puis nous sélectionnons `Quit` et validons notre choix avec `Select`
 
 ![Capture d'écran 2024-06-20 100359](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/160050170/87188798-114d-4a26-bd76-ec900017e704)
+- Une boite de dialogue apparait, nous demandant si nous voulons réellement quitter. Sûr de notre choix nous validons avec `Yes`.
 
 ![Capture d'écran 2024-06-20 143545](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/160050170/2f4bf427-71cb-4cc1-ad35-963ae1516cb8)
+- Enfin, nous pouvons nous rendre sur notre navigateur préféré et entrer l'adresse IP de notre serveur RedMine fraichement installé, et logger vous sur le compte admin avec le mot de passe que vous avez prédéfinis au préalable. 
 
 
 

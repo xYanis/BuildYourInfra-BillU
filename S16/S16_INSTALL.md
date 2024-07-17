@@ -2,8 +2,6 @@
 
 ## INSTALL GUIDE Infrastructure sécurisée pour BillU
 
-# Sommaire 
-
 ### 1 - AD - Rôles FSMO
 ### 2 - SÉCURITÉ - Mettre en place un serveur de gestion des mises à jour **WSUS**
 ### 3 - PARTENARIAT D'ENTREPRISE - VPN site-à-site
@@ -702,7 +700,7 @@ On redémarre les services MariaDB, Guacamole Daemon (guacd) et Tomcat 9 pour ap
 systemctl restart mariadb guacd tomcat9
 ```
 
-Merci Maggio Di Pasta pour l'accompagnement 
+> 🏴 *Merci Maggio Di Pasta pour l'accompagnement*
 
 
 

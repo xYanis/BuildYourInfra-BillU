@@ -1,18 +1,17 @@
 # TSSR-2402-P3-G1-BuildYourInfra-BillU
 
-# INSTALL GUIDE Infrastructure sécurisée pour BillU
+## INSTALL GUIDE Infrastructure sécurisée pour BillU
 
-# Sommaire
 
-## 1 Mettre en place des dossiers réseaux pour les utilisateurs
+### 1 - Mettre en place des dossiers réseaux pour les utilisateurs
 
-## 2 Mettre en place du RAID 1 sur le volume système des serveurs
+### 2 - Mettre en place du RAID 1 sur le volume système des serveurs
 
-## 3 Mettre en place une sauvegarde du volume qui contient les dossiers partagés des utilisateurs
+### 3 - Mettre en place une sauvegarde du volume qui contient les dossiers partagés des utilisateurs
 
-## 4 Mise en place de LAPS
+### 4 - Mise en place de LAPS
 
-## 5 Automatisation du placement dans la bonne OU
+### 5 - Automatisation du placement dans la bonne OU
 
 
 
@@ -169,7 +168,7 @@ La fichier est également présent sur le dossier du serveur avec le bon chemin 
 
 ## 2 - SAUVEGARDE
 
-## 2.1 Sauvegarde sur un volume spécifique 
+### 2.1 Sauvegarde sur un volume spécifique 
 
 Nous avons rajouté un volume spécifique de 10 GB pour prendre en charge la sauvegarde
 
@@ -272,37 +271,6 @@ On va définir la destination pour la sauvegarde et en suivant les captures d'é
 ![2024-06-06 15_13_35-QEMU (G1-WServer2022-GUI) - noVNC](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/161461625/7408bd8f-a317-4951-af44-101b9885a909)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ## 3 - MOT DE PASSE ADMINISTRATEUR LOCAL - Mise en place de LAPS
 
 ### 1 - Configuration de Windows LAPS
@@ -397,19 +365,18 @@ Get-LapsADPassword "<Nom_PC> -AsPlainText
   
 ### Création d'une tache planifiée
 ![Capture d'écran 2024-06-06 141148](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/160050170/6c5976ab-006c-4822-8729-36091c8a0b8a)
-Ouvrir le planificateur de tache et cliquez sur 'Create Task...'
+Ouvrir le planificateur de tache et cliquez sur `Create Task...`
 
 ![Capture d'écran 2024-06-06 141322](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/160050170/f7d8208a-197d-476a-8719-1be861c848f6)
-Ajoutez un nom et une description , selectionnez 'Run whether user is logged on or not','Run with highest privileges et la version du serveur.
-Ensuite allez sur l'onglet Triggers
+Ajoutez un nom et une description , selectionnez `Run whether user is logged on or not`,`Run with highest privileges` et indiquez la version du serveur.
+Ensuite allez sur l'onglet `Triggers`
 
 ![Capture d'écran 2024-06-06 141423](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/160050170/96504b6f-3240-4151-ae32-45d4ea1caebc)
-Dans notre cas , on selectionne une tache journalière.
+Dans notre cas, nous selectionnons une tâche journalière qui executera un script tous les jours à minuit, pour verifier des modifications à notre fichier CSV et le cas échéant lancer un autre script pour appliquer ces modifications.
 
 ![Capture d'écran 2024-06-06 141525](https://github.com/WildCodeSchool/TSSR-2402-P3-G1-BuildYourInfra-BillU/assets/160050170/8522955a-cd0a-43ef-9622-548042a15402)
-Qui executera un script tous les jours à minuit, pour verifier des modifications à notre fichier CSV et le cas échéant lancer un autre script pour appliquer ces modifications.
 
-La tache planifiée est créée sous forme de fichier XML dans Windows\System32\Tasks.
+La tache planifiée est créée la sous forme d'un fichier `XML` dans `Windows\System32\Tasks`
 
 
 
