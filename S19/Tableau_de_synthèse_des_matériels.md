@@ -10,7 +10,7 @@
 | 542  | WServer2022-Core          |    VM        | Windows Server 2022          |           |           |           |           |
 | 543   | pfSense          |    VM        |  FreeBSD         |           |           |           |           |
 | 544   | DebianServer-GLPI          |   VM         | Debian 12 bookworm          |           |           |           |           |
-| 545  | VyOS          |   VM         |           |  Debian 12 bookworm         |           |           |           |
+| 545  | VyOS          |   VM         | Debian 12 bookworm          |           |           |           |           |
 | 546  | Ubuntu-Client2          |   VM         |  Ubuntu 24.04 LTS         |           |           |           |           |
 | 547  | FreePBX          |    VM        | FreeBSD          |           |           |           |           |
 | 548  | Win-Client          |    VM        |  Windows 10         |           |           |           |           |
