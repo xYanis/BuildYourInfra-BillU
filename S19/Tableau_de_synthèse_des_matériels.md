@@ -12,7 +12,7 @@
 | 544 | DebianServer-GLPI | VM | Debian 12 Bookworm  | Serveur GLPI                          | 172.19.0.4/24                                    | 32 Go  | 2 Go   |
 | 545 | VyOS              | VM | Debian 12 Bookworm  | Routeur                               | 172.19.1.254/24, 172.19.10.1/24, 172.19.0.254/24 | 4 Go   | 1 Go   |
 | 546 | Ubuntu-Client2    | VM | Ubuntu 24.04 LTS    | Client                                | 172.19.1.9/24                                    | 32 Go  | 4 Go   |
-| 547 | FreePBX           | VM | FreeBSD             | Serveur Pbx                           | 172.19.0.15/24                                   | 20 Go  | 2 Go   |
+| 547 | FreePBX           | VM | FreeBSD             | Serveur VoIP                          | 172.19.0.15/24                                   | 20 Go  | 2 Go   |
 | 548 | Win-Client        | VM | Windows 10          | Client                                | 172.19.1.50./24                                  | 50 Go  | 4 Go   |
 | 549 | BillU-Core-Two    | VM | Windows Server 2022 | Réplication AD                        | 172.19.0.5/24                                    | 32 Go  | 2 Go   |
 | 550 | Debian-Zabbix     | VM | Debian 12 Bookworm  | Serveur Supervision                   | 172.19.0.9/24                                    | 32 Go  | 2 Go   |
