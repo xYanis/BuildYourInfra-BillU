@@ -15,4 +15,4 @@
 | 550 Debian Zabbix |                                           |                                          |
 | 552 Kali          |                                           |                                          |
 | 553 Snort         |                                           |                                          |
-| 554 Gucamole      |                                           |                                          |
+| 554 Guacamole     |                                           |                                          |
