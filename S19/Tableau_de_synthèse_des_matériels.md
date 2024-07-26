@@ -1,12 +1,12 @@
 # Tableau de synthèse des matériels
 
-| N° ID | Nom des machines | Type | OS | Fonction | Adresse IP | Disque | RAM |
+| N° ID | Nom des machines | Type | OS | Fonction | Adresse IP | Disque (Taille Totale en Go / Espace Libre en Go / Espace Libre en %) | RAM (Taille totale en Go / Taille utilisée en %) |
 |:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|
-| 530 | mail              | CT | Ubuntu 20.04.6 LTS  | Serveur Mail                          | 172.19.11.4/24                                   | 10 Go  | 6 Go   |
-| 531 | Redmine           | CT | Debian 12 Bookworm  | Serveur Gestion Projets               | 172.19.0.13/24                                   | 4 Go   | 512 Mo |
-| 532 | Passbolt          | CT | Debian 12 Bookworm  | Serveur Gestionnaire de mots de passe | 172.19.0.25/24                                   | 8 Go   | 2 Go   |
-| 533 | Apache            | CT | Debian 12 Bookworm  | Serveur Web                           | 172.19.11.5/24                                   | 8 Go   | 4 Go   |
-| 541 | WServer2022-GUI   | VM | Windows Server 2022 | AD, DNS, DHCP, WSUS, LAPS, FSMO       | 172.19.0.2/24                                    | 170 Go | 8 Go   |
+| 530 | mail              | CT | Ubuntu 20.04.6 LTS  | Serveur Mail                          | 172.19.11.4/24                                   | HDD 1 : 10 Go/2.36 Go/24.14 % | 6 Go/48.89 % |
+| 531 | Redmine           | CT | Debian 12 Bookworm  | Serveur Gestion Projets               | 172.19.0.13/24                                   | HDD 1 : 4 Go/1.6 Go/41.44 % | 512 Mo/31.82 % |
+| 532 | Passbolt          | CT | Debian 12 Bookworm  | Serveur Gestionnaire de mots de passe | 172.19.0.25/24                                   | HDD 1 : 8 Go/6.37 Go/81.91 % | 2 Go/5.97 % | 
+| 533 | Apache            | CT | Debian 12 Bookworm  | Serveur Web                           | 172.19.11.5/24                                   | HDD 1 : 8 Go/6.69 Go/86.05 % | 4 Go/2.53 % |
+| 541 | WServer2022-GUI   | VM | Windows Server 2022 | AD, DNS, DHCP, WSUS, LAPS, FSMO       | 172.19.0.2/24                                    | HDD 1 : 100 Go/76.7 Go/76.7 % - HDD 2 : 51 Go/29.8 Go/40 % - HDD 3 : 10 Go/9.9 Go/99 % - HDD 4 : 10 Go/9.9 Go/99 % | 8 Go/63.36 % |
 | 542 | WServer2022-Core  | VM | Windows Server 2022 | Réplication AD, FSMO                  | 172.19.0.3/24                                    | 200 Go | 4 Go   |
 | 543 | pfSense           | VM | FreeBSD             | Firewall                              | 172.19.10.254/16, 172.19.11.254/24, 10.0.0.2/24  | 6 Go   | 2 Go   |
 | 544 | DebianServer-GLPI | VM | Debian 12 Bookworm  | Serveur GLPI                          | 172.19.0.4/24                                    | 32 Go  | 2 Go   |
