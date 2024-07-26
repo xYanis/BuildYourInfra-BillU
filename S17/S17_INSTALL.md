@@ -3,10 +3,42 @@
 
 ## INSTALL GUIDE Infrastructure sécurisée pour BillU
 
+### PRA
+
 ### FreePBX - Installation d'un serveur VOIP
 
 ### Apache - Installation d'un serveur Web
     
+
+
+## PRA
+
+Suite à un problème électrique certains éléments de l'infrastructure ne fonctionnent plus.
+Le MCO (*Maintient en Condition Opérationnelle*) n'est plus valide
+
+# Problème électrique - Etat des lieux au 01/07/2024
+
+| Eléments                                     | Catégorie | Criticité | Etat                | Date de résolution |
+|----------------------------------------------|-----------|-----------|---------------------|---------------------|
+| Conteneur Zimbra HS                          | Messagerie| Majeur    | Défaillant          |                     |
+| Routeur Vyos HS                              | Réseau    | Critique  | Défaillant          |                     |
+| Serveur GUI : Disques de sauvegarde et stockage HS | Stockage  | Majeur    | Fonctionnel en partie |                     |
+| Windows Server Core HS                       | Serveur   | Mineur    | Défaillant          |                     |
+| OpenVPN : Carte réseau HS                    | Réseau    | Majeur    | Défaillant          |                     |
+| Zabbix : Carte réseau HS                     | Réseau    | Majeur    | Défaillant          |                     |
+
+# Evolution de la remise en route
+
+| Eléments                                     | Catégorie | Criticité | Etat       | Date de résolution |
+|----------------------------------------------|-----------|-----------|------------|---------------------|
+| Conteneur Zimbra HS                          | Messagerie| Majeur    | Fonctionnel| 01/07/2024          |
+| Routeur Vyos HS                              | Réseau    | Critique  | Fonctionnel| 01/07/2024          |
+| Serveur GUI : Disques de sauvegarde et stockage HS | Stockage  | Majeur    | Fonctionnel| 01/07/2024          |
+| Windows Server Core HS                       | Serveur   | Mineur    | Fonctionnel| 04/07/2024          |
+| OpenVPN : Carte réseau HS                    | Réseau    | Majeur    | Fonctionnel| 01/07/2024          |
+| Zabbix : Carte réseau HS                     | Réseau    | Majeur    | Fonctionnel| 01/07/2024          |
+
+
 
 ## 1 - FreePBX
 
