@@ -8,11 +8,11 @@
 | 533 Apache        |  A jour                                   |                                          |
 | 541 Wserver       |  A jour                                   |                                          |
 | 542 WserserCore   |  A jour                                   |                                          |
-| 543 pfSense       |                                           |                                          |
-| 544 Debian-GLPI   |                                           |                                          |
-| 545 VyOS          |                                           |                                          |
-| 547 FreePBX       |                                           |                                          |
-| 550 Debian Zabbix |                                           |                                          |
-| 552 Kali          |                                           |                                          |
-| 553 Snort         |                                           |                                          |
-| 554 Guacamole     |                                           |                                          |
+| 543 pfSense       |  A jour                                   |                                          |
+| 544 Debian-GLPI   |  A jour                                   |                                          |
+| 545 VyOS          |  A jour                                   |                                          |
+| 547 FreePBX       |  A jour                                   |                                          |
+| 550 Debian Zabbix |  A jour                                   |                                          |
+| 552 Kali          |  Inexistante ( pas d'utilité )            |                                          |
+| 553 Snort         |  Inexistante  ( non fonctionnnelle )      |                                          |
+| 554 Guacamole     |  A jour                                   |                                          |
