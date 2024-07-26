@@ -413,3 +413,14 @@ Ces logs sont également consultables depuis l'Observateur d'Evenements.
 |-----|------------------------------------------------------|-------------|
 | 1   |  Utilisation du logiciel **OpenSCAP**                |  All team   |
 
+# Semaine 19 et 20
+
+        - Yanis Hortholary PO
+        - Alexandre Peyronie SM
+        - Thomas Scotti      
+        - Sébastien Taiclet  
+## COMPTE-RENDU DE FIN DE PROJET 3
+### Mise à jour du schéma d'infrastructure
+### Tableau de synthèse des matériels
+### Tableau de synthèse de la documentation
+        
