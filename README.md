@@ -400,7 +400,7 @@ Ces logs sont également consultables depuis l'Observateur d'Evenements.
 | 1   |   Utilisation du logiciel  **PingCastle** |  Alexandre Peyronie     |
 
 
-### BLODDHOUND
+### BLOODHOUND
 
 | #   |   DÉTECTION DES VULNÉRABILITÉS                       | Responsable |
 |-----|------------------------------------------------------|-------------|
